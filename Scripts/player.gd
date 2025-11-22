@@ -5,8 +5,16 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var cam: Camera3D = $Camera3D
+@onready var ray_cast_3d: RayCast3D = $Camera3D/RayCast3D
 @export var mouse_sensitivity: float = 0.01
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Settings.settings_changed.connect(_on_settings_changed)
+
+func _on_settings_changed() -> void:
+	mouse_sensitivity = Settings.mouse_sensitivity
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
