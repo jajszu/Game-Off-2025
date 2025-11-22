@@ -1,6 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://cctvs7cem3bq5"]
+[gd_scene load_steps=13 format=3 uid="uid://cctvs7cem3bq5"]
 
 [ext_resource type="Script" uid="uid://d0qekpq12yxlg" path="res://Scripts/radio.gd" id="1_8y21s"]
+[ext_resource type="AudioStream" uid="uid://ohgimsajnq4l" path="res://Sounds/white-noise.mp3" id="2_bdbpc"]
+[ext_resource type="Script" uid="uid://dyskunjdmx1le" path="res://Scripts/AudioEnemyType.gd" id="2_jp436"]
+[ext_resource type="AudioStream" uid="uid://bamm6av25l01x" path="res://Sounds/lofi-guitar-105361.mp3" id="3_geon2"]
+[ext_resource type="AudioStream" uid="uid://deobegj76ldbd" path="res://Sounds/lofi-synth-pattern-29946.mp3" id="4_3asvo"]
+[ext_resource type="AudioStream" uid="uid://c6ch6c8fs4dlg" path="res://Sounds/lofibeats130bpm-329502.mp3" id="5_xxwnv"]
+
+[sub_resource type="Resource" id="Resource_63cyc"]
+script = ExtResource("2_jp436")
+audio = ExtResource("3_geon2")
+metadata/_custom_type_script = "uid://dyskunjdmx1le"
+
+[sub_resource type="Resource" id="Resource_clxkr"]
+script = ExtResource("2_jp436")
+audio = ExtResource("4_3asvo")
+enemy = 1
+metadata/_custom_type_script = "uid://dyskunjdmx1le"
+
+[sub_resource type="Resource" id="Resource_5jvd1"]
+script = ExtResource("2_jp436")
+audio = ExtResource("5_xxwnv")
+enemy = 3
+metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jxtu"]
 albedo_color = Color(0.11119685, 0.11119684, 0.11119684, 1)
@@ -14,6 +36,7 @@ size = Vector3(0.6, 0.3, 0.2)
 
 [node name="Radio" type="RigidBody3D"]
 script = ExtResource("1_8y21s")
+sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_6jxtu")
@@ -24,3 +47,6 @@ shape = SubResource("BoxShape3D_8y21s")
 [node name="SongPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [node name="NoisePlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_bdbpc")
+volume_db = -40.476
+autoplay = true
