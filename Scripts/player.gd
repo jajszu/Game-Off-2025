@@ -5,7 +5,9 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var cam: Camera3D = $Camera3D
-@onready var ray_cast_3d: RayCast3D = $Camera3D/RayCast3D
+@onready var ray_cast: RayCast3D = $Camera3D/RayCast
+@onready var interact_label: Label = $UI/InteractLabel
+@onready var subtitles_label: Label = $UI/SubtitlesLabel
 @export var mouse_sensitivity: float = 0.01
 
 func _ready() -> void:
@@ -20,14 +22,25 @@ func _input(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		cam.rotate_x(-event.relative.y * mouse_sensitivity)
 		cam.rotation_degrees.x = clamp(cam.rotation_degrees.x, -90, 90)
+	elif event.is_action_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	elif event.is_action_just_pressed("interact"):
+		if ray_cast.is_colliding():
+			if ray_cast.get_collider().has_method("interact"):
+				ray_cast.get_collider().interact(self)
 
 
 func _physics_process(delta: float) -> void:
+	if ray_cast.is_colliding():
+		if ray_cast.get_collider().has_method("get_interact_text"):
+			interact_label.text = ray_cast.get_collider().get_interact_text()
+		else:
+			interact_label.text = ""
+	else:
+		interact_label.text = ""
+			
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
