@@ -13,6 +13,9 @@ func _ready() -> void:
 	noise_player.volume_db = -80.0
 	play_radio_loop()
 
+func get_interact_text() -> String:
+	return "pick up"
+
 func play_radio_loop() -> void:
 	while true:
 		if sounds.is_empty():
