@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bh1sqvwywqmho"]
+
+[ext_resource type="FontFile" uid="uid://d237jdnyhyoi6" path="res://Fonts/HelpMe.ttf" id="1_470mv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+skew = Vector2(0.1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2l2q"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.15487608, 0.15487596, 0.15487596, 1)
+skew = Vector2(0.1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470mv"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.06879826, 0.06879829, 0.06879823, 1)
+skew = Vector2(0.1, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58jnp"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
+skew = Vector2(0.1, 0)
+
+[resource]
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_470mv")
+Button/styles/focus = SubResource("StyleBoxFlat_0omi4")
+Button/styles/hover = SubResource("StyleBoxFlat_a2l2q")
+Button/styles/normal = SubResource("StyleBoxFlat_470mv")
+Button/styles/pressed = SubResource("StyleBoxFlat_58jnp")
+Label/font_sizes/font_size = 30
+VBoxContainer/constants/separation = 20

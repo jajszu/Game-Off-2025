@@ -35,6 +35,7 @@ size = Vector3(0.6, 0.3, 0.2)
 size = Vector3(0.6, 0.3, 0.2)
 
 [node name="Radio" type="RigidBody3D"]
+collision_layer = 12
 script = ExtResource("1_8y21s")
 sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1")])
 
@@ -45,8 +46,10 @@ mesh = SubResource("BoxMesh_6jxtu")
 shape = SubResource("BoxShape3D_8y21s")
 
 [node name="SongPlayer" type="AudioStreamPlayer3D" parent="."]
+bus = &"radio"
 
 [node name="NoisePlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_bdbpc")
 volume_db = -40.476
 autoplay = true
+bus = &"radio"
