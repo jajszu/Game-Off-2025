@@ -100,6 +100,8 @@ func drop_item():
 		var item := inventory.current_item
 		item.set_collision_layer_value(4, true)
 		item.freeze = false
+		var pos = item.global_position
 		inventory.remove_child(item)
 		self.get_parent().add_child(item)
+		item.global_position = pos
 		inventory.current_item = null
