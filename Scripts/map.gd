@@ -1,7 +1,7 @@
 extends Node3D
 class_name Map
 @export var player_scene: PackedScene
-@onready var player_spawn_point: Node3D = $PlayerSpawnPoint
+@export var player_spawn_point: Node3D
 var player: Player
 
 func _ready() -> void:
