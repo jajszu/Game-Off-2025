@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8u5mydv1c1ln"]
+[gd_scene load_steps=12 format=3 uid="uid://c8u5mydv1c1ln"]
 
 [ext_resource type="PackedScene" uid="uid://xtuwmeio0bmf" path="res://Scenes/player.tscn" id="1_ci6au"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_p3ir5"]
 [ext_resource type="PackedScene" uid="uid://cctvs7cem3bq5" path="res://Scenes/radio.tscn" id="2_26yhd"]
+[ext_resource type="PackedScene" uid="uid://b4c30awkhi7ww" path="res://Scenes/trash.tscn" id="4_myvm1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_26yhd"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,9 +32,10 @@ albedo_color = Color(0.29155278, 0.46364903, 0.32873422, 1)
 material = SubResource("StandardMaterial3D_26yhd")
 size = Vector3(100, 1, 100)
 
-[node name="Map" type="Node3D"]
+[node name="Map" type="Node3D" node_paths=PackedStringArray("player_spawn_point")]
 script = ExtResource("1_p3ir5")
 player_scene = ExtResource("1_ci6au")
+player_spawn_point = NodePath("PlayerSpawnPoint")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_myvm1")
@@ -72,4 +74,5 @@ collision_mask = 3
 
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Trash" parent="." instance=ExtResource("4_myvm1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5198677, 0.6110778, 1.9692786)

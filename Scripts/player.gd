@@ -19,6 +19,7 @@ func _ready() -> void:
 	Settings.settings_changed.connect(_on_settings_changed)
 	pause_menu.visibility_changed.connect(on_pause_changed)
 	pause_menu.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func on_pause_changed():
 	if pause_menu.visible:
@@ -44,7 +45,9 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("interact"):
 		if ray_cast.is_colliding():
 			if ray_cast.get_collider().has_method("interact"):
-				ray_cast.get_collider().interact(self)
+				ray_cast.get_collider().interact()
+	elif event.is_action_pressed("drop_item"):
+		drop_item()
 
 func update_tasks():
 	mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
@@ -80,3 +83,23 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func pick_up_item(item: Item):
+	item.set_collision_layer_value(4, false)
+	item.freeze = true
+	item.get_parent().remove_child(item)
+	inventory.add_child(item)
+	inventory.current_item = item
+	item.position = Vector3.ZERO
+	item.rotation = Vector3.ZERO
+
+func drop_item():
+	if inventory.current_item == null:
+		return
+	else:
+		var item := inventory.current_item
+		item.set_collision_layer_value(4, true)
+		item.freeze = false
+		inventory.remove_child(item)
+		self.get_parent().add_child(item)
+		inventory.current_item = null
