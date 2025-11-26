@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://u2tibjpfbk18"]
+
+[ext_resource type="PackedScene" uid="uid://8e7l5bgndc5p" path="res://Models/trashbin.fbx" id="1_bgvmr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bgvmr"]
+height = 2.8984375
+radius = 1.1767578
+
+[node name="TrashCan" type="StaticBody3D"]
+
+[node name="trashbin" parent="." instance=ExtResource("1_bgvmr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4453125, 0)
+shape = SubResource("CylinderShape3D_bgvmr")

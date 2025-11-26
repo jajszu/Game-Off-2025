@@ -5,5 +5,5 @@ bus/1/name = &"radio"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -8.009033
+bus/1/volume_db = -10.523644
 bus/1/send = &"Master"

@@ -73,3 +73,79 @@ offset_bottom = -118.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "subtitles"
+
+[node name="Tasks" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -385.0
+offset_top = 33.0
+offset_bottom = 552.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Tasks"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Header" type="Label" parent="UI/Tasks/VBoxContainer"]
+layout_mode = 2
+text = "Clean all the rooms"
+
+[node name="RoomLabel" type="Label" parent="UI/Tasks/VBoxContainer"]
+layout_mode = 2
+text = "Current room:"
+
+[node name="MopLabel" type="Label" parent="UI/Tasks/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mop up the dirt "
+
+[node name="TrashLabel" type="Label" parent="UI/Tasks/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pick up the trash"
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_6t5aa")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -120.5
+offset_right = 369.0
+offset_bottom = 120.5
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
