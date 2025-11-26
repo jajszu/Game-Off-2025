@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bp842hfelf4bm"]
+
+[ext_resource type="Texture2D" uid="uid://bo0w3ccyrwcuh" path="res://Models/chair.fbm/Butter-Black-Leather.png" id="1_i8ac5"]
+
+[resource]
+albedo_texture = ExtResource("1_i8ac5")
