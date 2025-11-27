@@ -18,6 +18,7 @@ var current_room: Room
 func _ready() -> void:
 	Settings.settings_changed.connect(_on_settings_changed)
 	pause_menu.visibility_changed.connect(on_pause_changed)
+	_on_settings_changed() #sync values at start
 	pause_menu.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
