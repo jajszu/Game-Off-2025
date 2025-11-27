@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3npta3oex53b"]
+
+[ext_resource type="Script" uid="uid://by622bg3b2amr" path="res://Scripts/game.gd" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://c8u5mydv1c1ln" path="res://Scenes/map.tscn" id="2_wowpa"]
+[ext_resource type="Theme" uid="uid://bh1sqvwywqmho" path="res://main_theme.tres" id="2_wrm1d"]
+[ext_resource type="Script" uid="uid://clhd0221i7geo" path="res://Scripts/main_menu.gd" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bodebpdwwrnk2" path="res://Scenes/settings_menu.tscn" id="3_wrm1d"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_qxrlw")
+map_scene = ExtResource("2_wowpa")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_wrm1d")
+script = ExtResource("3_3dryh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -114.5
+offset_right = 438.0
+offset_bottom = 114.5
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="SettingsButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="SettingsMenu" parent="MainMenu" instance=ExtResource("3_wrm1d")]
+layout_mode = 1
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
