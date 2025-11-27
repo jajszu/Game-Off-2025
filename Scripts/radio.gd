@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends Item
 
 @onready var song_player: AudioStreamPlayer3D = $SongPlayer
 @onready var noise_player: AudioStreamPlayer3D = $NoisePlayer
@@ -12,9 +12,6 @@ func _ready() -> void:
 	song_player.volume_db = -80.0
 	noise_player.volume_db = -80.0
 	play_radio_loop()
-
-func get_interact_text() -> String:
-	return "pick up"
 
 func play_radio_loop() -> void:
 	while true:
