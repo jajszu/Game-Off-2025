@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7psvmstqmiro"
-path="res://.godot/imported/ghost1.fbx-3690e8c8fde7c1640f8fc3e41b8ade63.scn"
+uid="uid://cqwmmkdiyulmn"
+path="res://.godot/imported/papers.fbx-3b903561a9b8dc7c8d8b90cf72190801.scn"
 
 [deps]
 
-source_file="res://Models/ghost1.fbx"
-dest_files=["res://.godot/imported/ghost1.fbx-3690e8c8fde7c1640f8fc3e41b8ade63.scn"]
+source_file="res://Models/papers.fbx"
+dest_files=["res://.godot/imported/papers.fbx-3b903561a9b8dc7c8d8b90cf72190801.scn"]
 
 [params]
 
@@ -43,6 +43,16 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://Materials/Material.tres",
 "use_external/path": "uid://bav2ptpr38g8f"
+},
+"Material.001": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.001.tres",
+"use_external/path": "uid://diiecmtwystnn"
+},
+"Material.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/Material.002.tres",
+"use_external/path": "uid://wb2373knko1h"
 }
 }
 }
