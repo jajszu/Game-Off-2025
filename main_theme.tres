@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bh1sqvwywqmho"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://bh1sqvwywqmho"]
 
 [ext_resource type="FontFile" uid="uid://d237jdnyhyoi6" path="res://Fonts/HelpMe.ttf" id="1_470mv"]
+[ext_resource type="Texture2D" uid="uid://ds5h3x6wtgcn7" path="res://Sprites/slider_handle_horror_small.png" id="2_a2l2q"]
+[ext_resource type="Texture2D" uid="uid://5c1dqeask1k2" path="res://Sprites/slider_fill2.png" id="3_0omi4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0omi4"]
 content_margin_top = 10.0
@@ -30,6 +32,23 @@ content_margin_bottom = 10.0
 bg_color = Color(0.15294118, 0.15294118, 0.15294118, 1)
 skew = Vector2(0.1, 0)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58jnp"]
+texture = ExtResource("3_0omi4")
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0omi4"]
+texture = ExtResource("3_0omi4")
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52mx2"]
+border_width_top = 5
+border_width_bottom = 11
+border_color = Color(0.10747976, 0.10747973, 0.10747973, 1)
+
 [resource]
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("1_470mv")
@@ -37,5 +56,13 @@ Button/styles/focus = SubResource("StyleBoxFlat_0omi4")
 Button/styles/hover = SubResource("StyleBoxFlat_a2l2q")
 Button/styles/normal = SubResource("StyleBoxFlat_470mv")
 Button/styles/pressed = SubResource("StyleBoxFlat_58jnp")
+HBoxContainer/constants/separation = 50
+HSlider/icons/grabber = ExtResource("2_a2l2q")
+HSlider/icons/grabber_disabled = ExtResource("2_a2l2q")
+HSlider/icons/grabber_highlight = ExtResource("2_a2l2q")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_58jnp")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_0omi4")
+HSlider/styles/slider = SubResource("StyleBoxFlat_52mx2")
 Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_470mv")
 VBoxContainer/constants/separation = 20

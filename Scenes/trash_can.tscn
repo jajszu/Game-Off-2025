@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://u2tibjpfbk18"]
+[gd_scene load_steps=4 format=3 uid="uid://u2tibjpfbk18"]
 
 [ext_resource type="PackedScene" uid="uid://8e7l5bgndc5p" path="res://Models/trashbin.fbx" id="1_bgvmr"]
+[ext_resource type="Script" uid="uid://c7fhgmrw8ol2d" path="res://Scripts/trash_can.gd" id="1_t3ghh"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bgvmr"]
 height = 2.8984375
 radius = 1.1767578
 
 [node name="TrashCan" type="StaticBody3D"]
+script = ExtResource("1_t3ghh")
 
 [node name="trashbin" parent="." instance=ExtResource("1_bgvmr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

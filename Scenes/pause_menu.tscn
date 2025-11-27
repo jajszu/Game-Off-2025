@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqv4e5w8rji7a"]
+
+[ext_resource type="Theme" uid="uid://bh1sqvwywqmho" path="res://main_theme.tres" id="1_1och7"]
+[ext_resource type="Script" uid="uid://cdke75jdun61f" path="res://Scripts/pause_menu.gd" id="2_bpi0q"]
+[ext_resource type="PackedScene" uid="uid://bodebpdwwrnk2" path="res://Scenes/settings_menu.tscn" id="3_vmyb1"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1och7")
+script = ExtResource("2_bpi0q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.27450982)
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -120.5
+offset_right = 369.0
+offset_bottom = 120.5
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_vmyb1")]
+layout_mode = 1
+
+[connection signal="pressed" from="ButtonsContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ButtonsContainer/ExitButton" to="." method="_on_exit_button_pressed"]

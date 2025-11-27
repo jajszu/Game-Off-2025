@@ -9,7 +9,7 @@ const JUMP_VELOCITY = 4.5
 @onready var interact_label: Label = $UI/InteractLabel
 @onready var subtitles_label: Label = $UI/SubtitlesLabel
 @onready var inventory: Inventory = $Inventory
-@onready var pause_menu: Control = $PauseMenu
+@onready var pause_menu: PauseMenu = $PauseMenu
 @onready var mop_label: Label = %MopLabel
 @onready var trash_label: Label = %TrashLabel
 @export var mouse_sensitivity: float = 0.01
@@ -18,6 +18,7 @@ var current_room: Room
 func _ready() -> void:
 	Settings.settings_changed.connect(_on_settings_changed)
 	pause_menu.visibility_changed.connect(on_pause_changed)
+	_on_settings_changed() #sync values at start
 	pause_menu.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -100,6 +101,8 @@ func drop_item():
 		var item := inventory.current_item
 		item.set_collision_layer_value(4, true)
 		item.freeze = false
+		var pos = item.global_position
 		inventory.remove_child(item)
 		self.get_parent().add_child(item)
+		item.global_position = pos
 		inventory.current_item = null
