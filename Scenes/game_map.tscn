@@ -1,10 +1,10 @@
-[gd_scene load_steps=35 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=35 format=4 uid="uid://4ev1dt6lokhg"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Texture2D" uid="uid://csmry2deaxscx" path="res://Materials/ceil.png" id="2_d8w4w"]
 [ext_resource type="Texture2D" uid="uid://biaoq3vq8v7q5" path="res://Materials/walls.png" id="3_3qyi3"]
 [ext_resource type="PackedScene" uid="uid://dqx02sg63mkp8" path="res://Models/lamp.fbx" id="3_bcdk8"]
-[ext_resource type="PackedScene" uid="uid://by2lfnkoidhan" path="res://Scenes/desk.tscn" id="3_v8ky0"]
+[ext_resource type="PackedScene" path="res://Scenes/desk.tscn" id="3_v8ky0"]
 [ext_resource type="Material" uid="uid://diiecmtwystnn" path="res://Materials/Material.001.tres" id="4_jj4v6"]
 [ext_resource type="PackedScene" uid="uid://bdkinjyakkkbr" path="res://Models/monitor.fbx" id="4_qy8qd"]
 [ext_resource type="Texture2D" uid="uid://l8rhodaerdnp" path="res://Models/papers_0.png" id="5_1wdcn"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cigbayokw8sgv" path="res://Models/cup.fbx" id="8_1wdcn"]
 [ext_resource type="PackedScene" uid="uid://bguuvk4k5ivxu" path="res://Scenes/chair.tscn" id="9_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://dnilpilvh6g6i" path="res://Models/screen.fbx" id="13_1wdcn"]
-[ext_resource type="PackedScene" uid="uid://rqdfcuelai1g" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
+[ext_resource type="PackedScene" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://b15honqnfxkut" path="res://Models/projector.fbx" id="16_e6p2l"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_c4nuu"]

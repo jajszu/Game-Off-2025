@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://by2lfnkoidhan"]
+[gd_scene load_steps=4 format=3 uid="uid://d2cbc25m5uqld"]
 
 [ext_resource type="PackedScene" uid="uid://775hkgwlb4qk" path="res://Models/desk.fbx" id="1_825yk"]
+[ext_resource type="Script" uid="uid://b1ls5dey134do" path="res://Scripts/desk.gd" id="2_ii4wa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_825yk"]
 size = Vector3(1.95, 2.263, 5.085)
 
 [node name="desk" instance=ExtResource("1_825yk")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="6" node_paths=PackedStringArray("hide_location")]
+collision_layer = 9
+script = ExtResource("2_ii4wa")
+hide_location = NodePath("Node3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0536816, 0)
 shape = SubResource("BoxShape3D_825yk")
+
+[node name="Node3D" type="Node3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5927191, -0.5554006, 0.98292994)

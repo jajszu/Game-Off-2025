@@ -16,6 +16,7 @@ const JUMP_VELOCITY = 4.5
 @onready var drop_item_label: Label = $UI/DropItemLabel
 @export var mouse_sensitivity: float = 0.01
 var current_room: Room
+var hidden:bool = false
 
 func _ready() -> void:
 	Settings.settings_changed.connect(_on_settings_changed)
@@ -41,7 +42,15 @@ func _input(event: InputEvent) -> void:
 		pause_menu.visible = !pause_menu.visible
 	elif pause_menu.visible: #jeżeli pauza aktywna, nie sprawdzaj pozostałych inputów
 		return
-		
+	
+	if hidden:
+		if event.is_action_pressed("interact"):
+			cam.current = true
+			hidden = false
+		elif event is InputEventMouseMotion:
+			Globals.current_map.secondary_camera.get_input(event, mouse_sensitivity)
+		return
+	
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		cam.rotate_x(-event.relative.y * mouse_sensitivity)
