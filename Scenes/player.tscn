@@ -77,6 +77,21 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "subtitles"
 
+[node name="DropItemLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -89.0
+offset_right = -52.0
+offset_bottom = -47.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "[G] Drop Item"
+
 [node name="Tasks" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 1

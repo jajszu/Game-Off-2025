@@ -13,6 +13,7 @@ const JUMP_VELOCITY = 4.5
 @onready var mop_label: Label = %MopLabel
 @onready var trash_label: Label = %TrashLabel
 @onready var tasks: Control = $UI/Tasks
+@onready var drop_item_label: Label = $UI/DropItemLabel
 @export var mouse_sensitivity: float = 0.01
 var current_room: Room
 
@@ -24,6 +25,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	subtitles_label.text = ""
 	tasks.visible = false
+	drop_item_label.visible = false
 
 func on_pause_changed():
 	if pause_menu.visible:
@@ -112,6 +114,7 @@ func pick_up_item(item: Item):
 	inventory.current_item = item
 	item.position = Vector3.ZERO
 	item.rotation = Vector3.ZERO
+	drop_item_label.visible = true
 
 func drop_item():
 	if inventory.current_item == null:
@@ -120,8 +123,12 @@ func drop_item():
 		var item := inventory.current_item
 		item.set_collision_layer_value(4, true)
 		item.freeze = false
-		var pos = item.global_position
+		var pos := item.global_position
+		var rot := item.global_rotation
 		inventory.remove_child(item)
 		self.get_parent().add_child(item)
 		item.global_position = pos
+		item.global_rotation = rot
 		inventory.current_item = null
+		drop_item_label.visible = false
+		
