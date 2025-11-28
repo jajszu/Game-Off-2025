@@ -19,22 +19,28 @@ var current_mop: int = 0
 var goal_mop: int = 10
 #endregion
 
+#region Ghost things
+@export var light : SpotLight3D
+#endregion
+
 func _ready() -> void:
 	self.body_entered.connect(on_body_entered)
 	spawn_tasks()
 	Globals.rooms_total += 1
-	
+
 func on_body_entered(body: Node3D):
 	if body is Player:
 		body.current_room = self
 		body.update_tasks()
+	if body is Ghost:
+		body.current_room = self
 
 func check_done():
 	if current_trash >= goal_trash and current_mop >= goal_mop:
-		Globals.rooms_done += 1  
+		Globals.rooms_done += 1
 
 func spawn_tasks():
-	#if max higher than num of spawn points, reduce max 
+	#if max higher than num of spawn points, reduce max
 	if max_trash_spawn > trash_spawn_points.size():
 		max_trash_spawn = trash_spawn_points.size()
 	if max_mop_spawn > mop_dirt_spawn_points.size():
@@ -49,13 +55,13 @@ func spawn_tasks():
 	var trash_count = randi_range(min_trash_spawn, max_trash_spawn)
 	var available_trash_points = trash_spawn_points.duplicate()
 	available_trash_points.shuffle()
-	
+
 	# Ensure we don't try to spawn more than we have points for
 	trash_count = min(trash_count, available_trash_points.size())
-	
+
 	goal_trash = trash_count
 	current_trash = 0
-	
+
 	for i in range(trash_count):
 		var point = available_trash_points[i]
 		if not trash_scenes.is_empty():
@@ -64,17 +70,17 @@ func spawn_tasks():
 			add_child(trash_instance)
 			trash_instance.global_position = point.global_position
 			trash_instance.global_rotation = point.global_rotation
-			
+
 	# Mop Spawning
 	var mop_count = randi_range(min_mop_spawn, max_mop_spawn)
 	var available_mop_points = mop_dirt_spawn_points.duplicate()
 	available_mop_points.shuffle()
-	
+
 	mop_count = min(mop_count, available_mop_points.size())
-	
+
 	goal_mop = mop_count
 	current_mop = 0
-	
+
 	for i in range(mop_count):
 		var point = available_mop_points[i]
 		if not mop_dirt_scenes.is_empty():
