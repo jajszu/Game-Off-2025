@@ -34,16 +34,20 @@ collision_layer = 12
 script = ExtResource("1_8y21s")
 sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1")])
 songs = Array[AudioStream]([ExtResource("6_3asvo")])
+noise_volume = -5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8y21s")
 
 [node name="SongPlayer" type="AudioStreamPlayer3D" parent="."]
+attenuation_model = 1
+unit_size = 5.0
 bus = &"radio"
 
 [node name="NoisePlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_bdbpc")
-volume_db = -40.476
+attenuation_model = 1
+unit_size = 5.0
 autoplay = true
 bus = &"radio"
 

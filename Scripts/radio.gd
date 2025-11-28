@@ -5,10 +5,11 @@ extends Item
 @export var sounds: Array[AudioEnemyType]
 @export var songs: Array[AudioStream]
 
+@export_range(-80, 0) var noise_volume: float = 0.0
 @export var song_time: float = 40.0
 @export var instructions_time = 20.0
 @export var noise_time: float = 60.0
-@export var fade_time: float = 4.0
+@export var fade_time: float = 2.0
 
 func _ready() -> void:
 	song_player.volume_db = -80.0
@@ -36,7 +37,7 @@ func play_radio_loop() -> void:
 		noise_player.play()
 		tween_song_to_noise(tween)
 		
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(fade_time * 2).timeout
 		
 		#pick next enemy
 		var sound_data = sounds.pick_random()
@@ -69,4 +70,4 @@ func tween_song_to_noise(tween: Tween):
 		tween = create_tween()
 		tween.set_parallel(true)
 		tween.tween_property(song_player, "volume_db", -80.0, fade_time)
-		tween.tween_property(noise_player, "volume_db", 0.0, fade_time)
+		tween.tween_property(noise_player, "volume_db", noise_volume, fade_time)
