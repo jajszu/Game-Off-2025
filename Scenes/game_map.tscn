@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://csmry2deaxscx" path="res://Materials/ceil.png" id="2_d8w4w"]
 [ext_resource type="Texture2D" uid="uid://biaoq3vq8v7q5" path="res://Materials/walls.png" id="3_3qyi3"]
 [ext_resource type="PackedScene" uid="uid://dqx02sg63mkp8" path="res://Models/lamp.fbx" id="3_bcdk8"]
-[ext_resource type="PackedScene" path="res://Scenes/desk.tscn" id="3_v8ky0"]
+[ext_resource type="PackedScene" uid="uid://d2cbc25m5uqld" path="res://Scenes/desk.tscn" id="3_v8ky0"]
 [ext_resource type="Material" uid="uid://diiecmtwystnn" path="res://Materials/Material.001.tres" id="4_jj4v6"]
 [ext_resource type="PackedScene" uid="uid://bdkinjyakkkbr" path="res://Models/monitor.fbx" id="4_qy8qd"]
 [ext_resource type="Texture2D" uid="uid://l8rhodaerdnp" path="res://Models/papers_0.png" id="5_1wdcn"]
@@ -265,10 +265,8 @@ tonemap_exposure = 0.1
 tonemap_white = 16.0
 ssr_enabled = true
 ssao_enabled = true
-ssil_enabled = true
 ssil_radius = 2.94
 ssil_intensity = 5.3
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 fog_density = 0.0315
 volumetric_fog_enabled = true
@@ -1322,7 +1320,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 0, 17.3)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 17.5, 2, -13)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17.5, 2, -13)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 17.900002, 2.05, -13.700001)
@@ -1343,7 +1341,7 @@ transform = Transform3D(0.042499997, 0, 0.07361216, 0, 0.085, 0, -0.07361216, 0,
 transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, -0.09058666, 16.599998, 0.6, -13)
 
 [node name="desk3" parent="NavigationRegion3D/Decorations/biurka/biurto-template" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 27.400002, 2, -13)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 27.400002, 2, -13)
 
 [node name="monitor2" parent="NavigationRegion3D/Decorations/biurka/biurto-template" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 27.800003, 2.05, -13.700001)
@@ -1364,7 +1362,7 @@ transform = Transform3D(0.042499997, 0, 0.07361216, 0, 0.085, 0, -0.07361216, 0,
 transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, -0.09058666, 26.55, 0.6, -13.65)
 
 [node name="desk4" parent="NavigationRegion3D/Decorations/biurka/biurto-template" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(0.71999997, 0, -6.2944395e-08, 0, 0.72, 0, 6.2944395e-08, 0, 0.71999997, 29.0051, 2, -9.186191)
+transform = Transform3D(1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, 1, 29.0051, 2, -9.186191)
 
 [node name="monitor3" parent="NavigationRegion3D/Decorations/biurka/biurto-template" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(0.4056888, 0, 0.10870397, 0, 0.4199999, 0, -0.10870397, 0, 0.4056888, 28.605099, 2.05, -8.48619)
@@ -1388,7 +1386,7 @@ transform = Transform3D(0.09058669, 0, 0.33807403, 0, 0.35000002, 0, -0.33807403
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, 21.599998)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template2" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 14.499998, 2, 15.999998)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.499998, 2, 15.999998)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template2" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.4187018, 0, -0.032996688, 0, 0.41999987, 0, 0.032996688, 0, -0.4187018, 14.899998, 2.05, 15.799997)
@@ -1409,7 +1407,7 @@ transform = Transform3D(0.042499997, 0, 0.07361216, 0, 0.085, 0, -0.07361216, 0,
 transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, -0.09058666, 12.999996, 0.6, 15.999998)
 
 [node name="desk3" parent="NavigationRegion3D/Decorations/biurka/biurto-template2" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(3.1472197e-08, 0, 0.71999997, 0, 0.72, 0, -0.71999997, 0, 3.1472197e-08, 13.44264, 2, 25.100685)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 13.44264, 2, 25.100685)
 
 [node name="monitor2" parent="NavigationRegion3D/Decorations/biurka/biurto-template2" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.03299667, 0, 0.4187018, 0, 0.41999993, 0, -0.4187018, 0, -0.03299667, 13.642641, 2.05, 25.500685)
@@ -1433,7 +1431,7 @@ transform = Transform3D(-0.33807403, 0, 0.090586685, 0, 0.35000002, 0, -0.090586
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -19.7, 0, 17.349998)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template3" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, -14.500004, 2, 12.999998)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14.500004, 2, 12.999998)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template3" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, -14.250004, 2.479678, 12.849997)
@@ -1454,7 +1452,7 @@ transform = Transform3D(0.042499997, 0, 0.07361216, 0, 0.085, 0, -0.07361216, 0,
 transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, -0.09058666, -15.5, 0.6, 12.999998)
 
 [node name="desk3" parent="NavigationRegion3D/Decorations/biurka/biurto-template3" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, -24.400005, 2, 12.999996)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -24.400005, 2, 12.999996)
 
 [node name="monitor2" parent="NavigationRegion3D/Decorations/biurka/biurto-template3" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, -24.150005, 2.479678, 12.849995)
@@ -1478,7 +1476,7 @@ transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 0, -9.050001)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template4" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(3.1472197e-08, 0, 0.71999997, 0, 0.72, 0, -0.71999997, 0, 3.1472197e-08, 4.9178543, 2, 2.1750011)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, 4.9178543, 2, 2.1750011)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template4" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.10870399, 0, 0.4056888, 0, 0.4199999, 0, -0.4056888, 0, -0.10870399, 5.617853, 2.05, 2.5750008)
@@ -1502,7 +1500,7 @@ transform = Transform3D(-0.33807403, 0, 0.09058668, 0, 0.35000002, 0, -0.0905866
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, -4.7500014)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template5" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(3.1472197e-08, 0, -0.71999997, 0, 0.72, 0, 0.71999997, 0, 3.1472197e-08, 4.1992145, 2, -4.036974)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, 4.1992145, 2, -4.036974)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template5" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(0.032996707, 0, -0.4187018, 0, 0.41999993, 0, 0.4187018, 0, 0.032996707, 3.9992137, 2.05, -4.4369736)
@@ -1526,7 +1524,7 @@ transform = Transform3D(0.33807403, 0, -0.090586655, 0, 0.35000002, 0, 0.0905866
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -19.7, 0, -9.000002)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template6" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(3.1472197e-08, 0, 0.71999997, 0, 0.72, 0, -0.71999997, 0, 3.1472197e-08, -0.2678547, 2, -3.7250004)
+transform = Transform3D(7.54979e-08, 0, 1, 0, 1, 0, -1, 0, 7.54979e-08, -0.2678547, 2, -3.7250004)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template6" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.108703986, 0, 0.4056888, 0, 0.4199999, 0, -0.4056888, 0, -0.108703986, -0.117853165, 2.479678, -3.4750004)
@@ -1550,7 +1548,7 @@ transform = Transform3D(-0.33807403, 0, 0.090586685, 0, 0.35000002, 0, -0.090586
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.550001, 0, -9.150002)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template28" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(0.71999997, 0, 6.2944395e-08, 0, 0.72, 0, -6.2944395e-08, 0, 0.71999997, -1.5306168, 2, 0.049524307)
+transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, 1, -1.5306168, 2, 0.049524307)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template28" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(0.4056888, 0, 0.108704045, 0, 0.4199999, 0, -0.108704045, 0, 0.4056888, -1.9306164, 2.05, 0.74952316)
@@ -1574,7 +1572,7 @@ transform = Transform3D(0.09058663, 0, 0.33807403, 0, 0.35000002, 0, -0.33807403
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.85, 0, -4.8500013)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template29" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(3.1472197e-08, 0, -0.71999997, 0, 0.72, 0, 0.71999997, 0, 3.1472197e-08, -4.850785, 2, 0.06302452)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -4.850785, 2, 0.06302452)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template29" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(0.032996707, 0, -0.4187018, 0, 0.41999993, 0, 0.4187018, 0, 0.032996707, -5.0507855, 2.05, -0.3369751)
@@ -1598,10 +1596,10 @@ transform = Transform3D(0.20075175, 0, 0.2867032, 0, 0.35000005, 0, -0.2867032, 
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 22.15, 0, -9.100002)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template30" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(0.71999997, 0, -6.2944395e-08, 0, 0.72, 0, 6.2944395e-08, 0, 0.71999997, -1.4163265, 2, 0.013807297)
+transform = Transform3D(1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, 1, -1.4163265, 2, 0.013807297)
 
 [node name="desk3" parent="NavigationRegion3D/Decorations/biurka/biurto-template30" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-1.17302896e-07, 0, 0.72, 0, 0.72, 0, 0.72, 0, 1.17302896e-07, -0.31632614, 2, -10.186193)
+transform = Transform3D(1.6292068e-07, 1.424298e-14, -1, 8.742278e-08, -1, 0, -1, -8.742278e-08, -1.6292068e-07, -0.31632614, 2, -10.186193)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template30" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(0.40568873, 0, 0.10870395, 0, 0.41999987, 0, -0.10870395, 0, 0.40568873, -1.6663265, 2.479678, 0.16380882)
@@ -1625,7 +1623,7 @@ transform = Transform3D(0.0905867, 0, 0.33807403, 0, 0.35000002, 0, -0.33807403,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 0, 4.299999)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template7" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 1.5, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 2, 0)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template7" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 1.9, 2.05, -0.70000005)
@@ -1649,7 +1647,7 @@ transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, 
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22, 0, 8.599998)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template8" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(3.1472197e-08, 0, -0.71999997, 0, 0.72, 0, 0.71999997, 0, 3.1472197e-08, -2.5507822, 2, -3.8869762)
+transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -2.5507822, 2, -3.8869762)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template8" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(0.032996707, 0, -0.4187018, 0, 0.41999993, 0, 0.4187018, 0, 0.032996707, -3.5507832, 2.05, -4.4369755)
@@ -1676,10 +1674,10 @@ transform = Transform3D(0.30310887, 0, 0.17499997, 0, 0.35000005, 0, -0.17499997
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -19.7, 0, 4.3499985)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template9" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 1.5, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 2, 0)
 
 [node name="desk3" parent="NavigationRegion3D/Decorations/biurka/biurto-template9" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(5.4358487e-08, 0, 0.72, 0, 0.72, 0, 0.72, 0, -5.4358487e-08, 5.050009, 2, -9.400001)
+transform = Transform3D(-7.54979e-08, -6.600236e-15, -1, 8.742278e-08, -1, 0, -1, -8.742278e-08, 7.54979e-08, 5.050009, 2, -9.400001)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template9" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 1.75, 2.479678, -0.15000153)
@@ -1700,7 +1698,7 @@ transform = Transform3D(0.042499997, 0, 0.07361216, 0, 0.085, 0, -0.07361216, 0,
 transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, -0.09058666, 0.70000076, 0.6, -0.5)
 
 [node name="desk4" parent="NavigationRegion3D/Decorations/biurka/biurto-template9" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 6.3500023, 2, 9.550001)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.3500023, 2, 9.550001)
 
 [node name="monitor2" parent="NavigationRegion3D/Decorations/biurka/biurto-template9" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 6.6000023, 2.479678, 9.4)
@@ -1769,7 +1767,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 21.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2, 0, 4.299999)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template25" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 1.5, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 2, 0)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template25" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 1.9, 2.05, -0.70000005)
@@ -1793,7 +1791,7 @@ transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, 
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.5, 0, 8.599998)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template26" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 1.5, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 2, 0)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template26" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.4187018, 0, -0.032996688, 0, 0.41999987, 0, 0.032996688, 0, -0.4187018, 1.8999996, 2.05, -0.20000076)
@@ -1817,7 +1815,7 @@ transform = Transform3D(-0.09058666, 0, -0.33807403, 0, 0.35, 0, 0.33807403, 0, 
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 21.8, 0, 4.3499985)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template27" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-0.71999997, 0, 0, 0, 0.72, 0, 0, 0, -0.71999997, 1.5, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 2, 0)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template27" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 1.75, 2.479678, -0.15000153)
@@ -1973,6 +1971,7 @@ transform = Transform3D(-3.632255e-08, 0, 0.8309631, 0, 0.8309631, 0, -0.8309631
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6696892, 5.734723, -1.8603764)
+visible = false
 material_override = SubResource("StandardMaterial3D_mue85")
 size = Vector3(100, 0.1, 100)
 

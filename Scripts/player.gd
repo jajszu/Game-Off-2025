@@ -17,6 +17,7 @@ const JUMP_VELOCITY = 6.0
 @onready var tasks: Control = $UI/Tasks
 @onready var drop_item_label: Label = $UI/DropItemLabel
 @export var mouse_sensitivity: float = 0.01
+var position_before_hidden: Vector3
 var current_room: Room
 var hidden:bool = false
 
@@ -46,19 +47,20 @@ func _input(event: InputEvent) -> void:
 	elif pause_menu.visible: #jeżeli pauza aktywna, nie sprawdzaj pozostałych inputów
 		return
 
-	if hidden:
-		if event.is_action_pressed("interact"):
-			cam.current = true
-			hidden = false
-		elif event is InputEventMouseMotion:
-			Globals.current_map.secondary_camera.get_input(event, mouse_sensitivity)
-		return
-
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		cam.rotate_x(-event.relative.y * mouse_sensitivity)
 		cam.rotation_degrees.x = clamp(cam.rotation_degrees.x, -90, 90)
-	elif event.is_action_pressed("jump") and is_on_floor():
+		
+	if hidden:
+		if event.is_action_pressed("interact"):
+			hidden = false
+			global_position = position_before_hidden
+			set_collision_mask_value(1, true)
+			axis_lock_linear_y = false
+		return
+	
+	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	elif event.is_action_pressed("interact"):
 		if ray_cast.is_colliding():
@@ -83,6 +85,7 @@ func update_tasks():
 	+ "/" + str(current_room.goal_mop)
 	trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
 	+ "/" + str(current_room.goal_trash)
+
 
 func _physics_process(delta: float) -> void:
 	ghost_visible_to_camera()

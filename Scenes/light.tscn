@@ -320,9 +320,10 @@ shadow_mesh = SubResource("ArrayMesh_gdm4p")
 
 [node name="light" type="SpotLight3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-shadow_bias = 1.886
+shadow_enabled = true
+shadow_bias = 0.1
 shadow_reverse_cull_face = true
-spot_range = 19.719
+spot_range = 182.207
 spot_attenuation = 2.0
 spot_angle = 52.43
 script = ExtResource("1_veqsg")
@@ -377,5 +378,9 @@ skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4816774e-08, -1.4828349)
-light_energy = 10.0
+light_energy = 0.0
+shadow_bias = 0.2
+shadow_normal_bias = 6.0
+shadow_reverse_cull_face = true
+distance_fade_enabled = true
 omni_range = 6.0

@@ -2,7 +2,6 @@ extends Node3D
 class_name Map
 @export var player_scene: PackedScene
 @export var player_spawn_point: Node3D
-@export var secondary_camera: SecondaryCamera
 var player: Player
 
 func _ready() -> void:

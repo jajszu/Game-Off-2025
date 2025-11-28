@@ -13,15 +13,14 @@ func get_interact_text() -> String:
 func interact():
 	if get_angle_to_player() > 40:
 		return
-	var sec_cam := Globals.current_map.secondary_camera
-	sec_cam.get_parent().remove_child(sec_cam)
-	hide_location.add_child(sec_cam)
-	sec_cam.pivot = hide_location
-	sec_cam.global_position = hide_location.global_position
-	sec_cam.global_rotation = hide_location.global_rotation
-	sec_cam.current = true
-	Globals.current_map.player.hidden = true
-	Globals.current_map.player.drop_item()
+	var player = Globals.current_map.player
+	player.hidden = true
+	player.drop_item()
+	player.set_collision_mask_value(1, false)
+	player.position_before_hidden = player.global_position
+	player.global_position.y -= 2
+	player.axis_lock_linear_y = true
+	player.global_position = hide_location.global_position
 	
 func get_angle_to_player():
 		var pos := hide_location.global_position
