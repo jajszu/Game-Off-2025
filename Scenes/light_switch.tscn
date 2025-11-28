@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://rwebxmoqf3f7"]
+[gd_scene load_steps=5 format=3 uid="uid://rwebxmoqf3f7"]
 
 [ext_resource type="Script" uid="uid://d20wmq3qj2wel" path="res://light_switch.gd" id="1_06m6k"]
 [ext_resource type="AudioStream" uid="uid://bt5ffh52xm3p6" path="res://Sounds/light-switch-on-382714.mp3" id="2_ysq76"]
+[ext_resource type="PackedScene" uid="uid://cdnedwwdmsos6" path="res://Models/lightswitch.fbx" id="3_2qx2t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_06m6k"]
+size = Vector3(0.285, 1, 0.675)
 
 [node name="LightSwitch" type="StaticBody3D"]
 collision_layer = 9
@@ -13,6 +15,14 @@ script = ExtResource("1_06m6k")
 shape = SubResource("BoxShape3D_06m6k")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.53901976, 0, 0)
+light_energy = 0.1
+spot_range = 0.918
+spot_attenuation = -0.24
+spot_angle = 80.26
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_ysq76")
+
+[node name="lightswitch" parent="." instance=ExtResource("3_2qx2t")]
+transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, 0, 0, 0)
