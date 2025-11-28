@@ -1,17 +1,12 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://1nbd3tj7aa3b"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://1nbd3tj7aa3b"]
 
-[sub_resource type="AudioEffectEQ10" id="AudioEffectEQ10_j3pel"]
-resource_name = "EQ10"
-band_db/31_hz = -60.0
-band_db/62_hz = -60.0
-band_db/125_hz = -40.3
-band_db/250_hz = -20.6
-band_db/500_hz = -5.3
-band_db/1000_hz = 2.5
-band_db/2000_hz = 6.1
-band_db/4000_hz = -9.0
-band_db/8000_hz = -43.8
-band_db/16000_hz = -60.0
+[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_j3pel"]
+resource_name = "HighPassFilter"
+cutoff_hz = 500.0
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
+resource_name = "LowPassFilter"
+cutoff_hz = 3000.0
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
 resource_name = "Compressor"
@@ -20,6 +15,11 @@ ratio = 10.0
 gain = 2.2
 release_ms = 100.0
 
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
+resource_name = "Distortion"
+mode = 2
+drive = 0.2
+
 [resource]
 bus/1/name = &"radio"
 bus/1/solo = false
@@ -27,10 +27,14 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = -20.368397
 bus/1/send = &"Master"
-bus/1/effect/0/effect = SubResource("AudioEffectEQ10_j3pel")
+bus/1/effect/0/effect = SubResource("AudioEffectHighPassFilter_j3pel")
 bus/1/effect/0/enabled = true
-bus/1/effect/1/effect = SubResource("AudioEffectCompressor_j3pel")
+bus/1/effect/1/effect = SubResource("AudioEffectLowPassFilter_j3pel")
 bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectCompressor_j3pel")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectDistortion_j3pel")
+bus/1/effect/3/enabled = true
 bus/2/name = &"menu"
 bus/2/solo = false
 bus/2/mute = false

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bamm6av25l01x" path="res://Sounds/lofi-guitar-105361.mp3" id="3_geon2"]
 [ext_resource type="AudioStream" uid="uid://deobegj76ldbd" path="res://Sounds/lofi-synth-pattern-29946.mp3" id="4_3asvo"]
 [ext_resource type="AudioStream" uid="uid://c6ch6c8fs4dlg" path="res://Sounds/lofibeats130bpm-329502.mp3" id="5_xxwnv"]
-[ext_resource type="AudioStream" uid="uid://krndrtftnkdm" path="res://Sounds/piano-classical-music-347514.mp3" id="6_3asvo"]
+[ext_resource type="AudioStream" uid="uid://dr6kh8hhrlffc" path="res://Sounds/spring-lofi-vibes-lofi-music-340019.mp3" id="6_3asvo"]
 [ext_resource type="PackedScene" uid="uid://cuh23wgobhim1" path="res://Models/radio.fbx" id="7_geon2"]
 
 [sub_resource type="Resource" id="Resource_63cyc"]
@@ -34,7 +34,10 @@ collision_layer = 12
 script = ExtResource("1_8y21s")
 sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1")])
 songs = Array[AudioStream]([ExtResource("6_3asvo")])
-noise_volume = -5.0
+noise_volume = -2.0
+song_time = 10.0
+instructions_time = 10.0
+noise_time = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8y21s")
