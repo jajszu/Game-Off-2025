@@ -573,7 +573,6 @@ _data = {
 
 [node name="ghost4" type="CharacterBody3D" node_paths=PackedStringArray("agent", "emiter", "animator")]
 script = ExtResource("1_c4hd0")
-chasing_speed = 500
 active = true
 speed = 100.0
 wandering = true

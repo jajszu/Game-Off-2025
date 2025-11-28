@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 6.0
 
 @onready var cam: Camera3D = $Camera3D
 @onready var ray_cast: RayCast3D = $Camera3D/RayCast
@@ -58,6 +58,7 @@ func update_tasks():
 	+ "/" + str(current_room.goal_trash)
 
 func _physics_process(delta: float) -> void:
+	ghost_visible_to_camera()
 	if ray_cast.is_colliding():
 		var coll := ray_cast.get_collider()
 		if coll.has_method("get_interact_text"):
@@ -107,3 +108,20 @@ func drop_item():
 		self.get_parent().add_child(item)
 		item.global_position = pos
 		inventory.current_item = null
+
+
+func ghost_visible_to_camera() -> void:
+	if Globals.current_ghost == null:
+		SignalBus.saw_ghost.emit(false)
+		return
+	if not cam.is_position_in_frustum(Globals.current_ghost.global_position):
+		SignalBus.saw_ghost.emit(false)
+		return
+	var space = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(cam.global_position, Globals.current_ghost.global_position)
+	query.collision_mask = 1 
+	var result = space.intersect_ray(query)
+	if result and result.collider != Globals.current_ghost:
+		SignalBus.saw_ghost.emit(false)
+		return 
+	SignalBus.saw_ghost.emit(true)

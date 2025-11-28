@@ -2,6 +2,13 @@ extends CharacterBody3D
 
 class_name Ghost
 
+
+#ghost1 - patrz / nie patrz
+#ghost 2 - floor is lava
+#ghost3 - schowaj sie
+#ghost 4 - nie ruszaj sie
+#ghost 5 - swiatlo
+
 @export var active = false
 @export var speed = 1.0
 @export var wandering = false
@@ -17,6 +24,7 @@ var target
 
 
 func _ready() -> void:
+	Globals.current_ghost = self
 	waypoints = get_tree().get_nodes_in_group("waypoints")
 	player = get_tree().get_first_node_in_group("player")
 	pick_destination()
@@ -45,20 +53,19 @@ func chase_player(delta):
 		agent.set_target_position(target.global_position)
 		wander(delta)
 
-func trigger():
-	pass
-
 func kill():
 	print("gameover")
 	pass
 
 func despawn():
-	#visualeffect
-	pass
+	Globals.current_ghost = null
 
 func _process(delta: float) -> void:
 	if not active:
+		animator.stop(true)
 		return
+	if not animator.is_playing():
+		animator.play()
 	if wandering:
 		wander(delta)
 	if chasing:
