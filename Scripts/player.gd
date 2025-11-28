@@ -105,6 +105,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if hidden:
+		input_dir = Vector2.ZERO
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -140,7 +142,6 @@ func drop_item():
 		item.global_rotation = rot
 		inventory.current_item = null
 		drop_item_label.visible = false
-
 
 
 func ghost_visible_to_camera() -> void:

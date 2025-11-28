@@ -9,7 +9,6 @@ func _ready() -> void:
 	Globals.current_map = self
 	spawn_player()
 	player.cam.current = true
-	
 
 
 func spawn_player():
