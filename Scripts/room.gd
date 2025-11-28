@@ -29,10 +29,16 @@ func on_body_entered(body: Node3D):
 		body.update_tasks()
 		
 func spawn_tasks():
+	#if max higher than num of spawn points, reduce max 
 	if max_trash_spawn > trash_spawn_points.size():
 		max_trash_spawn = trash_spawn_points.size()
 	if max_mop_spawn > mop_dirt_spawn_points.size():
 		max_mop_spawn = mop_dirt_spawn_points.size()
+	#im min > max, reduce min
+	if min_trash_spawn > max_trash_spawn:
+		min_trash_spawn = max_trash_spawn
+	if min_mop_spawn > max_mop_spawn:
+		min_mop_spawn = max_mop_spawn
 
 	# Trash Spawning
 	var trash_count = randi_range(min_trash_spawn, max_trash_spawn)
