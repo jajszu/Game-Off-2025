@@ -566,6 +566,7 @@ _data = {
 }
 
 [node name="ghost2" type="CharacterBody3D" node_paths=PackedStringArray("agent", "emiter", "animator")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("2_ge6du")
 normal_speed = 150.0
 chasing_speed = 800.0

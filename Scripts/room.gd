@@ -19,6 +19,10 @@ var current_mop: int = 0
 var goal_mop: int = 10
 #endregion
 
+#region Ghost things
+@export var light : SpotLight3D
+#endregion
+
 func _ready() -> void:
 	self.body_entered.connect(on_body_entered)
 	spawn_tasks()
@@ -27,6 +31,8 @@ func on_body_entered(body: Node3D):
 	if body is Player:
 		body.current_room = self
 		body.update_tasks()
+	if body is Ghost:
+		body.current_room = self
 		
 func spawn_tasks():
 	if max_trash_spawn > trash_spawn_points.size():

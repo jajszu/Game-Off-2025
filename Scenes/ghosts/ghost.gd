@@ -22,6 +22,7 @@ var waypoints = []
 var player = null
 var target
 
+@export var current_room : Room = null 
 
 func _ready() -> void:
 	Globals.current_ghost = self

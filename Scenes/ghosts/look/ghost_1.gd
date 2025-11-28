@@ -7,7 +7,6 @@ func _ready() -> void:
 	SignalBus.saw_ghost.connect(trigger)
 
 func trigger(x):
-	print(x)
 	if x == shy:
 		active = false
 		return

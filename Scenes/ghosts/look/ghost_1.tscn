@@ -566,6 +566,7 @@ _data = {
 }
 
 [node name="ghost1" type="CharacterBody3D" node_paths=PackedStringArray("agent", "emiter", "animator")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 script = ExtResource("1_sjck6")
 shy = true
 active = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=48 format=4 uid="uid://bf20svfn7q30o"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_mbdl7"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://cery1ge5t1ol2" path="res://Scenes/ghosts/waypoint.tscn" id="19_bei53"]
 [ext_resource type="PackedScene" uid="uid://rwebxmoqf3f7" path="res://Scenes/light_switch.tscn" id="21_aweeb"]
 [ext_resource type="PackedScene" uid="uid://cwmku2tjrj3d2" path="res://Scenes/light.tscn" id="21_wvmc5"]
+[ext_resource type="Script" uid="uid://bpgrkcmo2snu4" path="res://Scripts/room.gd" id="22_wvmc5"]
+[ext_resource type="VoxelGIData" uid="uid://b0yiyv80svw1" path="res://Materials/game_map.VoxelGI_data.res" id="23_r2fkr"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_c4nuu"]
 vertices = PackedVector3Array(-26.5, 0.8480704, -12.5, -26.25, 0.8480704, -12, -18, 0.8480704, -12, -18, 0.8480704, -19.75, -21.75, 0.8480704, -20, -49.5, 0.8480704, -11, -27.75, 0.8480704, -10.75, -27.5, 0.8480704, -12.5, -21.5, 0.8480704, -21.25, -20, 0.8480704, -21.25, -20.25, 0.8480704, -49.5, -49.5, 0.8480704, -49.5, -18, 0.8480704, -21.25, -17.75, 0.8480704, -21.75, -16.5, 0.8480704, -21.25, 14.25, 0.8480704, -21.25, 14.5, 0.8480704, -21.75, 18, 0.8480704, -49.5, -16.75, 0.8480704, -21.75, 17.75, 0.8480704, -21.25, 15.75, 0.8480704, -12, 23.75, 0.8480704, -12, 24, 0.8480704, -12.5, 19.5, 0.8480704, -20, 15.75, 0.8480704, -19.75, 25.25, 0.8480704, -12.5, 25.5, 0.8480704, -10.25, 49.5, 0.8480704, -10.25, 19.25, 0.8480704, -21.25, 49.5, 0.8480704, -49.5, -13.75, 0.8480704, -5, -11.75, 0.8480704, -5, -11.5, 0.8480704, -5.75, -14, 0.8480704, -5.75, -10.5, 0.8480704, -8.25, -11, 0.8480704, -8.5, -10.5, 0.8480704, -5.75, -16.5, 0.8480704, -5.75, -10.75, 0.8480704, -17.25, -11, 0.8480704, -19.75, -16.5, 0.8480704, -19.75, -8.75, 0.8480704, -15.5, -8.25, 0.8480704, -15.25, -7.75, 0.8480704, -15.25, -7.75, 0.8480704, -17, -9, 0.8480704, -17.5, 5.25, 0.8480704, -17.5, 6.75, 0.8480704, -17.5, 10.5, 0.8480704, -19.75, -4.25, 0.8480704, -17.5, -3, 0.8480704, -17.5, -7.25, 0.8480704, -17.5, -2.5, 0.8480704, -15.5, -1.5, 0.8480704, -15.25, -1.5, 0.8480704, -17, -2.5, 0.8480704, -17, 3.5, 0.8480704, -17.5, -1, 0.8480704, -17.5, 3.75, 0.8480704, -15.5, 4.75, 0.8480704, -15.25, 4.75, 0.8480704, -17, -5.75, 0.8480704, -17.5, 0.25, 0.8480704, -17.5, 8.5, 0.8480704, -17.5, 10.25, 0.8480704, -17.25, 8, 0.8480704, -17, -4.75, 0.8480704, -17, 0.75, 0.8480704, -10.25, 1.5, 0.8480704, -10, 1.5, 0.8480704, -17, 0.75, 0.8480704, -17, 2, 0.8480704, -17.5, -5.25, 0.8480704, -10, -4.75, 0.8480704, -10, 7, 0.8480704, -10.25, 8, 0.8480704, -10, 9.5, 0.8480704, -5, 11.25, 0.8480704, -5, 11.5, 0.8480704, -5.75, 10.25, 0.8480704, -8.5, 9, 0.8480704, -8.25, 9, 0.8480704, -5.75, 14.25, 0.8480704, -19.75, 10.5, 0.8480704, -10, 14.25, 0.8480704, -5.75, -8.75, 0.8480704, -13.75, -8.75, 0.8480704, -8.5, -7.75, 0.8480704, -8.5, -4.5, 0.8480704, -8.25, -5.75, 0.8480704, -8.25, -2.5, 0.8480704, -8.5, -1.5, 0.8480704, -8.5, 8, 0.8480704, -8.5, 6.75, 0.8480704, -8.25, 0.5, 0.8480704, -8.25, 1.75, 0.8480704, -8.25, 3.75, 0.8480704, -8.5, 4.75, 0.8480704, -8.5, -49.5, 0.8480704, 17.25, -27.75, 0.8480704, 17, -18.5, 0.8480704, -9.5, -18, 0.8480704, -8.25, -18, 0.8480704, -10.5, -20.75, 0.8480704, -3, -20.75, 0.8480704, -4, -22, 0.8480704, -4.25, -23.75, 0.8480704, -4, -24.75, 0.8480704, -3.5, -25, 0.8480704, -2.75, -24.75, 0.8480704, -10.5, -24.75, 0.8480704, -9.5, -23.75, 0.8480704, -9, -20.25, 0.8480704, -9.5, -18, 0.8480704, -0.75, -18, 0.8480704, -4, -18.75, 0.8480704, -2.5, -24.75, 0.8480704, -7.25, -24.75, 0.8480704, -5.75, -24, 0.8480704, -5.5, -23.75, 0.8480704, -7.75, -17.5, 0.8480704, 1.25, -17.25, 0.8480704, -0.5, -21.75, 0.8480704, -8, -20.5, 0.8480704, -8.25, -26.25, 0.8480704, 1.25, -20, 0.8480704, -2.5, -26.25, 0.8480704, -2.75, 23.5, 0.8480704, -1.25, 23.25, 0.8480704, -0.25, 23.75, 0.8480704, -0.25, 21, 0.8480704, -2.5, 21.25, 0.8480704, -1.75, 22.5, 0.8480704, -2, 22.5, 0.8480704, -6.75, 15.75, 0.8480704, -0.75, 15, 0.8480704, -0.5, 15, 0.8480704, 1.25, 18.5, 0.8480704, 1.25, 22.25, 0.8480704, -8, 20.75, 0.8480704, -8.5, 18.75, 0.8480704, -8.5, 17.25, 0.8480704, -8, 17, 0.8480704, -6.5, 23.75, 0.8480704, -6.75, 18.75, 0.8480704, -2.5, 15.75, 0.8480704, -6.5, 22.25, 0.8480704, -10.5, 17.25, 0.8480704, -10.5, 18.75, 0.8480704, -9.75, 21, 0.8480704, -10, 33.25, 0.8480704, 14.25, 33.5, 0.8480704, 15, 49.5, 0.8480704, 15, 25.5, 0.8480704, 14.25, -16.5, 0.8480704, 1.5, -16.5, 0.8480704, -0.75, -11.5, 0.8480704, 1.25, -9.5, 0.8480704, 1.25, -9.5, 0.8480704, -4.25, -11.5, 0.8480704, -4.25, -14, 0.8480704, -4.25, -16.5, 0.8480704, -4.25, -16.5, 0.8480704, 3.25, -11.75, 0.8480704, 3.25, 14.25, 0.8480704, 1.5, 14.25, 0.8480704, -0.75, 11.5, 0.8480704, -4.25, 7.25, 0.8480704, -4.25, 7.25, 0.8480704, 1.25, 9.25, 0.8480704, 1.25, 9.25, 0.8480704, -4.25, 14.25, 0.8480704, -4.25, 9.5, 0.8480704, 3.25, 14.25, 0.8480704, 3.25, -17.25, 0.8480704, 14.25, -17.25, 0.8480704, 12.75, -18, 0.8480704, 12.5, -22.25, 0.8480704, 12.75, -22.25, 0.8480704, 14.25, -23.5, 0.8480704, 11.25, -23.75, 0.8480704, 12.5, -24.5, 0.8480704, 9, -24.5, 0.8480704, 10.5, -18, 0.8480704, 2.75, -19.75, 0.8480704, 2.75, -19.25, 0.8480704, 5.75, -20, 0.8480704, 6.75, -24, 0.8480704, 6.75, -24.75, 0.8480704, 2.75, -26.25, 0.8480704, 2.75, -26.25, 0.8480704, 8.75, -3.75, 0.8480704, 2.75, -3.75, 0.8480704, 3.25, -3, 0.8480704, 3.5, -1.75, 0.8480704, 2.75, -5.25, 0.8480704, 9.75, -6.75, 0.8480704, 9.75, -10.25, 0.8480704, 12.5, -11, 0.8480704, 14.25, -1.75, 0.8480704, 14.25, -9, 0.8480704, 3.75, -8.25, 0.8480704, 2.75, -10.25, 0.8480704, 2.75, -11, 0.8480704, 12.75, -3.5, 0.8480704, 8.25, -4.75, 0.8480704, 8.5, -7.25, 0.8480704, 8.5, -8.5, 0.8480704, 8.25, -3, 0.8480704, 5, -9, 0.8480704, 5, -3.75, 0.8480704, 5.5, -8.25, 0.8480704, 5.5, 7.75, 0.8480704, 2.75, 6, 0.8480704, 2.75, 6.75, 0.8480704, 3.5, 1.75, 0.8480704, 6.25, 1.75, 0.8480704, 4.75, 1, 0.8480704, 4.5, 8.75, 0.8480704, 14.25, 8.75, 0.8480704, 12.75, 7.75, 0.8480704, 12.5, 1.25, 0.8480704, 2.75, -0.25, 0.8480704, 2.75, 6.75, 0.8480704, 5, 0.75, 0.8480704, 7, 6, 0.8480704, 5.5, 6, 0.8480704, 7.75, 6.75, 0.8480704, 8, 2, 0.8480704, 10.75, 1.75, 0.8480704, 8.5, 0.75, 0.8480704, 8.25, -0.25, 0.8480704, 14.25, 5.75, 0.8480704, 10.5, 6.75, 0.8480704, 9.5, 16, 0.8480704, 3.5, 17.25, 0.8480704, 2.75, 15.75, 0.8480704, 2.75, 21.75, 0.8480704, 2.75, 21.75, 0.8480704, 3.25, 23, 0.8480704, 3.5, 23.75, 0.8480704, 2.75, 15, 0.8480704, 14.25, 23.75, 0.8480704, 14.25, 20.25, 0.8480704, 9.75, 18.75, 0.8480704, 9.75, 15.75, 0.8480704, 12.5, 15, 0.8480704, 12.75, 16, 0.8480704, 5, 22, 0.8480704, 8.25, 20.75, 0.8480704, 8.5, 18.25, 0.8480704, 8.5, 17, 0.8480704, 8.25, 23, 0.8480704, 5, 21.75, 0.8480704, 5.5, 17.25, 0.8480704, 5.5, -11.75, 0.8480704, 12.5, -16.5, 0.8480704, 12.5, 14.25, 0.8480704, 12.5, 9.5, 0.8480704, 12.5, -6, 2.3480704, 5.5, -6, 2.3480704, 6, -5.25, 2.3480704, 6, 33.25, 0.8480704, 15.75, 25.5, 0.8480704, 15.75, 25.5, 0.8480704, 18.5, 24.75, 0.8480704, 18.75, 24.75, 0.8480704, 49.5, 49.5, 0.8480704, 49.5, -1.75, 0.8480704, 15.75, -26.25, 0.8480704, 15.75, -26.25, 0.8480704, 18.5, -1.75, 0.8480704, 22.25, -27, 0.8480704, 18.75, -27, 0.8480704, 49.5, -1, 0.8480704, 49.5, -1, 0.8480704, 22.5, 23.75, 0.8480704, 18.5, 23.75, 0.8480704, 15.75, -0.25, 0.8480704, 15.75, -0.25, 0.8480704, 22.25, -27.75, 0.8480704, 18.5, -49.5, 0.8480704, 49.5)
@@ -240,6 +242,40 @@ uv1_scale = Vector3(48.96, 48.96, 48.96)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mbdl7"]
 size = Vector3(100, 0.3, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r2fkr"]
+size = Vector3(9.41, 6.15, 12.625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1f6r8"]
+size = Vector3(32.135, 6.15, 15.31)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l12iw"]
+size = Vector3(32.025, 6.15, 6.975)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tcqau"]
+size = Vector3(13.365, 6.15, 6.29)
+
+[sub_resource type="Environment" id="Environment_r2fkr"]
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_color = Color(0.10747974, 0.10747974, 0.10747967, 1)
+ambient_light_energy = 0.6
+tonemap_mode = 2
+tonemap_exposure = 0.1
+tonemap_white = 16.0
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+ssil_radius = 2.94
+ssil_intensity = 5.3
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+fog_density = 0.0315
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.07683582, 0.07683582, 0.07683582, 1)
+adjustment_enabled = true
+adjustment_contrast = 0.91
+adjustment_saturation = 0.85
 
 [node name="GameMap" type="Node3D" node_paths=PackedStringArray("player_spawn_point")]
 script = ExtResource("1_mbdl7")
@@ -1935,14 +1971,14 @@ transform = Transform3D(0.44654053, 0.034688707, 0.04356836, -0.03485244, 0.4486
 [node name="projector" parent="NavigationRegion3D/confrence room" instance=ExtResource("16_e6p2l")]
 transform = Transform3D(-3.632255e-08, 0, 0.8309631, 0, 0.8309631, 0, -0.8309631, 0, -3.632255e-08, -3.207285, 4.2975426, -12.43038)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+[node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6696892, 5.734723, -1.8603764)
 material_override = SubResource("StandardMaterial3D_mue85")
 size = Vector3(100, 0.1, 100)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="roof"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="roof/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999905, 0)
 shape = SubResource("BoxShape3D_mbdl7")
 
@@ -2152,33 +2188,135 @@ lights = [NodePath("../light3"), NodePath("../light4"), NodePath("../light5"), N
 [node name="confrence" type="Node3D" parent="lights"]
 
 [node name="light3" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.007422, 5.6394224, -10.098921)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9.448114, 5.6394224, -10.098921)
 
 [node name="light4" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.007422, 5.6394224, -16.862612)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -9.448114, 5.6394224, -16.862612)
 
 [node name="light5" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.38106585, 5.6394224, -10.098921)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.8217578, 5.6394224, -10.098921)
 
 [node name="light6" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.38106585, 5.6394224, -16.862612)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.8217578, 5.6394224, -16.862612)
 
 [node name="light7" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.4212904, 5.6394224, -10.098921)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.9805984, 5.6394224, -10.098921)
 
 [node name="light8" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.4212904, 5.6394224, -16.862612)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.9805984, 5.6394224, -16.862612)
 
 [node name="light9" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.322316, 5.6394224, -10.098921)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.881624, 5.6394224, -10.098921)
 
 [node name="light10" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.322316, 5.6394224, -16.862612)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 9.881624, 5.6394224, -16.862612)
+
+[node name="light11" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 14.957968, 5.6394224, -10.098921)
+
+[node name="light12" parent="lights/confrence" instance=ExtResource("21_wvmc5")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 14.957968, 5.6394224, -16.862612)
 
 [node name="LightSwitch" parent="lights/confrence" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-2.2292808e-08, 0, 0.51, 0, 0.50999993, 0, -0.51, 0, -2.2292808e-08, -11.124132, 3.1533422, -5.697691)
-lights = [NodePath("../light3"), NodePath("../light4"), NodePath("../light5"), NodePath("../light6"), NodePath("../light7"), NodePath("../light8"), NodePath("../light9"), NodePath("../light10")]
+lights = [NodePath("../light3"), NodePath("../light4"), NodePath("../light5"), NodePath("../light6"), NodePath("../light7"), NodePath("../light8"), NodePath("../light9"), NodePath("../light10"), NodePath("../light11"), NodePath("../light12")]
 
 [node name="LightSwitch2" parent="lights/confrence" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-2.2292808e-08, 0, 0.51, 0, 0.50999993, 0, -0.51, 0, -2.2292808e-08, 16.86971, 3.1533422, -5.697691)
-lights = [NodePath("../light3"), NodePath("../light4"), NodePath("../light5"), NodePath("../light6"), NodePath("../light7"), NodePath("../light8"), NodePath("../light9"), NodePath("../light10")]
+lights = [NodePath("../light3"), NodePath("../light4"), NodePath("../light5"), NodePath("../light6"), NodePath("../light7"), NodePath("../light8"), NodePath("../light9"), NodePath("../light10"), NodePath("../light12"), NodePath("../light11")]
+
+[node name="Room1" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, 7.9786673)
+script = ExtResource("22_wvmc5")
+light = NodePath("../lights/roomlight4/light")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room1"]
+shape = SubResource("BoxShape3D_r2fkr")
+
+[node name="Room4" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8733063, 2.4272346, 7.9786673)
+script = ExtResource("22_wvmc5")
+light = NodePath("../lights/roomlight6/light")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room4"]
+shape = SubResource("BoxShape3D_r2fkr")
+
+[node name="Room5" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, 7.9786673)
+script = ExtResource("22_wvmc5")
+light = NodePath("../lights/roomlight2/light")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room5"]
+shape = SubResource("BoxShape3D_r2fkr")
+
+[node name="Room6" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, -5.1002455)
+script = ExtResource("22_wvmc5")
+light = NodePath("../lights/roomlight/light")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room6"]
+shape = SubResource("BoxShape3D_r2fkr")
+
+[node name="confrence" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6907768, 2.4272366, -17.015518)
+script = ExtResource("22_wvmc5")
+light = NodePath("../lights/confrence/light4")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0527458, 0, 3.8855572)
+shape = SubResource("BoxShape3D_1f6r8")
+
+[node name="Room3" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8424664, 2.4272346, 7.9786673)
+script = ExtResource("22_wvmc5")
+light = NodePath("../lights/roomlight3/light")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room3"]
+shape = SubResource("BoxShape3D_r2fkr")
+
+[node name="Room2" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, -5.0765376)
+script = ExtResource("22_wvmc5")
+light = NodePath("../lights/roomlight5/light2")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room2"]
+shape = SubResource("BoxShape3D_r2fkr")
+
+[node name="corridor" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8752918, 2.4272346, -2.4607553)
+script = ExtResource("22_wvmc5")
+min_trash_spawn = 1
+max_trash_spawn = 1
+min_mop_spawn = 1
+max_mop_spawn = 1
+light = NodePath("../lights/corridorlight/light4")
+metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.46710396)
+shape = SubResource("BoxShape3D_l12iw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="corridor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.985495, 0, 10.276288)
+shape = SubResource("BoxShape3D_tcqau")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="corridor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.938778, 0, 10.276288)
+shape = SubResource("BoxShape3D_tcqau")
+
+[node name="postprocess" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="postprocess"]
+environment = SubResource("Environment_r2fkr")
+
+[node name="VoxelGI" type="VoxelGI" parent="postprocess"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0575705, 3.1601791, -3.0575724)
+size = Vector3(54.125, 6.47, 43.715)
+data = ExtResource("23_r2fkr")

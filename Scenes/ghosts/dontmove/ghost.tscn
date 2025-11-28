@@ -572,6 +572,7 @@ _data = {
 }
 
 [node name="ghost4" type="CharacterBody3D" node_paths=PackedStringArray("agent", "emiter", "animator")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 script = ExtResource("1_c4hd0")
 active = true
 speed = 100.0
