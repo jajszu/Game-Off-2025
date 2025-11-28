@@ -11,7 +11,6 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_v0iea")
-mouse_sensitivity = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -110,7 +109,13 @@ offset_top = 45.0
 offset_right = 246.0
 offset_bottom = 193.0
 
+[node name="RoomCountLabel" type="Label" parent="UI/Tasks/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rooms done:"
+
 [node name="RoomLabel" type="Label" parent="UI/Tasks/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Current room:"
 

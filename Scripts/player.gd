@@ -12,6 +12,8 @@ const JUMP_VELOCITY = 4.5
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var mop_label: Label = %MopLabel
 @onready var trash_label: Label = %TrashLabel
+@onready var room_count_label: Label = %RoomCountLabel
+@onready var room_label: Label = %RoomLabel
 @onready var tasks: Control = $UI/Tasks
 @onready var drop_item_label: Label = $UI/DropItemLabel
 @export var mouse_sensitivity: float = 0.01
@@ -65,25 +67,21 @@ func _input(event: InputEvent) -> void:
 		drop_item()
 
 func update_tasks():
+	tasks.visible = true
 	var no_mop := current_room.goal_mop == 0
 	var no_trash := current_room.goal_trash == 0
 	if no_mop and no_trash:
-		tasks.visible = false
-	else:
-		tasks.visible = true
-		if no_mop:
-			mop_label.visible = false
-		else:
-			mop_label.visible = true
-		if no_trash:
-			trash_label.visible = false
-		else:
-			trash_label.visible = true
-		#set text
-		mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
-		+ "/" + str(current_room.goal_mop)
-		trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
-		+ "/" + str(current_room.goal_trash)
+		room_label.visible = false
+	mop_label.visible = !no_mop
+	trash_label.visible = !no_trash
+	
+	#set text
+	room_count_label.text = "Rooms done: " + str(Globals.rooms_done) \
+	+ "/" + str(Globals.rooms_total)
+	mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
+	+ "/" + str(current_room.goal_mop)
+	trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
+	+ "/" + str(current_room.goal_trash)
 
 func _physics_process(delta: float) -> void:
 	#region raycast
