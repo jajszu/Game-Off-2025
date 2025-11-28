@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://bamm6av25l01x" path="res://Sounds/lofi-guitar-105361.mp3" id="3_geon2"]
 [ext_resource type="AudioStream" uid="uid://deobegj76ldbd" path="res://Sounds/lofi-synth-pattern-29946.mp3" id="4_3asvo"]
 [ext_resource type="AudioStream" uid="uid://c6ch6c8fs4dlg" path="res://Sounds/lofibeats130bpm-329502.mp3" id="5_xxwnv"]
+[ext_resource type="AudioStream" uid="uid://dr6kh8hhrlffc" path="res://Sounds/spring-lofi-vibes-lofi-music-340019.mp3" id="6_3asvo"]
+[ext_resource type="PackedScene" uid="uid://cuh23wgobhim1" path="res://Models/radio.fbx" id="7_geon2"]
 
 [sub_resource type="Resource" id="Resource_63cyc"]
 script = ExtResource("2_jp436")
@@ -24,32 +26,33 @@ audio = ExtResource("5_xxwnv")
 enemy = 3
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jxtu"]
-albedo_color = Color(0.11119685, 0.11119684, 0.11119684, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_6jxtu"]
-material = SubResource("StandardMaterial3D_6jxtu")
-size = Vector3(0.6, 0.3, 0.2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_8y21s"]
-size = Vector3(0.6, 0.3, 0.2)
+size = Vector3(0.98, 0.44, 0.17)
 
 [node name="Radio" type="RigidBody3D"]
 collision_layer = 12
 script = ExtResource("1_8y21s")
 sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1")])
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_6jxtu")
+songs = Array[AudioStream]([ExtResource("6_3asvo")])
+noise_volume = -2.0
+song_time = 10.0
+instructions_time = 10.0
+noise_time = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8y21s")
 
 [node name="SongPlayer" type="AudioStreamPlayer3D" parent="."]
+attenuation_model = 1
+unit_size = 5.0
 bus = &"radio"
 
 [node name="NoisePlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_bdbpc")
-volume_db = -40.476
+attenuation_model = 1
+unit_size = 5.0
 autoplay = true
 bus = &"radio"
+
+[node name="radio" parent="." instance=ExtResource("7_geon2")]
+transform = Transform3D(-2.141858e-08, 0, -0.49, 0, 0.49, 0, 0.49, 0, -2.141858e-08, 0, 0, -0.029146433)

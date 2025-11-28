@@ -8,10 +8,11 @@ const JUMP_VELOCITY = 6.0
 @onready var ray_cast: RayCast3D = $Camera3D/RayCast
 @onready var interact_label: Label = $UI/InteractLabel
 @onready var subtitles_label: Label = $UI/SubtitlesLabel
-@onready var inventory: Inventory = $Inventory
+@onready var inventory: Inventory = $Camera3D/Inventory
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var mop_label: Label = %MopLabel
 @onready var trash_label: Label = %TrashLabel
+@onready var tasks: Control = $UI/Tasks
 @export var mouse_sensitivity: float = 0.01
 var current_room: Room
 
@@ -21,6 +22,8 @@ func _ready() -> void:
 	_on_settings_changed() #sync values at start
 	pause_menu.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	subtitles_label.text = ""
+	tasks.visible = false
 
 func on_pause_changed():
 	if pause_menu.visible:
@@ -52,13 +55,29 @@ func _input(event: InputEvent) -> void:
 		drop_item()
 
 func update_tasks():
-	mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
-	+ "/" + str(current_room.goal_mop)
-	trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
-	+ "/" + str(current_room.goal_trash)
+	var no_mop := current_room.goal_mop == 0
+	var no_trash := current_room.goal_trash == 0
+	if no_mop and no_trash:
+		tasks.visible = false
+	else:
+		tasks.visible = true
+		if no_mop:
+			mop_label.visible = false
+		else:
+			mop_label.visible = true
+		if no_trash:
+			trash_label.visible = false
+		else:
+			trash_label.visible = true
+		#set text
+		mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
+		+ "/" + str(current_room.goal_mop)
+		trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
+		+ "/" + str(current_room.goal_trash)
 
 func _physics_process(delta: float) -> void:
 	ghost_visible_to_camera()
+	#region raycast
 	if ray_cast.is_colliding():
 		var coll := ray_cast.get_collider()
 		if coll.has_method("get_interact_text"):
@@ -72,7 +91,7 @@ func _physics_process(delta: float) -> void:
 			interact_label.text = ""
 	else:
 		interact_label.text = ""
-
+	#endregion
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
