@@ -32,6 +32,7 @@ func _on_settings_changed() -> void:
 	mouse_sensitivity = Settings.mouse_sensitivity
 
 func _input(event: InputEvent) -> void:
+	SignalBus.player_moved.emit()
 	if event.is_action_pressed("ui_cancel"): #na to reaguje zawsze
 		pause_menu.visible = !pause_menu.visible
 	elif pause_menu.visible: #jeżeli pauza aktywna, nie sprawdzaj pozostałych inputów
