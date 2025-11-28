@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://bh1sqvwywqmho" path="res://main_theme.tres" id="2_wrm1d"]
 [ext_resource type="Script" uid="uid://clhd0221i7geo" path="res://Scripts/main_menu.gd" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bodebpdwwrnk2" path="res://Scenes/settings_menu.tscn" id="3_wrm1d"]
-[ext_resource type="AudioStream" uid="uid://12h4ayh4l7h" path="res://Sounds/horror theme.mp3" id="6_i6g32"]
+[ext_resource type="AudioStream" uid="uid://cbrqqmuhr2dd" path="res://Sounds/horror theme2.mp3" id="6_i6g32"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_qxrlw")
