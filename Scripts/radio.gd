@@ -44,6 +44,11 @@ func play_radio_loop() -> void:
 		var sound_data = sounds.pick_random()
 		song_player.stream = sound_data.audio
 		
+		#play instructions
+		song_player.play()
+		tween_noise_to_song(tween)
+		await get_tree().create_timer(instructions_time).timeout
+		
 		#choose spawn point (higher distance)
 		
 		var max_dist := 0.0
@@ -61,27 +66,26 @@ func play_radio_loop() -> void:
 		enemy.global_position = chosen_spawn
 			
 		
-		song_player.play()
-		tween_noise_to_song(tween)
-		await get_tree().create_timer(instructions_time).timeout
-		
 		# Crossfade to noise
 		noise_player.play()
 		tween_song_to_noise(tween)
-		#TODO: spawn enemy
 		await get_tree().create_timer(noise_time).timeout
+		
+		#destroy enemy
+		enemy.queue_free()
 		
 		# Fade out noise
 		tween = create_tween()
 		tween.tween_property(noise_player, "volume_db", -80.0, fade_time)
 		
+		
 		await tween.finished
 
-func tween_noise_to_song(tween: Tween):
+func tween_noise_to_song(tween: Tween, volume:float = 0):
 		tween = create_tween()
 		tween.set_parallel(true)
 		tween.tween_property(noise_player, "volume_db", -80.0, fade_time)
-		tween.tween_property(song_player, "volume_db", 0.0, fade_time)
+		tween.tween_property(song_player, "volume_db", volume, fade_time)
 
 func tween_song_to_noise(tween: Tween):
 		tween = create_tween()
