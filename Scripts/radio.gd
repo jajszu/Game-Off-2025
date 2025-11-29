@@ -1,5 +1,6 @@
 extends Item
 
+@export var spawns: Array[Node3D]
 @onready var song_player: AudioStreamPlayer3D = $SongPlayer
 @onready var noise_player: AudioStreamPlayer3D = $NoisePlayer
 @export var sounds: Array[AudioEnemyType]
@@ -42,7 +43,22 @@ func play_radio_loop() -> void:
 		#pick next enemy
 		var sound_data = sounds.pick_random()
 		song_player.stream = sound_data.audio
-		print("next enemy: " + str(sound_data.enemy))
+		
+		#choose spawn point (higher distance)
+		
+		var max_dist := 0.0
+		var chosen_spawn: Vector3 = Vector3.ZERO
+		var player_pos = Globals.current_map.player.global_position
+		for s in spawns:
+			var dist := s.global_position.distance_to(player_pos)
+			if dist > max_dist:
+				max_dist = dist
+				chosen_spawn = s.global_position
+		
+		var enemy = sound_data.enemy.instantiate()
+		Globals.current_map.add_child(enemy)
+		enemy.global_position = chosen_spawn
+			
 		
 		song_player.play()
 		tween_noise_to_song(tween)

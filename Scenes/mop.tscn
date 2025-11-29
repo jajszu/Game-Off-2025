@@ -10,6 +10,33 @@ size = Vector3(1.385, 0.13, 0.465)
 height = 2.5
 radius = 0.05
 
+[sub_resource type="Animation" id="Animation_0v723"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("brush:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.075991e-08, -0.82817394, -1.4301808)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("brush:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.2694475e-08, -1.5707963, -0.49848354)]
+}
+
 [sub_resource type="Animation" id="Animation_d6wy5"]
 resource_name = "use"
 tracks/0/type = "value"
@@ -49,33 +76,6 @@ tracks/2/keys = {
 "args": [],
 "method": &"clean"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_0v723"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("brush:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-2.075991e-08, -0.82817394, -1.4301808)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("brush:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(6.2694475e-08, -1.5707963, -0.49848354)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bo05y"]
