@@ -1,10 +1,11 @@
-[gd_scene load_steps=81 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=84 format=4 uid="uid://bf20svfn7q30o"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_mbdl7"]
 [ext_resource type="PackedScene" uid="uid://xtuwmeio0bmf" path="res://Scenes/player.tscn" id="2_bei53"]
 [ext_resource type="Texture2D" uid="uid://csmry2deaxscx" path="res://Materials/ceil.png" id="2_d8w4w"]
 [ext_resource type="PackedScene" uid="uid://dqx02sg63mkp8" path="res://Models/lamp.fbx" id="3_bcdk8"]
+[ext_resource type="Texture2D" uid="uid://biaoq3vq8v7q5" path="res://Materials/walls.png" id="3_r2fkr"]
 [ext_resource type="PackedScene" uid="uid://d2cbc25m5uqld" path="res://Scenes/desk.tscn" id="3_v8ky0"]
 [ext_resource type="Material" uid="uid://diiecmtwystnn" path="res://Materials/Material.001.tres" id="4_jj4v6"]
 [ext_resource type="PackedScene" uid="uid://bdkinjyakkkbr" path="res://Models/monitor.fbx" id="4_qy8qd"]
@@ -15,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cigbayokw8sgv" path="res://Models/cup.fbx" id="8_1wdcn"]
 [ext_resource type="PackedScene" uid="uid://bguuvk4k5ivxu" path="res://Scenes/chair.tscn" id="9_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://dnilpilvh6g6i" path="res://Models/screen.fbx" id="13_1wdcn"]
-[ext_resource type="PackedScene" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
+[ext_resource type="PackedScene" uid="uid://rqdfcuelai1g" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://b15honqnfxkut" path="res://Models/projector.fbx" id="16_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://cery1ge5t1ol2" path="res://Scenes/ghosts/waypoint.tscn" id="19_bei53"]
 [ext_resource type="PackedScene" uid="uid://rwebxmoqf3f7" path="res://Scenes/light_switch.tscn" id="21_aweeb"]
@@ -28,6 +29,10 @@ vertices = PackedVector3Array(-26.5, 0.8480704, -12.5, -26.25, 0.8480704, -12, -
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(7, 6, 5), PackedInt32Array(10, 9, 8), PackedInt32Array(4, 0, 7), PackedInt32Array(4, 7, 8), PackedInt32Array(8, 7, 5), PackedInt32Array(8, 5, 10), PackedInt32Array(10, 5, 11), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 9, 10), PackedInt32Array(18, 10, 14), PackedInt32Array(14, 10, 15), PackedInt32Array(15, 10, 16), PackedInt32Array(16, 10, 17), PackedInt32Array(17, 19, 16), PackedInt32Array(18, 13, 10), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(23, 20, 24), PackedInt32Array(27, 26, 25), PackedInt32Array(28, 19, 17), PackedInt32Array(25, 22, 23), PackedInt32Array(23, 28, 25), PackedInt32Array(25, 28, 27), PackedInt32Array(27, 28, 17), PackedInt32Array(27, 17, 29), PackedInt32Array(30, 32, 31), PackedInt32Array(30, 33, 32), PackedInt32Array(32, 33, 35), PackedInt32Array(32, 35, 34), PackedInt32Array(34, 36, 32), PackedInt32Array(33, 37, 35), PackedInt32Array(35, 37, 38), PackedInt32Array(38, 37, 39), PackedInt32Array(39, 37, 40), PackedInt32Array(42, 41, 43), PackedInt32Array(43, 41, 44), PackedInt32Array(44, 41, 45), PackedInt32Array(48, 47, 46), PackedInt32Array(50, 49, 39), PackedInt32Array(44, 45, 51), PackedInt32Array(51, 45, 39), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53), PackedInt32Array(48, 46, 56), PackedInt32Array(55, 50, 54), PackedInt32Array(54, 50, 57), PackedInt32Array(59, 58, 60), PackedInt32Array(60, 58, 56), PackedInt32Array(49, 61, 39), PackedInt32Array(56, 46, 60), PackedInt32Array(57, 39, 62), PackedInt32Array(62, 39, 48), PackedInt32Array(48, 64, 63), PackedInt32Array(39, 45, 38), PackedInt32Array(65, 47, 63), PackedInt32Array(63, 47, 48), PackedInt32Array(61, 49, 66), PackedInt32Array(61, 51, 39), PackedInt32Array(70, 69, 67), PackedInt32Array(67, 69, 68), PackedInt32Array(57, 50, 39), PackedInt32Array(70, 62, 69), PackedInt32Array(69, 62, 71), PackedInt32Array(73, 72, 66), PackedInt32Array(66, 72, 61), PackedInt32Array(75, 74, 65), PackedInt32Array(65, 74, 47), PackedInt32Array(48, 71, 62), PackedInt32Array(48, 56, 71), PackedInt32Array(77, 76, 78), PackedInt32Array(78, 76, 81), PackedInt32Array(78, 81, 80), PackedInt32Array(78, 80, 79), PackedInt32Array(48, 82, 64), PackedInt32Array(64, 82, 83), PackedInt32Array(83, 82, 78), PackedInt32Array(78, 82, 84), PackedInt32Array(78, 79, 83), PackedInt32Array(42, 43, 85), PackedInt32Array(85, 43, 86), PackedInt32Array(86, 43, 87), PackedInt32Array(73, 88, 72), PackedInt32Array(72, 88, 89), PackedInt32Array(91, 90, 53), PackedInt32Array(53, 90, 52), PackedInt32Array(75, 92, 74), PackedInt32Array(74, 92, 93), PackedInt32Array(36, 89, 88), PackedInt32Array(68, 95, 67), PackedInt32Array(67, 95, 94), PackedInt32Array(94, 95, 81), PackedInt32Array(92, 80, 93), PackedInt32Array(93, 80, 81), PackedInt32Array(86, 87, 34), PackedInt32Array(34, 87, 36), PackedInt32Array(36, 87, 89), PackedInt32Array(97, 96, 59), PackedInt32Array(59, 96, 58), PackedInt32Array(96, 97, 95), PackedInt32Array(95, 97, 93), PackedInt32Array(95, 93, 81), PackedInt32Array(91, 94, 90), PackedInt32Array(90, 94, 88), PackedInt32Array(88, 94, 36), PackedInt32Array(36, 94, 81), PackedInt32Array(99, 98, 6), PackedInt32Array(6, 98, 5), PackedInt32Array(102, 101, 100), PackedInt32Array(104, 103, 105), PackedInt32Array(105, 103, 106), PackedInt32Array(108, 107, 106), PackedInt32Array(110, 109, 111), PackedInt32Array(111, 109, 112), PackedInt32Array(112, 109, 102), PackedInt32Array(115, 114, 113), PackedInt32Array(117, 116, 118), PackedInt32Array(118, 116, 119), PackedInt32Array(113, 121, 120), PackedInt32Array(123, 122, 112), PackedInt32Array(112, 122, 111), PackedInt32Array(111, 122, 119), PackedInt32Array(106, 103, 108), PackedInt32Array(108, 103, 113), PackedInt32Array(108, 113, 120), PackedInt32Array(108, 120, 124), PackedInt32Array(102, 100, 112), PackedInt32Array(125, 115, 113), PackedInt32Array(113, 103, 125), PackedInt32Array(106, 118, 105), PackedInt32Array(105, 118, 119), PackedInt32Array(105, 119, 122), PackedInt32Array(124, 126, 108), PackedInt32Array(129, 128, 127), PackedInt32Array(131, 130, 132), PackedInt32Array(132, 130, 133), PackedInt32Array(135, 134, 136), PackedInt32Array(136, 134, 137), PackedInt32Array(139, 138, 133), PackedInt32Array(142, 141, 140), PackedInt32Array(143, 129, 127), PackedInt32Array(142, 144, 145), PackedInt32Array(145, 144, 134), PackedInt32Array(134, 144, 137), PackedInt32Array(149, 148, 146), PackedInt32Array(146, 148, 147), PackedInt32Array(133, 143, 132), PackedInt32Array(132, 143, 127), PackedInt32Array(140, 148, 139), PackedInt32Array(139, 148, 149), PackedInt32Array(139, 133, 140), PackedInt32Array(140, 133, 142), PackedInt32Array(142, 133, 144), PackedInt32Array(144, 133, 130), PackedInt32Array(151, 150, 152), PackedInt32Array(152, 150, 27), PackedInt32Array(27, 150, 26), PackedInt32Array(150, 153, 26), PackedInt32Array(121, 155, 120), PackedInt32Array(120, 155, 154), PackedInt32Array(159, 158, 156), PackedInt32Array(156, 158, 157), PackedInt32Array(31, 159, 30), PackedInt32Array(30, 159, 160), PackedInt32Array(154, 155, 156), PackedInt32Array(156, 155, 160), PackedInt32Array(156, 160, 159), PackedInt32Array(155, 161, 160), PackedInt32Array(162, 154, 163), PackedInt32Array(163, 154, 156), PackedInt32Array(136, 164, 135), PackedInt32Array(135, 164, 165), PackedInt32Array(77, 166, 76), PackedInt32Array(170, 169, 167), PackedInt32Array(167, 169, 168), PackedInt32Array(76, 166, 170), PackedInt32Array(170, 166, 165), PackedInt32Array(170, 165, 164), PackedInt32Array(170, 164, 169), PackedInt32Array(166, 171, 165), PackedInt32Array(173, 172, 164), PackedInt32Array(164, 172, 169), PackedInt32Array(158, 167, 157), PackedInt32Array(157, 167, 168), PackedInt32Array(175, 174, 176), PackedInt32Array(176, 174, 177), PackedInt32Array(177, 174, 178), PackedInt32Array(179, 177, 180), PackedInt32Array(179, 182, 181), PackedInt32Array(184, 183, 185), PackedInt32Array(185, 183, 176), PackedInt32Array(179, 181, 177), PackedInt32Array(177, 181, 187), PackedInt32Array(177, 187, 186), PackedInt32Array(177, 186, 176), PackedInt32Array(181, 190, 187), PackedInt32Array(187, 190, 188), PackedInt32Array(188, 190, 189), PackedInt32Array(186, 185, 176), PackedInt32Array(192, 191, 193), PackedInt32Array(193, 191, 194), PackedInt32Array(196, 195, 197), PackedInt32Array(197, 195, 198), PackedInt32Array(198, 195, 199), PackedInt32Array(202, 201, 200), PackedInt32Array(203, 197, 198), PackedInt32Array(205, 204, 195), PackedInt32Array(195, 204, 199), PackedInt32Array(206, 196, 207), PackedInt32Array(207, 196, 197), PackedInt32Array(208, 193, 194), PackedInt32Array(200, 209, 202), PackedInt32Array(204, 210, 208), PackedInt32Array(209, 211, 207), PackedInt32Array(208, 194, 204), PackedInt32Array(204, 194, 199), PackedInt32Array(209, 207, 202), PackedInt32Array(202, 207, 197), PackedInt32Array(214, 213, 212), PackedInt32Array(216, 215, 217), PackedInt32Array(220, 219, 218), PackedInt32Array(222, 221, 217), PackedInt32Array(223, 214, 212), PackedInt32Array(215, 224, 217), PackedInt32Array(217, 224, 222), PackedInt32Array(226, 225, 227), PackedInt32Array(227, 225, 223), PackedInt32Array(229, 228, 230), PackedInt32Array(230, 228, 231), PackedInt32Array(220, 218, 232), PackedInt32Array(232, 218, 228), PackedInt32Array(228, 218, 231), PackedInt32Array(232, 233, 220), PackedInt32Array(223, 212, 227), PackedInt32Array(227, 212, 220), PackedInt32Array(224, 230, 222), PackedInt32Array(222, 230, 231), PackedInt32Array(233, 227, 220), PackedInt32Array(236, 235, 234), PackedInt32Array(238, 237, 239), PackedInt32Array(239, 237, 240), PackedInt32Array(244, 243, 245), PackedInt32Array(245, 243, 241), PackedInt32Array(241, 243, 242), PackedInt32Array(246, 245, 241), PackedInt32Array(234, 247, 236), PackedInt32Array(236, 247, 245), PackedInt32Array(249, 248, 243), PackedInt32Array(243, 248, 242), PackedInt32Array(250, 244, 251), PackedInt32Array(251, 244, 245), PackedInt32Array(252, 239, 240), PackedInt32Array(248, 253, 252), PackedInt32Array(254, 251, 247), PackedInt32Array(247, 251, 245), PackedInt32Array(252, 240, 248), PackedInt32Array(248, 240, 242), PackedInt32Array(175, 256, 174), PackedInt32Array(174, 256, 255), PackedInt32Array(174, 255, 203), PackedInt32Array(174, 203, 198), PackedInt32Array(256, 162, 255), PackedInt32Array(255, 162, 163), PackedInt32Array(219, 258, 218), PackedInt32Array(218, 258, 257), PackedInt32Array(218, 257, 246), PackedInt32Array(218, 246, 241), PackedInt32Array(258, 172, 257), PackedInt32Array(257, 172, 173), PackedInt32Array(261, 260, 259), PackedInt32Array(264, 263, 262), PackedInt32Array(152, 262, 151), PackedInt32Array(264, 262, 152), PackedInt32Array(264, 152, 265), PackedInt32Array(265, 152, 266), PackedInt32Array(266, 152, 267), PackedInt32Array(269, 268, 270), PackedInt32Array(270, 268, 271), PackedInt32Array(270, 271, 272), PackedInt32Array(272, 271, 275), PackedInt32Array(272, 275, 274), PackedInt32Array(272, 274, 273), PackedInt32Array(277, 276, 278), PackedInt32Array(278, 276, 279), PackedInt32Array(279, 276, 275), PackedInt32Array(275, 276, 265), PackedInt32Array(275, 265, 274), PackedInt32Array(274, 265, 266), PackedInt32Array(98, 99, 280), PackedInt32Array(280, 272, 98), PackedInt32Array(98, 272, 273), PackedInt32Array(98, 273, 281)]
 agent_radius = 0.4
 agent_max_climb = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l12iw"]
+albedo_texture = ExtResource("3_r2fkr")
+uv1_scale = Vector3(-4.365, -4.365, -4.365)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_r2fkr"]
 _surfaces = [{
@@ -207,6 +212,10 @@ _surfaces = [{
 "vertex_count": 36,
 "vertex_data": PackedByteArray("AACgwAAAIMCamRk+AACgwAAAIMCamRm+AACgwAAAIECamRm+AACgQAAAIMCamRm+AACgwAAAIMCamRm+AACgwAAAIMCamRk+AACgwAAAIECamRm+AACgwAAAIMCamRm+AACgQAAAIMCamRm+AACgwAAAIECamRm+AACgwAAAIECamRk+AACgwAAAIMCamRk+AACgwAAAIMCamRk+AACgwAAAIECamRk+AACgQAAAIECamRk+AACgQAAAIECamRk+AACgwAAAIECamRk+AACgwAAAIECamRm+AACgwAAAIMCamRk+AACgQAAAIMCamRk+AACgQAAAIMCamRm+AACgQAAAIECamRk+AACgQAAAIMCamRk+AACgwAAAIMCamRk+AACgQAAAIMCamRm+AACgQAAAIMCamRk+AACgQAAAIECamRk+AACgQAAAIMCamRm+AACgQAAAIECamRm+AACgwAAAIECamRm+AACgwAAAIECamRm+AACgQAAAIECamRm+AACgQAAAIECamRk+AACgQAAAIECamRk+AACgQAAAIECamRm+AACgQAAAIMCamRm+AAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2fkr"]
+albedo_texture = ExtResource("3_r2fkr")
+uv1_scale = Vector3(-0.725, -3.605, -0.49)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ewwyc"]
 _surfaces = [{
@@ -677,6 +686,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.5, 15)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D2"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_r2fkr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D2"]
@@ -687,6 +697,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.5, 15)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D9"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_wvmc5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D9"]
@@ -697,6 +708,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15, 2.5, 2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D11"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_l12iw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D11"]
@@ -707,6 +719,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2.5, 15)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D12"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_tcqau")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D12"]
@@ -717,6 +730,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.15, 2.5, 2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D14"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_1f6r8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D14"]
@@ -727,6 +741,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1, 2.5, 16.85)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D7"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_hgxaw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D7"]
@@ -737,6 +752,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1, 2.5, 6.8500004)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D10"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_tv2ut")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D10"]
@@ -747,6 +763,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27, 2.5, 13.150001)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D17"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_tgw6e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D17"]
@@ -757,6 +774,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27, 2.5, 3.1500003)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D18"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_dawxc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D18"]
@@ -767,6 +785,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27, 2.5, -6.8500004)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D20"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_42l45")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D20"]
@@ -777,6 +796,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11, 2.5, 7)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D5"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_tqoxq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D5"]
@@ -787,6 +807,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.3, 2.5, 7)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D16"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_suvey")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D16"]
@@ -797,6 +818,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.15, 2.5, -11.2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D21"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_skbwv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D21"]
@@ -807,6 +829,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1499996, 2.5, -5)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D22"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_rl02s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D22"]
@@ -817,6 +840,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1499996, 2.5, -20.5)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D26"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_sgkvl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D26"]
@@ -827,6 +851,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.15, 2.5, -20.5)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D27"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_r6ejm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D27"]
@@ -838,6 +863,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.15, 2.5, -5)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D24"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6999998, 0, 0)
+material_override = SubResource("StandardMaterial3D_r2fkr")
 mesh = SubResource("ArrayMesh_ewwyc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D24"]
@@ -848,6 +874,7 @@ shape = SubResource("BoxShape3D_rlp0x")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.3, 2.5, -6.2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D23"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_3n2ud")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D23"]
@@ -858,6 +885,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.3, 2.5, -16.2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D25"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_6it8s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D25"]
@@ -868,6 +896,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 7.9880996, 2.499996, 15)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D3"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_0vg3s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D3"]
@@ -878,6 +907,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 3.7880993, 2.4999957, 2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D31"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_a176g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D31"]
@@ -888,6 +918,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 27.9881, 2.4999964, 15)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D50"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_6yj3o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D50"]
@@ -898,6 +929,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 17.9881, 2.4999964, 15)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D33"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_20v3u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D33"]
@@ -908,6 +940,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 19.7881, 2.4999964, 2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D34"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_rgekh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D34"]
@@ -918,6 +951,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.742278e-08, 1, 0, -4.371139e-08, 24.6381, 2.4999967, 13.150002)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D36"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_aigge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D36"]
@@ -928,6 +962,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.742278e-08, 1, 0, -4.371139e-08, 24.6381, 2.4999967, 3.1500003)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D37"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_l1vcw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D37"]
@@ -938,6 +973,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.742278e-08, 1, 0, -4.371139e-08, 24.6381, 2.4999967, -6.850001)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D39"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_w8g5j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D39"]
@@ -948,6 +984,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.742278e-08, 1, 0, -4.371139e-08, 8.6381, 2.499996, 7)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D40"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_rqpwm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D40"]
@@ -958,6 +995,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.742278e-08, 1, 0, -4.371139e-08, 14.938099, 2.4999962, 7)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D42"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_aw6rc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D42"]
@@ -968,6 +1006,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 19.7881, 2.4999964, -11.199999)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D43"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_1ui8m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D43"]
@@ -978,6 +1017,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 3.7880993, 2.4999957, -5.0000005)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D44"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_3nnfa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D44"]
@@ -988,6 +1028,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 3.7880993, 2.4999957, -20.5)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D45"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_vnakf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D45"]
@@ -998,6 +1039,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 13.788099, 2.4999962, -20.5)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D46"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_xcw7j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D46"]
@@ -1009,6 +1051,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 12.7
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D47"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6999998, 0, 0)
+material_override = SubResource("StandardMaterial3D_r2fkr")
 mesh = SubResource("ArrayMesh_bx6u4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D47"]
@@ -1019,6 +1062,7 @@ shape = SubResource("BoxShape3D_rlp0x")
 transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.742278e-08, 1, 0, -4.371139e-08, 14.938099, 2.4999962, -6.1999993)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D48"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_hpyx2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D48"]
@@ -1029,6 +1073,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.742278e-08, 1, 0, -4.371139e-08, 14.938099, 2.4999962, -16.2)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D49"]
+material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_htk3w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D49"]
@@ -2287,7 +2332,6 @@ transform = Transform3D(-3.632255e-08, 0, 0.8309631, 0, 0.8309631, 0, -0.8309631
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6696892, 5.734723, -1.8603764)
-visible = false
 material_override = SubResource("StandardMaterial3D_mue85")
 size = Vector3(100, 0.1, 100)
 
@@ -2484,10 +2528,10 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 14.9
 
 [node name="LightSwitch" parent="lights/roomlight" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(0.51, 0, 0, 0, 0.50999993, 0, 0, 0, 0.51, 19.08714, 3.1533422, -2.5)
-lights = [NodePath("../OmniLight3D"), NodePath("../OmniLight3D2"), NodePath("../OmniLight3D6"), NodePath("../OmniLight3D8"), NodePath("../OmniLight3D9"), NodePath("../OmniLight3D10"), NodePath("../OmniLight3D11")]
+lights = [NodePath("../OmniLight3D"), NodePath("../OmniLight3D2")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lights/roomlight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.137188, 4.1759214, -5.3640547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.96086, 4.77928, -7.7239046)
 light_energy = 10.0
 shadow_enabled = true
 shadow_normal_bias = 2.0
@@ -2495,80 +2539,298 @@ omni_range = 10.0
 omni_attenuation = 2.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="lights/roomlight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.243067, 3.628138, -8.883146)
-omni_range = 6.756
-omni_attenuation = 2.0
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="lights/roomlight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.734188, 3.628138, -5.6082797)
-omni_range = 6.756
-omni_attenuation = 2.0
-
-[node name="OmniLight3D8" type="OmniLight3D" parent="lights/roomlight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.240007, 3.628138, -1.2021332)
-omni_range = 6.756
-omni_attenuation = 2.0
-
-[node name="OmniLight3D9" type="OmniLight3D" parent="lights/roomlight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.14712, 3.628138, -1.5003319)
-omni_range = 6.756
-omni_attenuation = 2.0
-
-[node name="OmniLight3D10" type="OmniLight3D" parent="lights/roomlight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.378485, 3.628138, -5.483919)
-omni_range = 6.756
-omni_attenuation = 2.0
-
-[node name="OmniLight3D11" type="OmniLight3D" parent="lights/roomlight"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.460852, 3.628138, -8.964441)
-omni_range = 6.756
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.90401, 4.77928, -2.7727044)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
 omni_attenuation = 2.0
 
 [node name="roomlight2" type="Node3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.913781)
 
-[node name="LightSwitch" parent="lights/roomlight2" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch" parent="lights/roomlight2" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(0.51, 0, 0, 0, 0.50999993, 0, 0, 0, 0.51, 19.08714, 3.1533422, -2.5)
+lights = [NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4")]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lights/roomlight2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.906954, 4.77928, -7.7843294)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lights/roomlight2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.917469, 4.77928, -2.8672056)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
 
 [node name="roomlight3" type="Node3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.923952, 0, 12.913781)
 
-[node name="LightSwitch" parent="lights/roomlight3" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch" parent="lights/roomlight3" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(0.51, 0, 0, 0, 0.50999993, 0, 0, 0, 0.51, 19.08714, 3.1533422, -2.5)
+lights = [NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4")]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lights/roomlight3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.935623, 4.77928, -7.8050394)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lights/roomlight3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.885231, 4.77928, -2.8670015)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
 
 [node name="roomlight4" type="Node3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.826508, 0, 12.913781)
 
-[node name="LightSwitch" parent="lights/roomlight4" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch" parent="lights/roomlight4" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-0.51, 0, -4.4585615e-08, 0, 0.50999993, 0, 4.4585615e-08, 0, -0.51, 28.337587, 3.1533422, -2.5)
+lights = [NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4")]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lights/roomlight4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.88523, 4.77928, -7.803249)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lights/roomlight4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.860035, 4.77928, -2.7896223)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
 
 [node name="roomlight5" type="Node3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.826508, 0, -0.38403988)
 
-[node name="LightSwitch" parent="lights/roomlight5" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch" parent="lights/roomlight5" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-0.51, 0, -4.4585615e-08, 0, 0.50999993, 0, 4.4585615e-08, 0, -0.51, 28.337587, 3.1533422, -2.5)
+lights = [NodePath("../OmniLight3D4"), NodePath("../OmniLight3D3")]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lights/roomlight5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.910427, 4.77928, -7.7591057)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lights/roomlight5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.960815, 4.77928, -2.7958713)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
 
 [node name="roomlight6" type="Node3D" parent="lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.944408, 0, 12.97865)
 
-[node name="LightSwitch" parent="lights/roomlight6" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch" parent="lights/roomlight6" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-0.51, 0, -4.4585615e-08, 0, 0.50999993, 0, 4.4585615e-08, 0, -0.51, 28.337587, 3.1533422, -2.5)
+lights = [NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4")]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lights/roomlight6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.910425, 4.77928, -7.7519865)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lights/roomlight6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.910427, 4.77928, -2.889536)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
 
 [node name="corridorlight" type="Node3D" parent="lights"]
 
-[node name="LightSwitch" parent="lights/corridorlight" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch" parent="lights/corridorlight" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(0.51, 0, 0, 0, 0.50999993, 0, 0, 0, 0.51, -13.115709, 3.1533422, 10.4330225)
+lights = [NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4"), NodePath("../OmniLight3D5"), NodePath("../OmniLight3D7"), NodePath("../OmniLight3D8"), NodePath("../OmniLight3D9"), NodePath("../OmniLight3D10"), NodePath("../OmniLight3D11"), NodePath("../OmniLight3D6")]
 
-[node name="LightSwitch2" parent="lights/corridorlight" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch2" parent="lights/corridorlight" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-0.51, 0, -4.4585615e-08, 0, 0.50999993, 0, 4.4585615e-08, 0, -0.51, 18.755442, 3.1533422, 10.402652)
+lights = [NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4"), NodePath("../OmniLight3D5"), NodePath("../OmniLight3D7"), NodePath("../OmniLight3D8"), NodePath("../OmniLight3D9"), NodePath("../OmniLight3D10"), NodePath("../OmniLight3D11"), NodePath("../OmniLight3D6")]
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.565952, 4.77928, 3.8823986)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.616346, 4.77928, 10.4833555)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.248001, 4.77928, 3.7816162)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.273195, 4.77928, -2.3243322)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.593742, 4.77928, -2.3999195)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1117115, 4.77928, -2.2991362)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3010578, 4.77928, -2.3243322)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.934723, 4.77928, -2.3243322)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="lights/corridorlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.305423, 4.77928, 10.548115)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
 
 [node name="confrence" type="Node3D" parent="lights"]
 
-[node name="LightSwitch" parent="lights/confrence" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch" parent="lights/confrence" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-2.2292808e-08, 0, 0.51, 0, 0.50999993, 0, -0.51, 0, -2.2292808e-08, -11.124132, 3.1533422, -5.697691)
+lights = [NodePath("../OmniLight3D8"), NodePath("../OmniLight3D9"), NodePath("../OmniLight3D10"), NodePath("../OmniLight3D11"), NodePath("../OmniLight3D12"), NodePath("../OmniLight3D13"), NodePath("../OmniLight3D14"), NodePath("../OmniLight3D15"), NodePath("../OmniLight3D16"), NodePath("../OmniLight3D17")]
 
 [node name="LightSwitch2" parent="lights/confrence" instance=ExtResource("21_aweeb")]
 transform = Transform3D(-2.2292808e-08, 0, 0.51, 0, 0.50999993, 0, -0.51, 0, -2.2292808e-08, 16.86971, 3.1533422, -5.697691)
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9662895, 4.77928, -10.067113)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9662895, 4.77928, -16.857752)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9412155, 4.77928, -10.067113)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9412155, 4.77928, -16.857752)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0826702, 4.77928, -10.067113)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0826702, 4.77928, -16.857752)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8591404, 4.77928, -10.067113)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8591404, 4.77928, -16.857752)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.513966, 4.77928, -10.067113)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="lights/confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.513966, 4.77928, -16.857752)
+light_energy = 10.0
+shadow_enabled = true
+shadow_normal_bias = 2.0
+omni_range = 10.0
+omni_attenuation = 2.0
 
 [node name="Room1" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, 7.9786673)
