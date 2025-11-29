@@ -11,5 +11,6 @@ func interact() -> void:
 		if item.room != null:
 			item.room.current_trash += 1
 			Globals.current_map.player.update_tasks()
+			item.room.check_done()
 		Globals.current_map.player.inventory.current_item = null
 		item.queue_free()

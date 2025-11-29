@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3npta3oex53b"]
+[gd_scene load_steps=8 format=3 uid="uid://d3npta3oex53b"]
 
 [ext_resource type="Script" uid="uid://by622bg3b2amr" path="res://Scripts/game.gd" id="1_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://c8u5mydv1c1ln" path="res://Scenes/map.tscn" id="2_wowpa"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://clhd0221i7geo" path="res://Scripts/main_menu.gd" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bodebpdwwrnk2" path="res://Scenes/settings_menu.tscn" id="3_wrm1d"]
 [ext_resource type="AudioStream" uid="uid://cbrqqmuhr2dd" path="res://Sounds/horror theme2.mp3" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://1jybm62is2pk" path="res://Scenes/main_menu_map.tscn" id="7_1l0tm"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_qxrlw")
@@ -52,6 +53,8 @@ layout_mode = 1
 stream = ExtResource("6_i6g32")
 autoplay = true
 bus = &"menu"
+
+[node name="MainMenuMap" parent="." instance=ExtResource("7_1l0tm")]
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

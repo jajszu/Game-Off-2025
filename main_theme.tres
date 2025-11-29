@@ -19,7 +19,7 @@ skew = Vector2(0.1, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_470mv"]
 content_margin_top = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0.06879826, 0.06879829, 0.06879823, 1)
+bg_color = Color(0.029506553, 0.029506562, 0.029506536, 1)
 skew = Vector2(0.1, 0)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
