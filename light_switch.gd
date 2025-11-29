@@ -13,8 +13,5 @@ func interact():
 	$Sound.play()
 	$lightswitch.rotate_x(deg_to_rad(180))
 	for l in lights:
-		if l.light_energy == 0:
-			l.light_energy = 5
-		else:
-			l.light_energy = 0
+		l.visible = !l.visible
 	
