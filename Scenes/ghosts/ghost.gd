@@ -22,7 +22,6 @@ var waypoints = []
 var player = null
 var target
 
-@export var current_room : Room = null 
 
 func _ready() -> void:
 	Globals.current_ghost = self
@@ -47,7 +46,7 @@ func pick_destination():
 func chase_player(delta):
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
-	if global_position.distance_to(target.global_position) < 0.5:
+	if global_position.distance_to(target.global_position) < 1.0:
 		kill()
 	else:
 		target = player
@@ -55,7 +54,7 @@ func chase_player(delta):
 		wander(delta)
 
 func kill():
-	print("gameover")
+	#print("gameover")
 	pass
 
 func despawn():
