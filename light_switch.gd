@@ -4,7 +4,7 @@ extends StaticBody3D
 
 func _ready() -> void:
 	for l in lights:
-		l.light_energy = 5
+		l.light_energy = 15
 
 func get_interact_text() -> String:
 	return "[E] toggle light"
