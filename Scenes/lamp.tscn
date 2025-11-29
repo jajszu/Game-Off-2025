@@ -1,6 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://cwmku2tjrj3d2"]
-
-[ext_resource type="Script" uid="uid://dtxus3nc5u78q" path="res://Scenes/light.gd" id="1_veqsg"]
+[gd_scene load_steps=22 format=4 uid="uid://cwmku2tjrj3d2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb5nd"]
 resource_name = "Material"
@@ -318,14 +316,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gdm4p")
 
-[node name="light" type="SpotLight3D"]
+[node name="Lamp" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-shadow_bias = 1.886
-shadow_reverse_cull_face = true
-spot_range = 19.719
-spot_attenuation = 2.0
-spot_angle = 52.43
-script = ExtResource("1_veqsg")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(0.19, 0, 0, 0, -8.305164e-09, -0.19, 0, 0.19, -8.305164e-09, 0, 0, 0)
@@ -374,8 +366,3 @@ skeleton = NodePath("")
 transform = Transform3D(0, -2.0861626e-05, 100, -100, 0, 0, 0, -100, -2.3841858e-05, 0, 0, 0.50155175)
 mesh = SubResource("ArrayMesh_07eaj")
 skeleton = NodePath("")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4816774e-08, -1.4828349)
-light_energy = 10.0
-omni_range = 6.0

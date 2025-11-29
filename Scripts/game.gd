@@ -13,6 +13,7 @@ func _on_start_button_pressed() -> void:
 	var m = map_scene.instantiate()
 	add_child(m)
 	main_menu.visible = false
+	$MainMenuMap.queue_free()
 	$BgMusic.stop()
 
 

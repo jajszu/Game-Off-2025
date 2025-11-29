@@ -12,9 +12,14 @@ const JUMP_VELOCITY = 6.0
 @onready var pause_menu: PauseMenu = $PauseMenu
 @onready var mop_label: Label = %MopLabel
 @onready var trash_label: Label = %TrashLabel
+@onready var room_count_label: Label = %RoomCountLabel
+@onready var room_label: Label = %RoomLabel
 @onready var tasks: Control = $UI/Tasks
+@onready var drop_item_label: Label = $UI/DropItemLabel
 @export var mouse_sensitivity: float = 0.01
+var position_before_hidden: Vector3
 var current_room: Room
+var hidden:bool = false
 
 func _ready() -> void:
 	Settings.settings_changed.connect(_on_settings_changed)
@@ -24,6 +29,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	subtitles_label.text = ""
 	tasks.visible = false
+	drop_item_label.visible = false
 
 func on_pause_changed():
 	if pause_menu.visible:
@@ -40,12 +46,21 @@ func _input(event: InputEvent) -> void:
 		pause_menu.visible = !pause_menu.visible
 	elif pause_menu.visible: #jeżeli pauza aktywna, nie sprawdzaj pozostałych inputów
 		return
-		
+
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		cam.rotate_x(-event.relative.y * mouse_sensitivity)
 		cam.rotation_degrees.x = clamp(cam.rotation_degrees.x, -90, 90)
-	elif event.is_action_pressed("jump") and is_on_floor():
+		
+	if hidden:
+		if event.is_action_pressed("interact"):
+			hidden = false
+			global_position = position_before_hidden
+			set_collision_mask_value(1, true)
+			axis_lock_linear_y = false
+		return
+	
+	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	elif event.is_action_pressed("interact"):
 		if ray_cast.is_colliding():
@@ -55,25 +70,22 @@ func _input(event: InputEvent) -> void:
 		drop_item()
 
 func update_tasks():
+	tasks.visible = true
 	var no_mop := current_room.goal_mop == 0
 	var no_trash := current_room.goal_trash == 0
 	if no_mop and no_trash:
-		tasks.visible = false
-	else:
-		tasks.visible = true
-		if no_mop:
-			mop_label.visible = false
-		else:
-			mop_label.visible = true
-		if no_trash:
-			trash_label.visible = false
-		else:
-			trash_label.visible = true
-		#set text
-		mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
-		+ "/" + str(current_room.goal_mop)
-		trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
-		+ "/" + str(current_room.goal_trash)
+		room_label.visible = false
+	mop_label.visible = !no_mop
+	trash_label.visible = !no_trash
+
+	#set text
+	room_count_label.text = "Rooms done: " + str(Globals.rooms_done) \
+	+ "/" + str(Globals.rooms_total)
+	mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
+	+ "/" + str(current_room.goal_mop)
+	trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
+	+ "/" + str(current_room.goal_trash)
+
 
 func _physics_process(delta: float) -> void:
 	ghost_visible_to_camera()
@@ -96,6 +108,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if hidden:
+		input_dir = Vector2.ZERO
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -114,6 +128,7 @@ func pick_up_item(item: Item):
 	inventory.current_item = item
 	item.position = Vector3.ZERO
 	item.rotation = Vector3.ZERO
+	drop_item_label.visible = true
 
 func drop_item():
 	if inventory.current_item == null:
@@ -122,11 +137,14 @@ func drop_item():
 		var item := inventory.current_item
 		item.set_collision_layer_value(4, true)
 		item.freeze = false
-		var pos = item.global_position
+		var pos := item.global_position
+		var rot := item.global_rotation
 		inventory.remove_child(item)
 		self.get_parent().add_child(item)
 		item.global_position = pos
+		item.global_rotation = rot
 		inventory.current_item = null
+		drop_item_label.visible = false
 
 
 func ghost_visible_to_camera() -> void:
@@ -138,9 +156,9 @@ func ghost_visible_to_camera() -> void:
 		return
 	var space = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(cam.global_position, Globals.current_ghost.global_position)
-	query.collision_mask = 1 
+	query.collision_mask = 1
 	var result = space.intersect_ray(query)
 	if result and result.collider != Globals.current_ghost:
 		SignalBus.saw_ghost.emit(false)
-		return 
+		return
 	SignalBus.saw_ghost.emit(true)

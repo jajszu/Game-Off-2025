@@ -11,7 +11,9 @@
 height = 1.5
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
+physics_interpolation_mode = 1
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+collision_layer = 2
 script = ExtResource("1_v0iea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -28,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50704, 0)
 
 [node name="RayCast" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -3)
-collision_mask = 8
+collision_mask = 9
 
 [node name="Inventory" type="Node3D" parent="Camera3D"]
 transform = Transform3D(0.96592575, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.96592575, 0.405, -0.28104007, -0.468)
@@ -79,6 +81,21 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "subtitles"
 
+[node name="DropItemLabel" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -89.0
+offset_right = -52.0
+offset_bottom = -47.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "[G] Drop Item"
+
 [node name="Tasks" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 1
@@ -96,7 +113,13 @@ offset_top = 45.0
 offset_right = 246.0
 offset_bottom = 193.0
 
+[node name="RoomCountLabel" type="Label" parent="UI/Tasks/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Rooms done:"
+
 [node name="RoomLabel" type="Label" parent="UI/Tasks/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Current room:"
 
