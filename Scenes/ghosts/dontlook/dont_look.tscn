@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://dsisqq2mwr4m0"]
 
-[ext_resource type="Script" uid="uid://276mo0jb6eio" path="res://Scenes/ghosts/look/ghost_1.gd" id="1_vuq6i"]
+[ext_resource type="Script" uid="uid://cghj2gessvkp6" path="res://Scenes/ghosts/dontlook/ghost_1.gd" id="1_vuq6i"]
 [ext_resource type="Material" uid="uid://bav2ptpr38g8f" path="res://Materials/Material.tres" id="2_73iyo"]
 [ext_resource type="PackedScene" uid="uid://xw6nkjv2owld" path="res://Particles/ghost_particles.tscn" id="3_uas4w"]
 

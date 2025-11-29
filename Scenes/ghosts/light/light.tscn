@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bi728v7l7tx3v"]
+[gd_scene load_steps=8 format=4 uid="uid://bi728v7l7tx3v"]
 
 [ext_resource type="Script" uid="uid://bovt8uy10d1o" path="res://Scenes/ghosts/light/ghost_5.gd" id="1_2np6f"]
 [ext_resource type="Material" path="res://Materials/Material.tres" id="2_o2i17"]
@@ -565,9 +565,6 @@ _data = {
 &"mixamo_com": SubResource("Animation_0aeed")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_k212x"]
-size = Vector3(0.05, 0.21, 0)
-
 [node name="ghost5" type="CharacterBody3D" node_paths=PackedStringArray("agent", "emiter", "animator")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_2np6f")
@@ -1050,7 +1047,3 @@ autoplay = "mixamo_com"
 
 [node name="Ghost" parent="." instance=ExtResource("3_qfj23")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5085449, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33447266, -0.15133667)
-shape = SubResource("BoxShape3D_k212x")
