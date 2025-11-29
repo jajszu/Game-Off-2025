@@ -31,6 +31,7 @@ size = Vector3(0.98, 0.44, 0.17)
 
 [node name="Radio" type="RigidBody3D"]
 collision_layer = 12
+collision_mask = 3
 script = ExtResource("1_8y21s")
 sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1")])
 songs = Array[AudioStream]([ExtResource("6_3asvo")])

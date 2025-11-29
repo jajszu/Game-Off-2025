@@ -68,6 +68,9 @@ func _input(event: InputEvent) -> void:
 				ray_cast.get_collider().interact()
 	elif event.is_action_pressed("drop_item"):
 		drop_item()
+	elif event.is_action_pressed("use_item"):
+		if inventory.current_item is Mop:
+			inventory.current_item.use()
 
 func update_tasks():
 	tasks.visible = true
@@ -90,19 +93,19 @@ func update_tasks():
 func _physics_process(delta: float) -> void:
 	ghost_visible_to_camera()
 	#region raycast
+	interact_label.text = ""
 	if ray_cast.is_colliding():
 		var coll := ray_cast.get_collider()
-		if coll.has_method("get_interact_text"):
-			var t = coll.get_interact_text()
-			if t is String:
-				interact_label.text = t
-			else:
-				printerr("get_interact_text in " + str(coll.get_class()) +
-					" does not return a string")
-		else:
-			interact_label.text = ""
-	else:
-		interact_label.text = ""
+		if coll != null:
+			if coll.has_method("get_interact_text"):
+				var t = coll.get_interact_text()
+				if t is String:
+					interact_label.text = t
+				else:
+					printerr("get_interact_text in " + str(coll.get_class()) +
+						" does not return a string")
+	if hidden:
+		interact_label.text = "[E] hide"
 	#endregion
 	if not is_on_floor():
 		velocity += get_gravity() * delta
