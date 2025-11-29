@@ -20,30 +20,35 @@
 script = ExtResource("2_jp436")
 audio = ExtResource("3_63cyc")
 enemy = ExtResource("4_clxkr")
+subtitles = "Do not look at him"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_clxkr"]
 script = ExtResource("2_jp436")
 audio = ExtResource("5_5jvd1")
 enemy = ExtResource("6_v8ggg")
+subtitles = "Do not touch the floor"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_5jvd1"]
 script = ExtResource("2_jp436")
 audio = ExtResource("6_7yf7r")
 enemy = ExtResource("8_lhl7a")
+subtitles = "Find a place to hide"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_v8ggg"]
 script = ExtResource("2_jp436")
 audio = ExtResource("7_lmej3")
 enemy = ExtResource("10_ic8se")
+subtitles = "look at him"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_lhl7a"]
 script = ExtResource("2_jp436")
 audio = ExtResource("11_lxpvs")
 enemy = ExtResource("12_x4xy5")
+subtitles = "turn off the lights"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8y21s"]
@@ -57,8 +62,7 @@ sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResour
 songs = Array[AudioStream]([ExtResource("6_3asvo")])
 noise_volume = -2.0
 song_time = 10.0
-instructions_time = 10.0
-noise_time = 10.0
+noise_time = 30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8y21s")

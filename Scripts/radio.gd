@@ -11,6 +11,11 @@ extends Item
 @export var instructions_time = 20.0
 @export var noise_time: float = 60.0
 @export var fade_time: float = 2.0
+@export_category("Subtitles")
+@export var subtitles_distance: float = 2
+@export var first_subtitles_offset: float = 4
+@export var second_subtitles_offset: float = 16
+
 
 func _ready() -> void:
 	song_player.volume_db = -80.0
@@ -19,6 +24,17 @@ func _ready() -> void:
 
 func play_radio_loop() -> void:
 	while true:
+		if Globals.current_map == null:
+			print("map is null")
+			await get_tree().create_timer(1.0).timeout
+			continue
+		elif Globals.current_map.player == null:
+			print("player is null")
+			await get_tree().create_timer(1.0).timeout
+			continue
+		print("play")
+		var player = Globals.current_map.player
+		var player_pos = player.global_position
 		if sounds.is_empty():
 			await get_tree().create_timer(1.0).timeout
 			continue
@@ -47,13 +63,19 @@ func play_radio_loop() -> void:
 		#play instructions
 		song_player.play()
 		tween_noise_to_song(tween)
-		await get_tree().create_timer(instructions_time).timeout
+		await get_tree().create_timer(first_subtitles_offset).timeout
+		if global_position.distance_to(player_pos) > subtitles_distance:
+			player.add_subtitles(sound_data.subtitles, 4)
+		await get_tree().create_timer(second_subtitles_offset).timeout
+		if global_position.distance_to(player_pos) > subtitles_distance:
+			player.add_subtitles(sound_data.subtitles, 4)
+		var t = instructions_time - first_subtitles_offset - second_subtitles_offset
+		if t > 0:
+			await get_tree().create_timer(t).timeout
 		
 		#choose spawn point (higher distance)
-		
 		var max_dist := 0.0
 		var chosen_spawn: Vector3 = Vector3.ZERO
-		var player_pos = Globals.current_map.player.global_position
 		for s in spawns:
 			var dist := s.global_position.distance_to(player_pos)
 			if dist > max_dist:
