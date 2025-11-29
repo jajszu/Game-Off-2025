@@ -149,3 +149,7 @@ grow_vertical = 2
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_vgqql")]
 visible = false
+
+[node name="SubtitlesTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SubtitlesTimer" to="." method="_on_subtitles_timer_timeout"]

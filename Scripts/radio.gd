@@ -55,6 +55,7 @@ func play_radio_loop() -> void:
 				max_dist = dist
 				chosen_spawn = s.global_position
 		
+		#spawn enemy
 		var enemy = sound_data.enemy.instantiate()
 		Globals.current_map.add_child(enemy)
 		enemy.global_position = chosen_spawn

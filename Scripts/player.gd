@@ -16,6 +16,7 @@ const JUMP_VELOCITY = 6.0
 @onready var room_label: Label = %RoomLabel
 @onready var tasks: Control = $UI/Tasks
 @onready var drop_item_label: Label = $UI/DropItemLabel
+@onready var subtitles_timer: Timer = $SubtitlesTimer
 @export var mouse_sensitivity: float = 0.01
 var position_before_hidden: Vector3
 var current_room: Room
@@ -165,3 +166,10 @@ func ghost_visible_to_camera() -> void:
 		SignalBus.saw_ghost.emit(false)
 		return
 	SignalBus.saw_ghost.emit(true)
+
+func add_subtitles(text: String, time: float):
+	subtitles_label.text = text
+	subtitles_timer.start(time)
+	
+func _on_subtitles_timer_timeout() -> void:
+	subtitles_label.text = ""
