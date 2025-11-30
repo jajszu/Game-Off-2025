@@ -66,7 +66,7 @@ func play_radio_loop() -> void:
 		await get_tree().create_timer(first_subtitles_offset).timeout
 		if global_position.distance_to(player_pos) > subtitles_distance:
 			player.add_subtitles(sound_data.subtitles, 4)
-		await get_tree().create_timer(second_subtitles_offset).timeout
+		await get_tree().create_timer(second_subtitles_offset - first_subtitles_offset).timeout
 		if global_position.distance_to(player_pos) > subtitles_distance:
 			player.add_subtitles(sound_data.subtitles, 4)
 		var t = instructions_time - first_subtitles_offset - second_subtitles_offset

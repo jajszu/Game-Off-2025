@@ -1,9 +1,10 @@
-[gd_scene load_steps=86 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=87 format=4 uid="uid://bf20svfn7q30o"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_mbdl7"]
 [ext_resource type="PackedScene" uid="uid://xtuwmeio0bmf" path="res://Scenes/player.tscn" id="2_bei53"]
 [ext_resource type="Texture2D" uid="uid://csmry2deaxscx" path="res://Materials/ceil.png" id="2_d8w4w"]
+[ext_resource type="PackedScene" uid="uid://wi23jua7bc6b" path="res://Scenes/lose_screen.tscn" id="3_1f6r8"]
 [ext_resource type="PackedScene" uid="uid://dqx02sg63mkp8" path="res://Models/lamp.fbx" id="3_bcdk8"]
 [ext_resource type="Texture2D" uid="uid://biaoq3vq8v7q5" path="res://Materials/walls.png" id="3_r2fkr"]
 [ext_resource type="PackedScene" uid="uid://d2cbc25m5uqld" path="res://Scenes/desk.tscn" id="3_v8ky0"]
@@ -675,6 +676,7 @@ adjustment_saturation = 0.85
 [node name="GameMap" type="Node3D" node_paths=PackedStringArray("player_spawn_point", "spawn_room")]
 script = ExtResource("1_mbdl7")
 player_scene = ExtResource("2_bei53")
+lose_scene = ExtResource("3_1f6r8")
 player_spawn_point = NodePath("Node3D/PlayerSpawnPoint")
 spawn_room = NodePath("corridor")
 

@@ -25,6 +25,8 @@ func spawn_player():
 		return
 
 func game_over():
+	print("game over")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var l = lose_scene.instantiate()
 	get_parent().add_child(l)
 	queue_free()
