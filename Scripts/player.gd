@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 					printerr("get_interact_text in " + str(coll.get_class()) +
 						" does not return a string")
 	if hidden:
-		interact_label.text = "[E] hide"
+		interact_label.text = "[E] stop hiding"
 	#endregion
 	if not is_on_floor():
 		velocity += get_gravity() * delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=92 format=4 uid="uid://bf20svfn7q30o"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_mbdl7"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cigbayokw8sgv" path="res://Models/cup.fbx" id="8_1wdcn"]
 [ext_resource type="PackedScene" uid="uid://bguuvk4k5ivxu" path="res://Scenes/chair.tscn" id="9_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://dnilpilvh6g6i" path="res://Models/screen.fbx" id="13_1wdcn"]
-[ext_resource type="PackedScene" uid="uid://rqdfcuelai1g" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
+[ext_resource type="PackedScene" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://b15honqnfxkut" path="res://Models/projector.fbx" id="16_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://cery1ge5t1ol2" path="res://Scenes/ghosts/waypoint.tscn" id="19_bei53"]
 [ext_resource type="PackedScene" uid="uid://rwebxmoqf3f7" path="res://Scenes/light_switch.tscn" id="21_aweeb"]
