@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=88 format=4 uid="uid://bf20svfn7q30o"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_mbdl7"]
@@ -16,14 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://cigbayokw8sgv" path="res://Models/cup.fbx" id="8_1wdcn"]
 [ext_resource type="PackedScene" uid="uid://bguuvk4k5ivxu" path="res://Scenes/chair.tscn" id="9_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://dnilpilvh6g6i" path="res://Models/screen.fbx" id="13_1wdcn"]
-[ext_resource type="PackedScene" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
+[ext_resource type="PackedScene" uid="uid://rqdfcuelai1g" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://b15honqnfxkut" path="res://Models/projector.fbx" id="16_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://cery1ge5t1ol2" path="res://Scenes/ghosts/waypoint.tscn" id="19_bei53"]
 [ext_resource type="PackedScene" uid="uid://rwebxmoqf3f7" path="res://Scenes/light_switch.tscn" id="21_aweeb"]
 [ext_resource type="PackedScene" uid="uid://cwmku2tjrj3d2" path="res://Scenes/lamp.tscn" id="21_wvmc5"]
 [ext_resource type="Script" uid="uid://bpgrkcmo2snu4" path="res://Scripts/room.gd" id="22_wvmc5"]
+[ext_resource type="PackedScene" uid="uid://b4c30awkhi7ww" path="res://Scenes/trash.tscn" id="23_hgxaw"]
 [ext_resource type="VoxelGIData" uid="uid://b0yiyv80svw1" path="res://Materials/game_map.VoxelGI_data.res" id="23_r2fkr"]
 [ext_resource type="PackedScene" uid="uid://d3bu52eiw3ics" path="res://Scenes/mop.tscn" id="24_tcqau"]
+[ext_resource type="PackedScene" uid="uid://c1rflfpxp5bqq" path="res://Scenes/dirt.tscn" id="24_tv2ut"]
 [ext_resource type="PackedScene" uid="uid://cctvs7cem3bq5" path="res://Scenes/radio.tscn" id="25_1f6r8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_c4nuu"]
@@ -667,8 +669,10 @@ ssil_radius = 2.94
 ssil_intensity = 5.3
 fog_density = 0.0315
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.07683582, 0.07683582, 0.07683582, 1)
+volumetric_fog_density = 0.0823
+volumetric_fog_albedo = Color(0.3180195, 0.31801987, 0.31801975, 1)
 adjustment_enabled = true
+adjustment_brightness = 0.83
 adjustment_contrast = 0.91
 adjustment_saturation = 0.85
 
@@ -2335,7 +2339,6 @@ transform = Transform3D(-3.632255e-08, 0, 0.8309631, 0, 0.8309631, 0, -0.8309631
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6696892, 5.734723, -1.8603764)
-visible = false
 material_override = SubResource("StandardMaterial3D_mue85")
 size = Vector3(100, 0.1, 100)
 
@@ -2844,50 +2847,354 @@ shadow_normal_bias = 2.0
 omni_range = 10.0
 omni_attenuation = 2.0
 
-[node name="Room1" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="Room1" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight4/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room1"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room4" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3019699, 0)
+
+[node name="trashMop2" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9573917, -1.3019699, 3.2542562)
+
+[node name="trashMop3" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.284565, -1.3019699, -1.3872895)
+
+[node name="trashMop4" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3030643, -1.3019699, -1.6997905)
+
+[node name="trashMop5" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3030643, -1.3019699, -5.009844)
+
+[node name="trashMop6" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.201088, -1.3019694, 4.0844536)
+
+[node name="trashMop7" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2225409, -1.3019694, -5.3770323)
+
+[node name="trashMop8" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3188887, -1.3019694, 5.543626)
+
+[node name="trashspawn" type="Node3D" parent="Room1"]
+
+[node name="trash" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8037357, 0.1642592, 2.151204)
+
+[node name="trash2" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9639988, 0.1642592, 4.8346567)
+
+[node name="trash3" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.197651, 0.1642592, 4.72931)
+
+[node name="trash4" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22431755, 0.1642592, -2.7803679)
+
+[node name="trash5" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1797161, 0.1642592, -5.5383134)
+
+[node name="trash6" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0808353, 0.1642592, -5.5383134)
+
+[node name="trash7" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.773305, -1.3749105, -0.5619011)
+
+[node name="trash8" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000011, -1.3749105, 1.1963148)
+
+[node name="trash10" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.337225, -1.3749105, -3.0214734)
+
+[node name="trash11" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1762028, -1.3749105, -4.565438)
+
+[node name="trash12" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3039379, -1.3749105, 5.1519117)
+
+[node name="trash13" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6003017, -1.3749105, 3.1684647)
+
+[node name="trash14" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7225094, -1.374911, 3.3342247)
+
+[node name="Room4" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8733063, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight6/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room4"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room5" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9573917, -1.3019699, 3.2542562)
+
+[node name="trashMop3" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.284565, -1.3019699, -1.3872895)
+
+[node name="trashMop4" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8417873, -1.3019699, -3.5060806)
+
+[node name="trashMop5" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1678696, -1.3019699, 4.8724747)
+
+[node name="trashMop6" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2510242, -1.3019694, 5.0968876)
+
+[node name="trashMop7" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2225409, -1.3019694, -5.3770323)
+
+[node name="trashMop8" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1875839, -1.3019699, 4.960061)
+
+[node name="trashspawn" type="Node3D" parent="Room4"]
+
+[node name="trash" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, 1.1087856)
+
+[node name="trash2" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3110847, 0.1642592, -1.8144503)
+
+[node name="trash3" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3588629, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3984089, 0.1642592, -4.5133395)
+
+[node name="trash5" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1797161, 0.1642592, -5.5383134)
+
+[node name="trash6" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3781509, 0.1642592, -4.9259753)
+
+[node name="trash7" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7225094, -1.374911, 3.3342247)
+
+[node name="Room5" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight2/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room5"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room6" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9573917, -1.3019699, 3.2542562)
+
+[node name="trashMop3" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.284565, -1.3019699, -1.3872895)
+
+[node name="trashMop4" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8417873, -1.3019699, -3.5060806)
+
+[node name="trashMop5" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1678696, -1.3019699, 4.8724747)
+
+[node name="trashMop6" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2510242, -1.3019694, 5.0968876)
+
+[node name="trashMop7" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2225409, -1.3019694, -5.3770323)
+
+[node name="trashMop8" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1875839, -1.3019699, 4.960061)
+
+[node name="trashspawn" type="Node3D" parent="Room5"]
+
+[node name="trash" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8243694, 0.1642592, -0.8616986)
+
+[node name="trash3" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9545498, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5733585, 0.1642592, -4.3224354)
+
+[node name="trash5" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4688377, 0.1642592, -5.681497)
+
+[node name="trash6" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0315285, 0.1642592, -5.213316)
+
+[node name="trash7" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3941631, -1.374911, 2.414916)
+
+[node name="Room6" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, -5.1002455)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight/OmniLight3D")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room6"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="confrence" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3806744, -1.3019699, 2.112269)
+
+[node name="trashMop3" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2952023, -1.3019699, -1.4682226)
+
+[node name="trashMop4" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2205658, -1.3019699, -4.791213)
+
+[node name="trashMop5" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9415684, -1.3019699, 1.7637331)
+
+[node name="trashMop6" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.761507, -1.3019694, -1.2584467)
+
+[node name="trashMop7" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2977619, -1.3019694, -2.052257)
+
+[node name="trashMop8" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9978771, -1.3019699, -1.0012951)
+
+[node name="trashspawn" type="Node3D" parent="Room6"]
+
+[node name="trash" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8243694, 0.1642592, -0.8616986)
+
+[node name="trash3" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9545498, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5733585, 0.1642592, -4.3224354)
+
+[node name="trash5" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4688377, 0.1642592, -5.681497)
+
+[node name="trash6" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0315285, 0.1642592, -5.213316)
+
+[node name="trash7" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3941631, -1.374911, 2.414916)
+
+[node name="confrence" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6907768, 2.4272366, -17.015518)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/confrence/OmniLight3D10")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
@@ -2895,27 +3202,350 @@ metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0527458, 0, 3.8855572)
 shape = SubResource("BoxShape3D_1f6r8")
 
-[node name="Room3" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9480734, -1.3019699, -0.18348312)
+
+[node name="trashMop2" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6716609, -1.3019694, 3.2757654)
+
+[node name="trashMop3" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7298007, -1.3019699, -2.2657871)
+
+[node name="trashMop4" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6422715, -1.3019699, -2.8403034)
+
+[node name="trashMop5" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36588, -1.3019699, 8.469946)
+
+[node name="trashMop6" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7381587, -1.3019699, 5.8680325)
+
+[node name="trashMop7" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2061615, -1.3019704, 2.5101624)
+
+[node name="trashMop8" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8412666, -1.3019699, 7.079418)
+
+[node name="trashMop9" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8412666, -1.3019699, 1.6669292)
+
+[node name="trashMop10" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.124684, -1.3019699, 1.6669292)
+
+[node name="trashMop11" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.265283, -1.3019699, 9.0663395)
+
+[node name="trashMop12" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.928076, -1.3019699, 8.408627)
+
+[node name="trashMop13" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.203955, -1.3019699, -1.0408115)
+
+[node name="trashMop14" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.373068, -1.3019699, 3.5148315)
+
+[node name="trashMop15" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.936125, -1.3019699, 3.5148315)
+
+[node name="trashMop16" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.906982, -1.3019699, 7.284547)
+
+[node name="trashMop17" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.547101, -1.3019699, 9.523208)
+
+[node name="trashMop18" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.939113, -1.3019699, -1.713192)
+
+[node name="trashMop19" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.425251, -1.3019699, 11.174872)
+
+[node name="trashMop20" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2386785, -1.3019699, 9.713222)
+
+[node name="trashMop21" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.905966, -1.3019699, 10.695325)
+
+[node name="trashMop22" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39007, -1.3019708, -2.4622097)
+
+[node name="trashMop23" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.638254, -1.3019708, -2.4622097)
+
+[node name="trashspawn" type="Node3D" parent="confrence"]
+
+[node name="trash14" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5338626, -1.374911, 1.0251637)
+
+[node name="trash15" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0327663, -1.374911, 6.0406914)
+
+[node name="trash16" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.009219, -1.374911, 8.885041)
+
+[node name="trash17" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1007137, -1.374911, 5.38381)
+
+[node name="trash18" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.015601, -1.374911, 1.2786894)
+
+[node name="trash19" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.896292, -1.374911, -0.9429741)
+
+[node name="trash20" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.469171, -1.374911, 2.8351068)
+
+[node name="trash21" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.087319, -1.374911, 6.465065)
+
+[node name="trash22" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.841938, -1.374911, 4.950178)
+
+[node name="trash23" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7793283, -1.3749119, -2.1318321)
+
+[node name="trash24" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5156522, -1.3749129, -1.7048435)
+
+[node name="trash25" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4060822, -1.3749148, -2.9708157)
+
+[node name="trash26" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6562266, -1.3749148, -0.010040283)
+
+[node name="trash27" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2654715, -1.3749148, -0.010040283)
+
+[node name="trash28" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2654715, -1.3749148, 4.5925665)
+
+[node name="trash29" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.409862, -1.3749148, 4.5925665)
+
+[node name="trash30" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.472355, -1.3749148, 0.3086605)
+
+[node name="trash31" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.689455, -1.3749148, 5.530532)
+
+[node name="trash32" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1597424, -1.3749148, -2.4524345)
+
+[node name="trash33" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.542727, -1.3749148, -2.623787)
+
+[node name="trash34" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.61254, -1.3749148, 3.1027355)
+
+[node name="trash35" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.61254, -1.3749148, -0.8972645)
+
+[node name="trash36" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.008583, -1.3749148, 2.6264324)
+
+[node name="trash37" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.008583, -1.3749148, 5.6264324)
+
+[node name="trash38" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.47765, -1.3749148, 8.824227)
+
+[node name="trash39" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.422726, -1.3749148, 10.1411)
+
+[node name="trash40" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.723127, -1.3749148, 8.002352)
+
+[node name="trash41" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.70965, -1.3749148, 9.681202)
+
+[node name="trash42" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.240303, -1.3749148, 9.438198)
+
+[node name="trash43" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3852797, -1.3749148, 9.467512)
+
+[node name="trash44" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6147332, -1.3749148, 9.382101)
+
+[node name="trash45" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.969575, -1.3749148, 9.3540535)
+
+[node name="trash46" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.618597, -1.3749148, 7.085905)
+
+[node name="Room3" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8424664, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight3/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room3"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room2" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3806744, -1.3019699, 2.112269)
+
+[node name="trashMop3" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.881074, -1.3019699, -1.8649015)
+
+[node name="trashMop4" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.653593, -1.3019699, -3.685264)
+
+[node name="trashMop5" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9415684, -1.3019699, 1.7637331)
+
+[node name="trashMop6" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8636761, -1.3019694, 5.3994484)
+
+[node name="trashMop7" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.777587, -1.3019694, 4.7198)
+
+[node name="trashMop8" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3013117, -1.3019699, 0.39243507)
+
+[node name="trashspawn" type="Node3D" parent="Room3"]
+
+[node name="trash" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8243694, 0.1642592, -0.8616986)
+
+[node name="trash3" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9545498, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5733585, 0.1642592, -4.3224354)
+
+[node name="trash5" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4688377, 0.1642592, -5.681497)
+
+[node name="trash6" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0315285, 0.1642592, -5.213316)
+
+[node name="trash7" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3941631, -1.374911, 2.414916)
+
+[node name="Room2" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, -5.0765376)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight5/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="corridor" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3806744, -1.3019699, 2.112269)
+
+[node name="trashMop3" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7170429, -1.3019699, -5.3806767)
+
+[node name="trashMop4" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2258968, -1.3019699, -5.0844502)
+
+[node name="trashMop5" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8745575, -1.3019699, 2.0388534)
+
+[node name="trashMop6" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8636761, -1.3019694, 5.3994484)
+
+[node name="trashMop7" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8970442, -1.3019694, 3.5749383)
+
+[node name="trashMop8" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1927052, -1.3019699, -5.320622)
+
+[node name="trashspawn" type="Node3D" parent="Room2"]
+
+[node name="trash" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0024891, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.658945, 0.1642592, 0.73380136)
+
+[node name="trash3" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0081577, 0.16425872, -1.8682771)
+
+[node name="trash4" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5555172, 0.1642592, -5.6019063)
+
+[node name="trash5" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4565163, 0.1642592, -2.4664106)
+
+[node name="trash6" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3381834, 0.1642592, -2.7483292)
+
+[node name="trash7" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.456809, -1.37491, -1.0248046)
+
+[node name="trash8" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2977161, -1.3749105, 0.1989274)
+
+[node name="trash10" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88523865, -1.374911, -5.055781)
+
+[node name="trash11" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7966957, -1.37491, 2.049339)
+
+[node name="trash12" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20215797, -1.3749114, -0.4207573)
+
+[node name="trash13" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6801739, -1.3749105, -5.843373)
+
+[node name="trash14" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8414555, -1.374911, 4.5621505)
+
+[node name="corridor" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8752918, 2.4272346, -2.4607553)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
@@ -2923,6 +3553,10 @@ min_trash_spawn = 1
 max_trash_spawn = 1
 min_mop_spawn = 1
 max_mop_spawn = 1
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/corridorlight/OmniLight3D7")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
@@ -2937,6 +3571,122 @@ shape = SubResource("BoxShape3D_tcqau")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="corridor"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.938778, 0, 10.276288)
 shape = SubResource("BoxShape3D_tcqau")
+
+[node name="trashspawnmop" type="Node3D" parent="corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6695695, -1.3019699, 1.5146316)
+
+[node name="trashMop2" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.53308, -1.3019708, 0.39744282)
+
+[node name="trashMop3" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.925125, -1.3019699, 10.420286)
+
+[node name="trashMop4" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.355436, -1.3019699, -0.061501026)
+
+[node name="trashMop5" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.876001, -1.3019699, 3.786598)
+
+[node name="trashMop6" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.075773, -1.3019694, 12.37972)
+
+[node name="trashMop7" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.238809, -1.3019694, -0.49354076)
+
+[node name="trashMop8" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.178239, -1.3019699, 2.1881628)
+
+[node name="trashMop9" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.721423, -1.3019699, 10.3844)
+
+[node name="trashMop10" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.362051, -1.3019699, 15.150305)
+
+[node name="trashMop11" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.132742, -1.3019699, 15.150305)
+
+[node name="trashMop12" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.072735, -1.3019699, 3.073573)
+
+[node name="trashMop13" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.297765, -1.3019699, 6.336703)
+
+[node name="trashMop14" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2639365, -1.3019699, 1.356123)
+
+[node name="trashspawn" type="Node3D" parent="corridor"]
+
+[node name="trash12" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3936496, -1.3749114, 1.3005359)
+
+[node name="trash13" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18758, -1.3749105, -0.9999671)
+
+[node name="trash14" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.756156, -1.374911, 1.659754)
+
+[node name="trash15" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.399678, -1.374911, -0.83334994)
+
+[node name="trash16" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.61663, -1.374911, 0.87750065)
+
+[node name="trash17" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.664045, -1.374911, -1.1084404)
+
+[node name="trash18" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.371309, -1.374911, 3.7096872)
+
+[node name="trash19" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.477161, -1.374911, 6.812453)
+
+[node name="trash20" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.294241, -1.374911, 9.474283)
+
+[node name="trash21" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.643758, -1.374911, 9.567898)
+
+[node name="trash22" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.963823, -1.374911, 12.129019)
+
+[node name="trash23" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.316232, -1.374911, 15.158504)
+
+[node name="trash24" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.512651, -1.374911, 14.815101)
+
+[node name="trash25" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.79328, -1.374911, 14.815101)
+
+[node name="trash26" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.306871, -1.374911, 10.917794)
+
+[node name="trash27" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.183711, -1.374911, 8.698431)
+
+[node name="trash28" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.42581, -1.3749119, 6.230691)
+
+[node name="trash29" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.046644, -1.3749129, 3.3296008)
+
+[node name="trash30" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.128492, -1.3749129, 1.6437812)
+
+[node name="trash31" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.674879, -1.3749129, -0.13581991)
+
+[node name="trash32" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.628515, -1.3749138, 0.4902525)
+
+[node name="trash33" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.457261, -1.3749138, -1.335362)
+
+[node name="trash34" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8299775, -1.3749138, 0.4948647)
 
 [node name="postprocess" type="Node3D" parent="."]
 
