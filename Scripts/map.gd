@@ -19,6 +19,7 @@ func spawn_player():
 		add_child(player)
 		player.global_position = player_spawn_point.global_position
 		player.current_room = spawn_room
+		player.update_tasks()
 	else:
 		printerr("player scene is not a player class!")
 		p.queue_free()

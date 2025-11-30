@@ -6,8 +6,10 @@ class_name Room
 @export_range(0, 20) var max_trash_spawn: int = 6
 @export_range(0, 20) var min_mop_spawn: int = 2
 @export_range(0, 20) var max_mop_spawn: int = 6
-@export var trash_spawn_points: Array[Node3D]
-@export var mop_dirt_spawn_points: Array[Node3D]
+@export var trash_spawner: Node3D
+@export var dirt_spawner: Node3D
+var trash_spawn_points: Array[Node3D]
+var mop_dirt_spawn_points: Array[Node3D]
 @export var trash_scenes: Array[PackedScene]
 @export var mop_dirt_scenes: Array[PackedScene]
 #endregion
@@ -24,7 +26,13 @@ var goal_mop: int = 10
 #endregion
 
 func _ready() -> void:
-	self.body_entered.connect(on_body_entered)
+	if trash_spawner != null:
+		for c in trash_spawner.get_children():
+			trash_spawn_points.append(c)
+	if dirt_spawner != null:
+		for c in dirt_spawner.get_children():
+			mop_dirt_spawn_points.append(c)
+		self.body_entered.connect(on_body_entered)
 	spawn_tasks()
 	Globals.rooms_total += 1
 
