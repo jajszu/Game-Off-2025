@@ -62,8 +62,8 @@ sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResour
 songs = Array[AudioStream]([ExtResource("6_3asvo")])
 noise_volume = -2.0
 song_time = 5.0
+instructions_time = 27.0
 noise_time = 30.0
-subtitles_distance = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8y21s")

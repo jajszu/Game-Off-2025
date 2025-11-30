@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://de67ievd8uhwl"]
+
+[ext_resource type="PackedScene" uid="uid://w45qrh6i7rl4" path="res://Models/plant.fbx" id="1_bxmca"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bxmca"]
+height = 0.5
+radius = 0.3
+
+[node name="Fern" type="StaticBody3D"]
+
+[node name="plant" parent="." instance=ExtResource("1_bxmca")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.036682725, 0)
+shape = SubResource("CylinderShape3D_bxmca")
