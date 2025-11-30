@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=86 format=4 uid="uid://bf20svfn7q30o"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_mbdl7"]
@@ -16,13 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://cigbayokw8sgv" path="res://Models/cup.fbx" id="8_1wdcn"]
 [ext_resource type="PackedScene" uid="uid://bguuvk4k5ivxu" path="res://Scenes/chair.tscn" id="9_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://dnilpilvh6g6i" path="res://Models/screen.fbx" id="13_1wdcn"]
-[ext_resource type="PackedScene" uid="uid://rqdfcuelai1g" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
+[ext_resource type="PackedScene" path="res://Scenes/chair_2.tscn" id="14_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://b15honqnfxkut" path="res://Models/projector.fbx" id="16_e6p2l"]
 [ext_resource type="PackedScene" uid="uid://cery1ge5t1ol2" path="res://Scenes/ghosts/waypoint.tscn" id="19_bei53"]
 [ext_resource type="PackedScene" uid="uid://rwebxmoqf3f7" path="res://Scenes/light_switch.tscn" id="21_aweeb"]
 [ext_resource type="PackedScene" uid="uid://cwmku2tjrj3d2" path="res://Scenes/lamp.tscn" id="21_wvmc5"]
 [ext_resource type="Script" uid="uid://bpgrkcmo2snu4" path="res://Scripts/room.gd" id="22_wvmc5"]
 [ext_resource type="VoxelGIData" uid="uid://b0yiyv80svw1" path="res://Materials/game_map.VoxelGI_data.res" id="23_r2fkr"]
+[ext_resource type="PackedScene" uid="uid://d3bu52eiw3ics" path="res://Scenes/mop.tscn" id="24_tcqau"]
+[ext_resource type="PackedScene" uid="uid://cctvs7cem3bq5" path="res://Scenes/radio.tscn" id="25_1f6r8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_c4nuu"]
 vertices = PackedVector3Array(-26.5, 0.8480704, -12.5, -26.25, 0.8480704, -12, -18, 0.8480704, -12, -18, 0.8480704, -19.75, -21.75, 0.8480704, -20, -49.5, 0.8480704, -11, -27.75, 0.8480704, -10.75, -27.5, 0.8480704, -12.5, -21.5, 0.8480704, -21.25, -20, 0.8480704, -21.25, -20.25, 0.8480704, -49.5, -49.5, 0.8480704, -49.5, -18, 0.8480704, -21.25, -17.75, 0.8480704, -21.75, -16.5, 0.8480704, -21.25, 14.25, 0.8480704, -21.25, 14.5, 0.8480704, -21.75, 18, 0.8480704, -49.5, -16.75, 0.8480704, -21.75, 17.75, 0.8480704, -21.25, 15.75, 0.8480704, -12, 23.75, 0.8480704, -12, 24, 0.8480704, -12.5, 19.5, 0.8480704, -20, 15.75, 0.8480704, -19.75, 25.25, 0.8480704, -12.5, 25.5, 0.8480704, -10.25, 49.5, 0.8480704, -10.25, 19.25, 0.8480704, -21.25, 49.5, 0.8480704, -49.5, -13.75, 0.8480704, -5, -11.75, 0.8480704, -5, -11.5, 0.8480704, -5.75, -14, 0.8480704, -5.75, -10.5, 0.8480704, -8.25, -11, 0.8480704, -8.5, -10.5, 0.8480704, -5.75, -16.5, 0.8480704, -5.75, -10.75, 0.8480704, -17.25, -11, 0.8480704, -19.75, -16.5, 0.8480704, -19.75, -8.75, 0.8480704, -15.5, -8.25, 0.8480704, -15.25, -7.75, 0.8480704, -15.25, -7.75, 0.8480704, -17, -9, 0.8480704, -17.5, 5.25, 0.8480704, -17.5, 6.75, 0.8480704, -17.5, 10.5, 0.8480704, -19.75, -4.25, 0.8480704, -17.5, -3, 0.8480704, -17.5, -7.25, 0.8480704, -17.5, -2.5, 0.8480704, -15.5, -1.5, 0.8480704, -15.25, -1.5, 0.8480704, -17, -2.5, 0.8480704, -17, 3.5, 0.8480704, -17.5, -1, 0.8480704, -17.5, 3.75, 0.8480704, -15.5, 4.75, 0.8480704, -15.25, 4.75, 0.8480704, -17, -5.75, 0.8480704, -17.5, 0.25, 0.8480704, -17.5, 8.5, 0.8480704, -17.5, 10.25, 0.8480704, -17.25, 8, 0.8480704, -17, -4.75, 0.8480704, -17, 0.75, 0.8480704, -10.25, 1.5, 0.8480704, -10, 1.5, 0.8480704, -17, 0.75, 0.8480704, -17, 2, 0.8480704, -17.5, -5.25, 0.8480704, -10, -4.75, 0.8480704, -10, 7, 0.8480704, -10.25, 8, 0.8480704, -10, 9.5, 0.8480704, -5, 11.25, 0.8480704, -5, 11.5, 0.8480704, -5.75, 10.25, 0.8480704, -8.5, 9, 0.8480704, -8.25, 9, 0.8480704, -5.75, 14.25, 0.8480704, -19.75, 10.5, 0.8480704, -10, 14.25, 0.8480704, -5.75, -8.75, 0.8480704, -13.75, -8.75, 0.8480704, -8.5, -7.75, 0.8480704, -8.5, -4.5, 0.8480704, -8.25, -5.75, 0.8480704, -8.25, -2.5, 0.8480704, -8.5, -1.5, 0.8480704, -8.5, 8, 0.8480704, -8.5, 6.75, 0.8480704, -8.25, 0.5, 0.8480704, -8.25, 1.75, 0.8480704, -8.25, 3.75, 0.8480704, -8.5, 4.75, 0.8480704, -8.5, -49.5, 0.8480704, 17.25, -27.75, 0.8480704, 17, -18.5, 0.8480704, -9.5, -18, 0.8480704, -8.25, -18, 0.8480704, -10.5, -20.75, 0.8480704, -3, -20.75, 0.8480704, -4, -22, 0.8480704, -4.25, -23.75, 0.8480704, -4, -24.75, 0.8480704, -3.5, -25, 0.8480704, -2.75, -24.75, 0.8480704, -10.5, -24.75, 0.8480704, -9.5, -23.75, 0.8480704, -9, -20.25, 0.8480704, -9.5, -18, 0.8480704, -0.75, -18, 0.8480704, -4, -18.75, 0.8480704, -2.5, -24.75, 0.8480704, -7.25, -24.75, 0.8480704, -5.75, -24, 0.8480704, -5.5, -23.75, 0.8480704, -7.75, -17.5, 0.8480704, 1.25, -17.25, 0.8480704, -0.5, -21.75, 0.8480704, -8, -20.5, 0.8480704, -8.25, -26.25, 0.8480704, 1.25, -20, 0.8480704, -2.5, -26.25, 0.8480704, -2.75, 23.5, 0.8480704, -1.25, 23.25, 0.8480704, -0.25, 23.75, 0.8480704, -0.25, 21, 0.8480704, -2.5, 21.25, 0.8480704, -1.75, 22.5, 0.8480704, -2, 22.5, 0.8480704, -6.75, 15.75, 0.8480704, -0.75, 15, 0.8480704, -0.5, 15, 0.8480704, 1.25, 18.5, 0.8480704, 1.25, 22.25, 0.8480704, -8, 20.75, 0.8480704, -8.5, 18.75, 0.8480704, -8.5, 17.25, 0.8480704, -8, 17, 0.8480704, -6.5, 23.75, 0.8480704, -6.75, 18.75, 0.8480704, -2.5, 15.75, 0.8480704, -6.5, 22.25, 0.8480704, -10.5, 17.25, 0.8480704, -10.5, 18.75, 0.8480704, -9.75, 21, 0.8480704, -10, 33.25, 0.8480704, 14.25, 33.5, 0.8480704, 15, 49.5, 0.8480704, 15, 25.5, 0.8480704, 14.25, -16.5, 0.8480704, 1.5, -16.5, 0.8480704, -0.75, -11.5, 0.8480704, 1.25, -9.5, 0.8480704, 1.25, -9.5, 0.8480704, -4.25, -11.5, 0.8480704, -4.25, -14, 0.8480704, -4.25, -16.5, 0.8480704, -4.25, -16.5, 0.8480704, 3.25, -11.75, 0.8480704, 3.25, 14.25, 0.8480704, 1.5, 14.25, 0.8480704, -0.75, 11.5, 0.8480704, -4.25, 7.25, 0.8480704, -4.25, 7.25, 0.8480704, 1.25, 9.25, 0.8480704, 1.25, 9.25, 0.8480704, -4.25, 14.25, 0.8480704, -4.25, 9.5, 0.8480704, 3.25, 14.25, 0.8480704, 3.25, -17.25, 0.8480704, 14.25, -17.25, 0.8480704, 12.75, -18, 0.8480704, 12.5, -22.25, 0.8480704, 12.75, -22.25, 0.8480704, 14.25, -23.5, 0.8480704, 11.25, -23.75, 0.8480704, 12.5, -24.5, 0.8480704, 9, -24.5, 0.8480704, 10.5, -18, 0.8480704, 2.75, -19.75, 0.8480704, 2.75, -19.25, 0.8480704, 5.75, -20, 0.8480704, 6.75, -24, 0.8480704, 6.75, -24.75, 0.8480704, 2.75, -26.25, 0.8480704, 2.75, -26.25, 0.8480704, 8.75, -3.75, 0.8480704, 2.75, -3.75, 0.8480704, 3.25, -3, 0.8480704, 3.5, -1.75, 0.8480704, 2.75, -5.25, 0.8480704, 9.75, -6.75, 0.8480704, 9.75, -10.25, 0.8480704, 12.5, -11, 0.8480704, 14.25, -1.75, 0.8480704, 14.25, -9, 0.8480704, 3.75, -8.25, 0.8480704, 2.75, -10.25, 0.8480704, 2.75, -11, 0.8480704, 12.75, -3.5, 0.8480704, 8.25, -4.75, 0.8480704, 8.5, -7.25, 0.8480704, 8.5, -8.5, 0.8480704, 8.25, -3, 0.8480704, 5, -9, 0.8480704, 5, -3.75, 0.8480704, 5.5, -8.25, 0.8480704, 5.5, 7.75, 0.8480704, 2.75, 6, 0.8480704, 2.75, 6.75, 0.8480704, 3.5, 1.75, 0.8480704, 6.25, 1.75, 0.8480704, 4.75, 1, 0.8480704, 4.5, 8.75, 0.8480704, 14.25, 8.75, 0.8480704, 12.75, 7.75, 0.8480704, 12.5, 1.25, 0.8480704, 2.75, -0.25, 0.8480704, 2.75, 6.75, 0.8480704, 5, 0.75, 0.8480704, 7, 6, 0.8480704, 5.5, 6, 0.8480704, 7.75, 6.75, 0.8480704, 8, 2, 0.8480704, 10.75, 1.75, 0.8480704, 8.5, 0.75, 0.8480704, 8.25, -0.25, 0.8480704, 14.25, 5.75, 0.8480704, 10.5, 6.75, 0.8480704, 9.5, 16, 0.8480704, 3.5, 17.25, 0.8480704, 2.75, 15.75, 0.8480704, 2.75, 21.75, 0.8480704, 2.75, 21.75, 0.8480704, 3.25, 23, 0.8480704, 3.5, 23.75, 0.8480704, 2.75, 15, 0.8480704, 14.25, 23.75, 0.8480704, 14.25, 20.25, 0.8480704, 9.75, 18.75, 0.8480704, 9.75, 15.75, 0.8480704, 12.5, 15, 0.8480704, 12.75, 16, 0.8480704, 5, 22, 0.8480704, 8.25, 20.75, 0.8480704, 8.5, 18.25, 0.8480704, 8.5, 17, 0.8480704, 8.25, 23, 0.8480704, 5, 21.75, 0.8480704, 5.5, 17.25, 0.8480704, 5.5, -11.75, 0.8480704, 12.5, -16.5, 0.8480704, 12.5, 14.25, 0.8480704, 12.5, 9.5, 0.8480704, 12.5, -6, 2.3480704, 5.5, -6, 2.3480704, 6, -5.25, 2.3480704, 6, 33.25, 0.8480704, 15.75, 25.5, 0.8480704, 15.75, 25.5, 0.8480704, 18.5, 24.75, 0.8480704, 18.75, 24.75, 0.8480704, 49.5, 49.5, 0.8480704, 49.5, -1.75, 0.8480704, 15.75, -26.25, 0.8480704, 15.75, -26.25, 0.8480704, 18.5, -1.75, 0.8480704, 22.25, -27, 0.8480704, 18.75, -27, 0.8480704, 49.5, -1, 0.8480704, 49.5, -1, 0.8480704, 22.5, 23.75, 0.8480704, 18.5, 23.75, 0.8480704, 15.75, -0.25, 0.8480704, 15.75, -0.25, 0.8480704, 22.25, -27.75, 0.8480704, 18.5, -49.5, 0.8480704, 49.5)
@@ -670,10 +672,11 @@ adjustment_enabled = true
 adjustment_contrast = 0.91
 adjustment_saturation = 0.85
 
-[node name="GameMap" type="Node3D" node_paths=PackedStringArray("player_spawn_point")]
+[node name="GameMap" type="Node3D" node_paths=PackedStringArray("player_spawn_point", "spawn_room")]
 script = ExtResource("1_mbdl7")
 player_scene = ExtResource("2_bei53")
-player_spawn_point = NodePath("PlayerSpawnPoint")
+player_spawn_point = NodePath("Node3D/PlayerSpawnPoint")
+spawn_room = NodePath("corridor")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -0.5)
@@ -1984,7 +1987,7 @@ transform = Transform3D(0.0905867, 0, 0.33807403, 0, 0.35000002, 0, -0.33807403,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 0, 4.299999)
 
 [node name="desk2" parent="NavigationRegion3D/Decorations/biurka/biurto-template7" instance=ExtResource("3_v8ky0")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 2, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.5, 2, -0.0048475266)
 
 [node name="monitor" parent="NavigationRegion3D/Decorations/biurka/biurto-template7" instance=ExtResource("4_qy8qd")]
 transform = Transform3D(-0.40568882, 0, -0.108704016, 0, 0.41999996, 0, 0.108704016, 0, -0.40568882, 1.9, 2.05, -0.70000005)
@@ -2332,6 +2335,7 @@ transform = Transform3D(-3.632255e-08, 0, 0.8309631, 0, 0.8309631, 0, -0.8309631
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6696892, 5.734723, -1.8603764)
+visible = false
 material_override = SubResource("StandardMaterial3D_mue85")
 size = Vector3(100, 0.1, 100)
 
@@ -2341,8 +2345,16 @@ size = Vector3(100, 0.1, 100)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999905, 0)
 shape = SubResource("BoxShape3D_mbdl7")
 
-[node name="PlayerSpawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.369976, 0.955423, -4.8291326)
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="PlayerSpawnPoint" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1769905, 0.955423, 8.339848)
+
+[node name="EnemySpawn1" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.33733, 1.107455, 7.150263)
+
+[node name="EnemySpawn2" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.122, 1.107, 6.779)
 
 [node name="waypoints" type="Node3D" parent="."]
 
@@ -2834,8 +2846,9 @@ omni_attenuation = 2.0
 
 [node name="Room1" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, 7.9786673)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
-light = NodePath("../Lamps/lamp7")
+light = NodePath("../lights/roomlight4/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room1"]
@@ -2843,8 +2856,9 @@ shape = SubResource("BoxShape3D_r2fkr")
 
 [node name="Room4" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8733063, 2.4272346, 7.9786673)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
-light = NodePath("../Lamps/lamp11")
+light = NodePath("../lights/roomlight6/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room4"]
@@ -2852,8 +2866,9 @@ shape = SubResource("BoxShape3D_r2fkr")
 
 [node name="Room5" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, 7.9786673)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
-light = NodePath("../Lamps/lamp3")
+light = NodePath("../lights/roomlight2/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room5"]
@@ -2861,8 +2876,9 @@ shape = SubResource("BoxShape3D_r2fkr")
 
 [node name="Room6" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, -5.1002455)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
-light = NodePath("../Lamps/lamp")
+light = NodePath("../lights/roomlight/OmniLight3D")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room6"]
@@ -2870,8 +2886,9 @@ shape = SubResource("BoxShape3D_r2fkr")
 
 [node name="confrence" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6907768, 2.4272366, -17.015518)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
-light = NodePath("../Lamps/lamp23")
+light = NodePath("../lights/confrence/OmniLight3D10")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="confrence"]
@@ -2880,8 +2897,9 @@ shape = SubResource("BoxShape3D_1f6r8")
 
 [node name="Room3" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8424664, 2.4272346, 7.9786673)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
-light = NodePath("../Lamps/lamp5")
+light = NodePath("../lights/roomlight3/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room3"]
@@ -2889,8 +2907,9 @@ shape = SubResource("BoxShape3D_r2fkr")
 
 [node name="Room2" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, -5.0765376)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
-light = NodePath("../Lamps/lamp10")
+light = NodePath("../lights/roomlight5/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2"]
@@ -2898,12 +2917,13 @@ shape = SubResource("BoxShape3D_r2fkr")
 
 [node name="corridor" type="Area3D" parent="." node_paths=PackedStringArray("light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8752918, 2.4272346, -2.4607553)
+collision_mask = 2
 script = ExtResource("22_wvmc5")
 min_trash_spawn = 1
 max_trash_spawn = 1
 min_mop_spawn = 1
 max_mop_spawn = 1
-light = NodePath("../Lamps/lamp14")
+light = NodePath("../lights/corridorlight/OmniLight3D7")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="corridor"]
@@ -2927,3 +2947,10 @@ environment = SubResource("Environment_r2fkr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0575705, 3.1601791, -3.0575724)
 size = Vector3(54.125, 6.47, 43.715)
 data = ExtResource("23_r2fkr")
+
+[node name="Mop" parent="." instance=ExtResource("24_tcqau")]
+transform = Transform3D(-0.010023551, 0.8354238, -0.54951483, 0.015236205, 0.54960626, 0.83528477, 0.99983364, 4.872937e-10, -0.018237695, 13.815107, 3.0684078, 7.8800297)
+
+[node name="Radio" parent="." node_paths=PackedStringArray("spawns") instance=ExtResource("25_1f6r8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.062369, 1.1890519, 5.073428)
+spawns = [NodePath("../Node3D/EnemySpawn1"), NodePath("../Node3D/EnemySpawn2")]

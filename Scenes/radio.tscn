@@ -1,29 +1,54 @@
-[gd_scene load_steps=13 format=3 uid="uid://cctvs7cem3bq5"]
+[gd_scene load_steps=22 format=3 uid="uid://cctvs7cem3bq5"]
 
 [ext_resource type="Script" uid="uid://d0qekpq12yxlg" path="res://Scripts/radio.gd" id="1_8y21s"]
 [ext_resource type="AudioStream" uid="uid://ohgimsajnq4l" path="res://Sounds/white-noise.mp3" id="2_bdbpc"]
 [ext_resource type="Script" uid="uid://dyskunjdmx1le" path="res://Scripts/AudioEnemyType.gd" id="2_jp436"]
-[ext_resource type="AudioStream" uid="uid://bamm6av25l01x" path="res://Sounds/lofi-guitar-105361.mp3" id="3_geon2"]
-[ext_resource type="AudioStream" uid="uid://deobegj76ldbd" path="res://Sounds/lofi-synth-pattern-29946.mp3" id="4_3asvo"]
-[ext_resource type="AudioStream" uid="uid://c6ch6c8fs4dlg" path="res://Sounds/lofibeats130bpm-329502.mp3" id="5_xxwnv"]
+[ext_resource type="AudioStream" uid="uid://bseshxhf8y0t8" path="res://Sounds/Instructions/dont look.mp3" id="3_63cyc"]
+[ext_resource type="PackedScene" uid="uid://dsisqq2mwr4m0" path="res://Scenes/ghosts/dontlook/dont_look.tscn" id="4_clxkr"]
+[ext_resource type="AudioStream" uid="uid://cyfe40kpt6ex6" path="res://Sounds/Instructions/floor.mp3" id="5_5jvd1"]
 [ext_resource type="AudioStream" uid="uid://dr6kh8hhrlffc" path="res://Sounds/spring-lofi-vibes-lofi-music-340019.mp3" id="6_3asvo"]
+[ext_resource type="AudioStream" uid="uid://phglhryxy216" path="res://Sounds/Instructions/hide.mp3" id="6_7yf7r"]
+[ext_resource type="PackedScene" uid="uid://ccftrqlpxtk21" path="res://Scenes/ghosts/floorislava/floor_is_lava.tscn" id="6_v8ggg"]
 [ext_resource type="PackedScene" uid="uid://cuh23wgobhim1" path="res://Models/radio.fbx" id="7_geon2"]
+[ext_resource type="AudioStream" uid="uid://oa4xshxed2kj" path="res://Sounds/Instructions/look.mp3" id="7_lmej3"]
+[ext_resource type="PackedScene" uid="uid://bap7mtqn3sg2y" path="res://Scenes/ghosts/hide/hide.tscn" id="8_lhl7a"]
+[ext_resource type="PackedScene" uid="uid://cd30tevb6onjv" path="res://Scenes/ghosts/look/ghost_1.tscn" id="10_ic8se"]
+[ext_resource type="AudioStream" uid="uid://hru8331p30u2" path="res://Sounds/Instructions/turn off light.mp3" id="11_lxpvs"]
+[ext_resource type="PackedScene" uid="uid://bi728v7l7tx3v" path="res://Scenes/ghosts/light/light.tscn" id="12_x4xy5"]
 
 [sub_resource type="Resource" id="Resource_63cyc"]
 script = ExtResource("2_jp436")
-audio = ExtResource("3_geon2")
+audio = ExtResource("3_63cyc")
+enemy = ExtResource("4_clxkr")
+subtitles = "Do not look at him"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_clxkr"]
 script = ExtResource("2_jp436")
-audio = ExtResource("4_3asvo")
-enemy = 1
+audio = ExtResource("5_5jvd1")
+enemy = ExtResource("6_v8ggg")
+subtitles = "Do not touch the floor"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_5jvd1"]
 script = ExtResource("2_jp436")
-audio = ExtResource("5_xxwnv")
-enemy = 3
+audio = ExtResource("6_7yf7r")
+enemy = ExtResource("8_lhl7a")
+subtitles = "Find a place to hide"
+metadata/_custom_type_script = "uid://dyskunjdmx1le"
+
+[sub_resource type="Resource" id="Resource_v8ggg"]
+script = ExtResource("2_jp436")
+audio = ExtResource("7_lmej3")
+enemy = ExtResource("10_ic8se")
+subtitles = "look at him"
+metadata/_custom_type_script = "uid://dyskunjdmx1le"
+
+[sub_resource type="Resource" id="Resource_lhl7a"]
+script = ExtResource("2_jp436")
+audio = ExtResource("11_lxpvs")
+enemy = ExtResource("12_x4xy5")
+subtitles = "turn off the lights"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8y21s"]
@@ -31,13 +56,13 @@ size = Vector3(0.98, 0.44, 0.17)
 
 [node name="Radio" type="RigidBody3D"]
 collision_layer = 12
+collision_mask = 3
 script = ExtResource("1_8y21s")
-sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1")])
+sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1"), SubResource("Resource_v8ggg"), SubResource("Resource_lhl7a")])
 songs = Array[AudioStream]([ExtResource("6_3asvo")])
 noise_volume = -2.0
 song_time = 10.0
-instructions_time = 10.0
-noise_time = 10.0
+noise_time = 30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_8y21s")

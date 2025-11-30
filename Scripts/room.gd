@@ -2,10 +2,10 @@ extends Area3D
 class_name Room
 
 #region Spawning
-@export_range(1, 20) var min_trash_spawn: int = 2
-@export_range(1, 20) var max_trash_spawn: int = 6
-@export_range(1, 20) var min_mop_spawn: int = 2
-@export_range(1, 20) var max_mop_spawn: int = 6
+@export_range(0, 20) var min_trash_spawn: int = 2
+@export_range(0, 20) var max_trash_spawn: int = 6
+@export_range(0, 20) var min_mop_spawn: int = 2
+@export_range(0, 20) var max_mop_spawn: int = 6
 @export var trash_spawn_points: Array[Node3D]
 @export var mop_dirt_spawn_points: Array[Node3D]
 @export var trash_scenes: Array[PackedScene]
@@ -20,7 +20,7 @@ var goal_mop: int = 10
 #endregion
 
 #region Ghost things
-@export var light : SpotLight3D
+@export var light : OmniLight3D
 #endregion
 
 func _ready() -> void:
@@ -29,11 +29,10 @@ func _ready() -> void:
 	Globals.rooms_total += 1
 
 func on_body_entered(body: Node3D):
+	print(name)
 	if body is Player:
 		body.current_room = self
 		body.update_tasks()
-	if body is Ghost:
-		body.current_room = self
 
 func check_done():
 	if current_trash >= goal_trash and current_mop >= goal_mop:
