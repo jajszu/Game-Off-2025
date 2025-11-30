@@ -1,6 +1,7 @@
 extends Node3D
 class_name Map
 @export var player_scene: PackedScene
+@export var lose_scene: PackedScene
 @export var player_spawn_point: Node3D
 @export var spawn_room: Room
 var player: Player
@@ -22,3 +23,8 @@ func spawn_player():
 		printerr("player scene is not a player class!")
 		p.queue_free()
 		return
+
+func game_over():
+	var l = lose_scene.instantiate()
+	get_parent().add_child(l)
+	queue_free()
