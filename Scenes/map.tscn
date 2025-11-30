@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b4c30awkhi7ww" path="res://Scenes/trash.tscn" id="4_myvm1"]
 [ext_resource type="PackedScene" uid="uid://d2cbc25m5uqld" path="res://Scenes/desk.tscn" id="5_q0mm3"]
 [ext_resource type="PackedScene" uid="uid://cery1ge5t1ol2" path="res://Scenes/ghosts/waypoint.tscn" id="6_np2xp"]
-[ext_resource type="PackedScene" uid="uid://ccftrqlpxtk21" path="res://Scenes/ghosts/floorislava/ghost_2.tscn" id="6_w7jjh"]
+[ext_resource type="PackedScene" uid="uid://ccftrqlpxtk21" path="res://Scenes/ghosts/floorislava/floor_is_lava.tscn" id="6_w7jjh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_26yhd"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -73,7 +73,6 @@ height = 7.076172
 
 [node name="Radio" parent="." instance=ExtResource("2_26yhd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5680504, 0.65, -2.4386272)
-collision_mask = 3
 
 [node name="PlayerSpawnPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.955423, -0.98771)

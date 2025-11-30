@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://ccftrqlpxtk21"]
 
-[ext_resource type="Material" uid="uid://bav2ptpr38g8f" path="res://Materials/Material.tres" id="2_4xp6a"]
+[ext_resource type="Material" path="res://Materials/Material.tres" id="2_4xp6a"]
 [ext_resource type="Script" uid="uid://bhlxt64r6jgem" path="res://Scenes/ghosts/floorislava/ghost_2.gd" id="2_ge6du"]
 [ext_resource type="PackedScene" uid="uid://xw6nkjv2owld" path="res://Particles/ghost_particles.tscn" id="3_4xp6a"]
 
@@ -569,7 +569,7 @@ _data = {
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("2_ge6du")
 normal_speed = 150.0
-chasing_speed = 800.0
+chasing_speed = 600.0
 active = true
 wandering = true
 agent = NodePath("NavigationAgent3D")

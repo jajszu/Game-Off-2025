@@ -2,10 +2,10 @@ extends Area3D
 class_name Room
 
 #region Spawning
-@export_range(1, 20) var min_trash_spawn: int = 2
-@export_range(1, 20) var max_trash_spawn: int = 6
-@export_range(1, 20) var min_mop_spawn: int = 2
-@export_range(1, 20) var max_mop_spawn: int = 6
+@export_range(0, 20) var min_trash_spawn: int = 2
+@export_range(0, 20) var max_trash_spawn: int = 6
+@export_range(0, 20) var min_mop_spawn: int = 2
+@export_range(0, 20) var max_mop_spawn: int = 6
 @export var trash_spawn_points: Array[Node3D]
 @export var mop_dirt_spawn_points: Array[Node3D]
 @export var trash_scenes: Array[PackedScene]

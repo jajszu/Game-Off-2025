@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://bap7mtqn3sg2y"]
 
-[ext_resource type="Script" uid="uid://bsw2chlr765qg" path="res://Scenes/ghosts/hide/ghost_4.gd" id="1_k1krb"]
+[ext_resource type="Script" uid="uid://bsw2chlr765qg" path="res://Scenes/ghosts/hide/hide.gd" id="1_k1krb"]
 [ext_resource type="PackedScene" uid="uid://xw6nkjv2owld" path="res://Particles/ghost_particles.tscn" id="2_m3ll1"]
-[ext_resource type="Material" uid="uid://bav2ptpr38g8f" path="res://Materials/Material.tres" id="3_amt30"]
+[ext_resource type="Material" path="res://Materials/Material.tres" id="3_amt30"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_i3cy8"]
 resource_name = "base"

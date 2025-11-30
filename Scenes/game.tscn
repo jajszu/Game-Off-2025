@@ -1,16 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3npta3oex53b"]
+[gd_scene load_steps=9 format=3 uid="uid://d3npta3oex53b"]
 
 [ext_resource type="Script" uid="uid://by622bg3b2amr" path="res://Scripts/game.gd" id="1_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://c8u5mydv1c1ln" path="res://Scenes/map.tscn" id="2_wowpa"]
+[ext_resource type="PackedScene" uid="uid://bf20svfn7q30o" path="res://Scenes/game_map.tscn" id="2_v158k"]
 [ext_resource type="Theme" uid="uid://bh1sqvwywqmho" path="res://main_theme.tres" id="2_wrm1d"]
 [ext_resource type="Script" uid="uid://clhd0221i7geo" path="res://Scripts/main_menu.gd" id="3_3dryh"]
+[ext_resource type="PackedScene" uid="uid://bqt6v7lxgs843" path="res://Scenes/loading_scene.tscn" id="3_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://bodebpdwwrnk2" path="res://Scenes/settings_menu.tscn" id="3_wrm1d"]
 [ext_resource type="AudioStream" uid="uid://cbrqqmuhr2dd" path="res://Sounds/horror theme2.mp3" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://1jybm62is2pk" path="res://Scenes/main_menu_map.tscn" id="7_1l0tm"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_qxrlw")
-map_scene = ExtResource("2_wowpa")
+map_scene = ExtResource("2_v158k")
+loading_scene = ExtResource("3_h4fw4")
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 3

@@ -16,6 +16,7 @@ const JUMP_VELOCITY = 6.0
 @onready var room_label: Label = %RoomLabel
 @onready var tasks: Control = $UI/Tasks
 @onready var drop_item_label: Label = $UI/DropItemLabel
+@onready var subtitles_timer: Timer = $SubtitlesTimer
 @export var mouse_sensitivity: float = 0.01
 var position_before_hidden: Vector3
 var current_room: Room
@@ -68,6 +69,9 @@ func _input(event: InputEvent) -> void:
 				ray_cast.get_collider().interact()
 	elif event.is_action_pressed("drop_item"):
 		drop_item()
+	elif event.is_action_pressed("use_item"):
+		if inventory.current_item is Mop:
+			inventory.current_item.use()
 
 func update_tasks():
 	tasks.visible = true
@@ -90,19 +94,19 @@ func update_tasks():
 func _physics_process(delta: float) -> void:
 	ghost_visible_to_camera()
 	#region raycast
+	interact_label.text = ""
 	if ray_cast.is_colliding():
 		var coll := ray_cast.get_collider()
-		if coll.has_method("get_interact_text"):
-			var t = coll.get_interact_text()
-			if t is String:
-				interact_label.text = t
-			else:
-				printerr("get_interact_text in " + str(coll.get_class()) +
-					" does not return a string")
-		else:
-			interact_label.text = ""
-	else:
-		interact_label.text = ""
+		if coll != null:
+			if coll.has_method("get_interact_text"):
+				var t = coll.get_interact_text()
+				if t is String:
+					interact_label.text = t
+				else:
+					printerr("get_interact_text in " + str(coll.get_class()) +
+						" does not return a string")
+	if hidden:
+		interact_label.text = "[E] hide"
 	#endregion
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -162,3 +166,10 @@ func ghost_visible_to_camera() -> void:
 		SignalBus.saw_ghost.emit(false)
 		return
 	SignalBus.saw_ghost.emit(true)
+
+func add_subtitles(text: String, time: float):
+	subtitles_label.text = text
+	subtitles_timer.start(time)
+	
+func _on_subtitles_timer_timeout() -> void:
+	subtitles_label.text = ""
