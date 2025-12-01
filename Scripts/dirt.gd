@@ -13,5 +13,6 @@ func clean():
 	await tween.finished
 	if hp <= 0:
 		room.current_mop += 1
+		room.check_done()
 		Globals.current_map.player.update_tasks()
 		queue_free()

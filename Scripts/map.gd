@@ -38,5 +38,5 @@ func game_over(text: String = "you lose"):
 	queue_free()
 	
 func check_win():
-	if rooms_done == rooms_total:
+	if rooms_done >= rooms_total:
 		game_over("You won!")

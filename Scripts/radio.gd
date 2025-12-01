@@ -63,10 +63,12 @@ func play_radio_loop() -> void:
 		song_player.play()
 		tween_noise_to_song(tween)
 		await get_tree().create_timer(first_subtitles_offset).timeout
-		if global_position.distance_to(player.global_position) < subtitles_distance:
+		
+
+		if dist_to_no_y(player) < subtitles_distance:
 			player.add_subtitles(sound_data.subtitles, 4)
 		await get_tree().create_timer(second_subtitles_offset - first_subtitles_offset).timeout
-		if global_position.distance_to(player.global_position) < subtitles_distance:
+		if dist_to_no_y(player) < subtitles_distance:
 			player.add_subtitles(sound_data.subtitles, 4)
 		var t = instructions_time - first_subtitles_offset - second_subtitles_offset
 		if t > 0:
@@ -113,3 +115,10 @@ func tween_song_to_noise(tween: Tween):
 		tween.set_parallel(true)
 		tween.tween_property(song_player, "volume_db", -80.0, fade_time)
 		tween.tween_property(noise_player, "volume_db", noise_volume, fade_time)
+
+func dist_to_no_y(other: Node3D) -> float:
+	var gp = global_position
+	gp.y = 0
+	var op = other.global_position
+	op.y = 0
+	return gp.distance_to(op) 

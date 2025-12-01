@@ -52,7 +52,7 @@ func wander(delta):
 		velocity = (agent.get_next_path_position() - global_position).normalized() * delta * speed * Vector3(1,0,1)
 	if global_position.distance_to(target.global_position) < 0.5:
 		pick_destination()
-		emiter.restart()
+		#emiter.restart()
 	move_and_slide()
 	look_at(global_position + velocity, Vector3.UP)
 		

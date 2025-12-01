@@ -4,8 +4,8 @@ class_name Room
 #region Spawning
 @export_range(0, 20) var min_trash_spawn: int = 2
 @export_range(0, 20) var max_trash_spawn: int = 6
-@export_range(0, 20) var min_mop_spawn: int = 2
-@export_range(0, 20) var max_mop_spawn: int = 6
+@export_range(0, 20) var min_mop_spawn: int = 1
+@export_range(0, 20) var max_mop_spawn: int = 3
 @export var trash_spawner: Node3D
 @export var dirt_spawner: Node3D
 var trash_spawn_points: Array[Node3D]
@@ -46,6 +46,7 @@ func on_body_entered(body: Node3D):
 func check_done():
 	if current_trash >= goal_trash and current_mop >= goal_mop:
 		Globals.current_map.rooms_done += 1
+		Globals.current_map.player.update_tasks()
 		Globals.current_map.check_win()
 
 func spawn_tasks():
