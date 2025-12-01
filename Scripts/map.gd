@@ -5,6 +5,8 @@ class_name Map
 @export var player_spawn_point: Node3D
 @export var spawn_room: Room
 var player: Player
+var rooms_done:int = 0
+var rooms_total:int = 0
 
 func _ready() -> void:
 	Globals.current_map = self
@@ -25,9 +27,14 @@ func spawn_player():
 		p.queue_free()
 		return
 
-func game_over():
-	print("game over")
+func game_over(text: String = "you lose"):
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var l = lose_scene.instantiate()
+	if l is LoseScreen:
+		l.label.text = text
 	get_parent().add_child(l)
 	queue_free()
+	
+func check_win():
+	if rooms_done == rooms_total:
+		game_over("You won!")

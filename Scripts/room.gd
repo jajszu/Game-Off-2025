@@ -34,7 +34,7 @@ func _ready() -> void:
 			mop_dirt_spawn_points.append(c)
 		self.body_entered.connect(on_body_entered)
 	spawn_tasks()
-	Globals.rooms_total += 1
+	Globals.current_map.rooms_total += 1
 
 func on_body_entered(body: Node3D):
 	print(name)
@@ -44,7 +44,8 @@ func on_body_entered(body: Node3D):
 
 func check_done():
 	if current_trash >= goal_trash and current_mop >= goal_mop:
-		Globals.rooms_done += 1
+		Globals.current_map.rooms_done += 1
+		Globals.current_map.check_win()
 
 func spawn_tasks():
 	#if max higher than num of spawn points, reduce max
