@@ -3,7 +3,7 @@ class_name Dirt
 
 @onready var model: Node3D = $model
 var hp: int = 3
-var current_room: Room
+var room: Room
 
 func clean():
 	hp -= 1
@@ -12,5 +12,6 @@ func clean():
 	tween.tween_property(model, "scale", new_scale, 1)
 	await tween.finished
 	if hp <= 0:
-		#current_room.current_mop += 1
+		room.current_mop += 1
+		Globals.current_map.player.update_tasks()
 		queue_free()

@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://wi23jua7bc6b"]
+
+[ext_resource type="Theme" uid="uid://bh1sqvwywqmho" path="res://main_theme.tres" id="1_s2rrh"]
+[ext_resource type="Script" uid="uid://dfo7mkp6jcgo" path="res://Scripts/lose_screen.gd" id="2_488pv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_488pv"]
+font_size = 100
+
+[node name="LoseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_s2rrh")
+script = ExtResource("2_488pv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.5
+offset_top = -22.0
+offset_right = 200.5
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "restart"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 166.0
+offset_right = 260.0
+offset_bottom = 281.0
+grow_horizontal = 2
+text = "you lose"
+label_settings = SubResource("LabelSettings_488pv")
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

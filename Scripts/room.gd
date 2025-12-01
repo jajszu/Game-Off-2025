@@ -75,6 +75,8 @@ func spawn_tasks():
 			var random_trash_scene = trash_scenes[randi() % trash_scenes.size()]
 			var trash_instance = random_trash_scene.instantiate()
 			add_child(trash_instance)
+			if trash_instance is Trash:
+				trash_instance.room = self
 			trash_instance.global_position = point.global_position
 			trash_instance.global_rotation = point.global_rotation
 
@@ -94,5 +96,7 @@ func spawn_tasks():
 			var random_mop_scene = mop_dirt_scenes[randi() % mop_dirt_scenes.size()]
 			var mop_instance = random_mop_scene.instantiate()
 			add_child(mop_instance)
+			if mop_instance is Dirt:
+				mop_instance.room = self
 			mop_instance.global_position = point.global_position
 			mop_instance.global_rotation = point.global_rotation
