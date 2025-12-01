@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://t3hqitrerjav"]
+
+[ext_resource type="Texture2D" uid="uid://cv2pmksxkqi05" path="res://Models/vase/pot_basecolor.png" id="1_7jvg6"]
+[ext_resource type="Texture2D" uid="uid://ddr5dbquuen4j" path="res://Models/vase/pot_metallic.png" id="2_sikgu"]
+[ext_resource type="Texture2D" uid="uid://dg2nxwccawwft" path="res://Models/vase/pot_normal.png" id="3_kf76b"]
+[ext_resource type="Texture2D" uid="uid://oqyw3igs6nap" path="res://Models/vase/pot_roughness.png" id="4_8f44i"]
+
+[resource]
+albedo_texture = ExtResource("1_7jvg6")
+metallic = 1.0
+metallic_texture = ExtResource("2_sikgu")
+roughness_texture = ExtResource("4_8f44i")
+normal_enabled = true
+normal_texture = ExtResource("3_kf76b")

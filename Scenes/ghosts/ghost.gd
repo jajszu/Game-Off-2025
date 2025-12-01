@@ -54,8 +54,7 @@ func chase_player(delta):
 		wander(delta)
 
 func kill():
-	#print("gameover")
-	pass
+	Globals.current_map.game_over()
 
 func despawn():
 	Globals.current_ghost = null

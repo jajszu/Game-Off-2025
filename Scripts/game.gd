@@ -1,10 +1,12 @@
 extends Node3D
+class_name Game
 
 @export var map_scene: PackedScene
 @export var loading_scene: PackedScene
 @onready var main_menu: Control = $MainMenu
 @onready var v_box_container: VBoxContainer = $MainMenu/VBoxContainer
 @onready var settings_menu: SettingsMenu = $MainMenu/SettingsMenu
+@onready var bg_music: AudioStreamPlayer = $BgMusic
 
 var can_skip:bool = false
 
@@ -34,8 +36,9 @@ func _on_start_button_pressed() -> void:
 func start_map():
 	var m = map_scene.instantiate()
 	add_child(m)
-	$BgMusic.stop()
-	loading_node.queue_free()
+	bg_music.stop()
+	if loading_node != null:
+		loading_node.queue_free()
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=86 format=4 uid="uid://bf20svfn7q30o"]
+[gd_scene load_steps=92 format=4 uid="uid://bf20svfn7q30o"]
 
 [ext_resource type="Texture2D" uid="uid://ds0klw0qat7jd" path="res://Materials/carpet.png" id="1_c4nuu"]
 [ext_resource type="Script" uid="uid://c8pqrwdq6k1l3" path="res://Scripts/map.gd" id="1_mbdl7"]
 [ext_resource type="PackedScene" uid="uid://xtuwmeio0bmf" path="res://Scenes/player.tscn" id="2_bei53"]
 [ext_resource type="Texture2D" uid="uid://csmry2deaxscx" path="res://Materials/ceil.png" id="2_d8w4w"]
+[ext_resource type="PackedScene" uid="uid://wi23jua7bc6b" path="res://Scenes/lose_screen.tscn" id="3_1f6r8"]
 [ext_resource type="PackedScene" uid="uid://dqx02sg63mkp8" path="res://Models/lamp.fbx" id="3_bcdk8"]
 [ext_resource type="Texture2D" uid="uid://biaoq3vq8v7q5" path="res://Materials/walls.png" id="3_r2fkr"]
 [ext_resource type="PackedScene" uid="uid://d2cbc25m5uqld" path="res://Scenes/desk.tscn" id="3_v8ky0"]
@@ -22,9 +23,14 @@
 [ext_resource type="PackedScene" uid="uid://rwebxmoqf3f7" path="res://Scenes/light_switch.tscn" id="21_aweeb"]
 [ext_resource type="PackedScene" uid="uid://cwmku2tjrj3d2" path="res://Scenes/lamp.tscn" id="21_wvmc5"]
 [ext_resource type="Script" uid="uid://bpgrkcmo2snu4" path="res://Scripts/room.gd" id="22_wvmc5"]
+[ext_resource type="PackedScene" uid="uid://b4c30awkhi7ww" path="res://Scenes/trash.tscn" id="23_hgxaw"]
 [ext_resource type="VoxelGIData" uid="uid://b0yiyv80svw1" path="res://Materials/game_map.VoxelGI_data.res" id="23_r2fkr"]
 [ext_resource type="PackedScene" uid="uid://d3bu52eiw3ics" path="res://Scenes/mop.tscn" id="24_tcqau"]
+[ext_resource type="PackedScene" uid="uid://c1rflfpxp5bqq" path="res://Scenes/dirt.tscn" id="24_tv2ut"]
 [ext_resource type="PackedScene" uid="uid://cctvs7cem3bq5" path="res://Scenes/radio.tscn" id="25_1f6r8"]
+[ext_resource type="PackedScene" uid="uid://fi2khj5pxmj5" path="res://Scenes/cactus.tscn" id="27_hgxaw"]
+[ext_resource type="PackedScene" uid="uid://de67ievd8uhwl" path="res://Scenes/fern.tscn" id="28_tv2ut"]
+[ext_resource type="PackedScene" uid="uid://c71ygqcn4l56l" path="res://Scenes/vase.tscn" id="29_tgw6e"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_c4nuu"]
 vertices = PackedVector3Array(-26.5, 0.8480704, -12.5, -26.25, 0.8480704, -12, -18, 0.8480704, -12, -18, 0.8480704, -19.75, -21.75, 0.8480704, -20, -49.5, 0.8480704, -11, -27.75, 0.8480704, -10.75, -27.5, 0.8480704, -12.5, -21.5, 0.8480704, -21.25, -20, 0.8480704, -21.25, -20.25, 0.8480704, -49.5, -49.5, 0.8480704, -49.5, -18, 0.8480704, -21.25, -17.75, 0.8480704, -21.75, -16.5, 0.8480704, -21.25, 14.25, 0.8480704, -21.25, 14.5, 0.8480704, -21.75, 18, 0.8480704, -49.5, -16.75, 0.8480704, -21.75, 17.75, 0.8480704, -21.25, 15.75, 0.8480704, -12, 23.75, 0.8480704, -12, 24, 0.8480704, -12.5, 19.5, 0.8480704, -20, 15.75, 0.8480704, -19.75, 25.25, 0.8480704, -12.5, 25.5, 0.8480704, -10.25, 49.5, 0.8480704, -10.25, 19.25, 0.8480704, -21.25, 49.5, 0.8480704, -49.5, -13.75, 0.8480704, -5, -11.75, 0.8480704, -5, -11.5, 0.8480704, -5.75, -14, 0.8480704, -5.75, -10.5, 0.8480704, -8.25, -11, 0.8480704, -8.5, -10.5, 0.8480704, -5.75, -16.5, 0.8480704, -5.75, -10.75, 0.8480704, -17.25, -11, 0.8480704, -19.75, -16.5, 0.8480704, -19.75, -8.75, 0.8480704, -15.5, -8.25, 0.8480704, -15.25, -7.75, 0.8480704, -15.25, -7.75, 0.8480704, -17, -9, 0.8480704, -17.5, 5.25, 0.8480704, -17.5, 6.75, 0.8480704, -17.5, 10.5, 0.8480704, -19.75, -4.25, 0.8480704, -17.5, -3, 0.8480704, -17.5, -7.25, 0.8480704, -17.5, -2.5, 0.8480704, -15.5, -1.5, 0.8480704, -15.25, -1.5, 0.8480704, -17, -2.5, 0.8480704, -17, 3.5, 0.8480704, -17.5, -1, 0.8480704, -17.5, 3.75, 0.8480704, -15.5, 4.75, 0.8480704, -15.25, 4.75, 0.8480704, -17, -5.75, 0.8480704, -17.5, 0.25, 0.8480704, -17.5, 8.5, 0.8480704, -17.5, 10.25, 0.8480704, -17.25, 8, 0.8480704, -17, -4.75, 0.8480704, -17, 0.75, 0.8480704, -10.25, 1.5, 0.8480704, -10, 1.5, 0.8480704, -17, 0.75, 0.8480704, -17, 2, 0.8480704, -17.5, -5.25, 0.8480704, -10, -4.75, 0.8480704, -10, 7, 0.8480704, -10.25, 8, 0.8480704, -10, 9.5, 0.8480704, -5, 11.25, 0.8480704, -5, 11.5, 0.8480704, -5.75, 10.25, 0.8480704, -8.5, 9, 0.8480704, -8.25, 9, 0.8480704, -5.75, 14.25, 0.8480704, -19.75, 10.5, 0.8480704, -10, 14.25, 0.8480704, -5.75, -8.75, 0.8480704, -13.75, -8.75, 0.8480704, -8.5, -7.75, 0.8480704, -8.5, -4.5, 0.8480704, -8.25, -5.75, 0.8480704, -8.25, -2.5, 0.8480704, -8.5, -1.5, 0.8480704, -8.5, 8, 0.8480704, -8.5, 6.75, 0.8480704, -8.25, 0.5, 0.8480704, -8.25, 1.75, 0.8480704, -8.25, 3.75, 0.8480704, -8.5, 4.75, 0.8480704, -8.5, -49.5, 0.8480704, 17.25, -27.75, 0.8480704, 17, -18.5, 0.8480704, -9.5, -18, 0.8480704, -8.25, -18, 0.8480704, -10.5, -20.75, 0.8480704, -3, -20.75, 0.8480704, -4, -22, 0.8480704, -4.25, -23.75, 0.8480704, -4, -24.75, 0.8480704, -3.5, -25, 0.8480704, -2.75, -24.75, 0.8480704, -10.5, -24.75, 0.8480704, -9.5, -23.75, 0.8480704, -9, -20.25, 0.8480704, -9.5, -18, 0.8480704, -0.75, -18, 0.8480704, -4, -18.75, 0.8480704, -2.5, -24.75, 0.8480704, -7.25, -24.75, 0.8480704, -5.75, -24, 0.8480704, -5.5, -23.75, 0.8480704, -7.75, -17.5, 0.8480704, 1.25, -17.25, 0.8480704, -0.5, -21.75, 0.8480704, -8, -20.5, 0.8480704, -8.25, -26.25, 0.8480704, 1.25, -20, 0.8480704, -2.5, -26.25, 0.8480704, -2.75, 23.5, 0.8480704, -1.25, 23.25, 0.8480704, -0.25, 23.75, 0.8480704, -0.25, 21, 0.8480704, -2.5, 21.25, 0.8480704, -1.75, 22.5, 0.8480704, -2, 22.5, 0.8480704, -6.75, 15.75, 0.8480704, -0.75, 15, 0.8480704, -0.5, 15, 0.8480704, 1.25, 18.5, 0.8480704, 1.25, 22.25, 0.8480704, -8, 20.75, 0.8480704, -8.5, 18.75, 0.8480704, -8.5, 17.25, 0.8480704, -8, 17, 0.8480704, -6.5, 23.75, 0.8480704, -6.75, 18.75, 0.8480704, -2.5, 15.75, 0.8480704, -6.5, 22.25, 0.8480704, -10.5, 17.25, 0.8480704, -10.5, 18.75, 0.8480704, -9.75, 21, 0.8480704, -10, 33.25, 0.8480704, 14.25, 33.5, 0.8480704, 15, 49.5, 0.8480704, 15, 25.5, 0.8480704, 14.25, -16.5, 0.8480704, 1.5, -16.5, 0.8480704, -0.75, -11.5, 0.8480704, 1.25, -9.5, 0.8480704, 1.25, -9.5, 0.8480704, -4.25, -11.5, 0.8480704, -4.25, -14, 0.8480704, -4.25, -16.5, 0.8480704, -4.25, -16.5, 0.8480704, 3.25, -11.75, 0.8480704, 3.25, 14.25, 0.8480704, 1.5, 14.25, 0.8480704, -0.75, 11.5, 0.8480704, -4.25, 7.25, 0.8480704, -4.25, 7.25, 0.8480704, 1.25, 9.25, 0.8480704, 1.25, 9.25, 0.8480704, -4.25, 14.25, 0.8480704, -4.25, 9.5, 0.8480704, 3.25, 14.25, 0.8480704, 3.25, -17.25, 0.8480704, 14.25, -17.25, 0.8480704, 12.75, -18, 0.8480704, 12.5, -22.25, 0.8480704, 12.75, -22.25, 0.8480704, 14.25, -23.5, 0.8480704, 11.25, -23.75, 0.8480704, 12.5, -24.5, 0.8480704, 9, -24.5, 0.8480704, 10.5, -18, 0.8480704, 2.75, -19.75, 0.8480704, 2.75, -19.25, 0.8480704, 5.75, -20, 0.8480704, 6.75, -24, 0.8480704, 6.75, -24.75, 0.8480704, 2.75, -26.25, 0.8480704, 2.75, -26.25, 0.8480704, 8.75, -3.75, 0.8480704, 2.75, -3.75, 0.8480704, 3.25, -3, 0.8480704, 3.5, -1.75, 0.8480704, 2.75, -5.25, 0.8480704, 9.75, -6.75, 0.8480704, 9.75, -10.25, 0.8480704, 12.5, -11, 0.8480704, 14.25, -1.75, 0.8480704, 14.25, -9, 0.8480704, 3.75, -8.25, 0.8480704, 2.75, -10.25, 0.8480704, 2.75, -11, 0.8480704, 12.75, -3.5, 0.8480704, 8.25, -4.75, 0.8480704, 8.5, -7.25, 0.8480704, 8.5, -8.5, 0.8480704, 8.25, -3, 0.8480704, 5, -9, 0.8480704, 5, -3.75, 0.8480704, 5.5, -8.25, 0.8480704, 5.5, 7.75, 0.8480704, 2.75, 6, 0.8480704, 2.75, 6.75, 0.8480704, 3.5, 1.75, 0.8480704, 6.25, 1.75, 0.8480704, 4.75, 1, 0.8480704, 4.5, 8.75, 0.8480704, 14.25, 8.75, 0.8480704, 12.75, 7.75, 0.8480704, 12.5, 1.25, 0.8480704, 2.75, -0.25, 0.8480704, 2.75, 6.75, 0.8480704, 5, 0.75, 0.8480704, 7, 6, 0.8480704, 5.5, 6, 0.8480704, 7.75, 6.75, 0.8480704, 8, 2, 0.8480704, 10.75, 1.75, 0.8480704, 8.5, 0.75, 0.8480704, 8.25, -0.25, 0.8480704, 14.25, 5.75, 0.8480704, 10.5, 6.75, 0.8480704, 9.5, 16, 0.8480704, 3.5, 17.25, 0.8480704, 2.75, 15.75, 0.8480704, 2.75, 21.75, 0.8480704, 2.75, 21.75, 0.8480704, 3.25, 23, 0.8480704, 3.5, 23.75, 0.8480704, 2.75, 15, 0.8480704, 14.25, 23.75, 0.8480704, 14.25, 20.25, 0.8480704, 9.75, 18.75, 0.8480704, 9.75, 15.75, 0.8480704, 12.5, 15, 0.8480704, 12.75, 16, 0.8480704, 5, 22, 0.8480704, 8.25, 20.75, 0.8480704, 8.5, 18.25, 0.8480704, 8.5, 17, 0.8480704, 8.25, 23, 0.8480704, 5, 21.75, 0.8480704, 5.5, 17.25, 0.8480704, 5.5, -11.75, 0.8480704, 12.5, -16.5, 0.8480704, 12.5, 14.25, 0.8480704, 12.5, 9.5, 0.8480704, 12.5, -6, 2.3480704, 5.5, -6, 2.3480704, 6, -5.25, 2.3480704, 6, 33.25, 0.8480704, 15.75, 25.5, 0.8480704, 15.75, 25.5, 0.8480704, 18.5, 24.75, 0.8480704, 18.75, 24.75, 0.8480704, 49.5, 49.5, 0.8480704, 49.5, -1.75, 0.8480704, 15.75, -26.25, 0.8480704, 15.75, -26.25, 0.8480704, 18.5, -1.75, 0.8480704, 22.25, -27, 0.8480704, 18.75, -27, 0.8480704, 49.5, -1, 0.8480704, 49.5, -1, 0.8480704, 22.5, 23.75, 0.8480704, 18.5, 23.75, 0.8480704, 15.75, -0.25, 0.8480704, 15.75, -0.25, 0.8480704, 22.25, -27.75, 0.8480704, 18.5, -49.5, 0.8480704, 49.5)
@@ -667,20 +673,24 @@ ssil_radius = 2.94
 ssil_intensity = 5.3
 fog_density = 0.0315
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.07683582, 0.07683582, 0.07683582, 1)
+volumetric_fog_density = 0.0823
+volumetric_fog_albedo = Color(0.3180195, 0.31801987, 0.31801975, 1)
 adjustment_enabled = true
+adjustment_brightness = 0.83
 adjustment_contrast = 0.91
 adjustment_saturation = 0.85
 
 [node name="GameMap" type="Node3D" node_paths=PackedStringArray("player_spawn_point", "spawn_room")]
 script = ExtResource("1_mbdl7")
 player_scene = ExtResource("2_bei53")
+lose_scene = ExtResource("3_1f6r8")
 player_spawn_point = NodePath("Node3D/PlayerSpawnPoint")
 spawn_room = NodePath("corridor")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -0.5)
 navigation_mesh = SubResource("NavigationMesh_c4nuu")
+metadata/_edit_lock_ = true
 
 [node name="walls" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
@@ -691,6 +701,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2.5, 15)
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D2"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_r2fkr")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D2"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -812,6 +823,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D16"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_suvey")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D16"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -823,6 +835,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.15, 2.5, -11.2)
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D21"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_skbwv")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D21"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -834,6 +847,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1499996, 2.5, -5)
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D22"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_rl02s")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D22"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -845,6 +859,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1499996, 2.5, -20.5)
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D26"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_sgkvl")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D26"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -856,6 +871,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.15, 2.5, -20.5)
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D27"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_r6ejm")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D27"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -868,6 +884,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.15, 2.5, -5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6999998, 0, 0)
 material_override = SubResource("StandardMaterial3D_r2fkr")
 mesh = SubResource("ArrayMesh_ewwyc")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D24"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6999998, 0, 0)
@@ -879,6 +896,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D23"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_3n2ud")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D23"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -890,6 +908,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D25"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_6it8s")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D25"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -901,6 +920,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 7.98
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D3"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_0vg3s")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D3"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -912,6 +932,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 3.78
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D31"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_a176g")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D31"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -923,6 +944,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 27.9
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D50"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_6yj3o")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D50"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -934,6 +956,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 17.9
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D33"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_20v3u")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D33"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -945,6 +968,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 19.7
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D34"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_rgekh")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D34"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -956,6 +980,7 @@ transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.74227
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D36"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_aigge")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D36"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -967,6 +992,7 @@ transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.74227
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D37"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_l1vcw")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D37"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -978,6 +1004,7 @@ transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.74227
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D39"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_w8g5j")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D39"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -989,6 +1016,7 @@ transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.74227
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D40"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_rqpwm")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D40"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -1000,6 +1028,7 @@ transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.74227
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D42"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_aw6rc")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D42"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -1011,6 +1040,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 19.7
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D43"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_1ui8m")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D43"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -1022,6 +1052,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 3.78
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D44"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_3nnfa")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D44"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -1033,6 +1064,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 3.78
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D45"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_vnakf")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D45"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -1044,6 +1076,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 13.7
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D46"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_xcw7j")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D46"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -1056,6 +1089,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 12.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6999998, 0, 0)
 material_override = SubResource("StandardMaterial3D_r2fkr")
 mesh = SubResource("ArrayMesh_bx6u4")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D47"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6999998, 0, 0)
@@ -1067,6 +1101,7 @@ transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.74227
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D48"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_hpyx2")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D48"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -1078,6 +1113,7 @@ transform = Transform3D(4.371139e-08, 8.742278e-08, 1, 3.821371e-15, -1, 8.74227
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/walls/StaticBody3D49"]
 material_override = SubResource("StandardMaterial3D_l12iw")
 mesh = SubResource("ArrayMesh_htk3w")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/walls/StaticBody3D49"]
 shape = SubResource("BoxShape3D_d8w4w")
@@ -2335,7 +2371,6 @@ transform = Transform3D(-3.632255e-08, 0, 0.8309631, 0, 0.8309631, 0, -0.8309631
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6696892, 5.734723, -1.8603764)
-visible = false
 material_override = SubResource("StandardMaterial3D_mue85")
 size = Vector3(100, 0.1, 100)
 
@@ -2844,50 +2879,354 @@ shadow_normal_bias = 2.0
 omni_range = 10.0
 omni_attenuation = 2.0
 
-[node name="Room1" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="Room1" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight4/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room1"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room4" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3019699, 0)
+
+[node name="trashMop2" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9573917, -1.3019699, 3.2542562)
+
+[node name="trashMop3" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.284565, -1.3019699, -1.3872895)
+
+[node name="trashMop4" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3030643, -1.3019699, -1.6997905)
+
+[node name="trashMop5" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3030643, -1.3019699, -5.009844)
+
+[node name="trashMop6" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.201088, -1.3019694, 4.0844536)
+
+[node name="trashMop7" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2225409, -1.3019694, -5.3770323)
+
+[node name="trashMop8" type="Node3D" parent="Room1/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3188887, -1.3019694, 5.543626)
+
+[node name="trashspawn" type="Node3D" parent="Room1"]
+
+[node name="trash" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8037357, 0.1642592, 2.151204)
+
+[node name="trash2" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9639988, 0.1642592, 4.8346567)
+
+[node name="trash3" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.197651, 0.1642592, 4.72931)
+
+[node name="trash4" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22431755, 0.1642592, -2.7803679)
+
+[node name="trash5" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1797161, 0.1642592, -5.5383134)
+
+[node name="trash6" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0808353, 0.1642592, -5.5383134)
+
+[node name="trash7" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.773305, -1.3749105, -0.5619011)
+
+[node name="trash8" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8000011, -1.3749105, 1.1963148)
+
+[node name="trash10" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.337225, -1.3749105, -3.0214734)
+
+[node name="trash11" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1762028, -1.3749105, -4.565438)
+
+[node name="trash12" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3039379, -1.3749105, 5.1519117)
+
+[node name="trash13" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6003017, -1.3749105, 3.1684647)
+
+[node name="trash14" type="Node3D" parent="Room1/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7225094, -1.374911, 3.3342247)
+
+[node name="Room4" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8733063, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight6/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room4"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room5" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9573917, -1.3019699, 3.2542562)
+
+[node name="trashMop3" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.284565, -1.3019699, -1.3872895)
+
+[node name="trashMop4" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8417873, -1.3019699, -3.5060806)
+
+[node name="trashMop5" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1678696, -1.3019699, 4.8724747)
+
+[node name="trashMop6" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2510242, -1.3019694, 5.0968876)
+
+[node name="trashMop7" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2225409, -1.3019694, -5.3770323)
+
+[node name="trashMop8" type="Node3D" parent="Room4/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1875839, -1.3019699, 4.960061)
+
+[node name="trashspawn" type="Node3D" parent="Room4"]
+
+[node name="trash" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, 1.1087856)
+
+[node name="trash2" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3110847, 0.1642592, -1.8144503)
+
+[node name="trash3" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3588629, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3984089, 0.1642592, -4.5133395)
+
+[node name="trash5" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1797161, 0.1642592, -5.5383134)
+
+[node name="trash6" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3781509, 0.1642592, -4.9259753)
+
+[node name="trash7" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room4/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7225094, -1.374911, 3.3342247)
+
+[node name="Room5" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight2/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room5"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room6" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9573917, -1.3019699, 3.2542562)
+
+[node name="trashMop3" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.284565, -1.3019699, -1.3872895)
+
+[node name="trashMop4" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8417873, -1.3019699, -3.5060806)
+
+[node name="trashMop5" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1678696, -1.3019699, 4.8724747)
+
+[node name="trashMop6" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2510242, -1.3019694, 5.0968876)
+
+[node name="trashMop7" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2225409, -1.3019694, -5.3770323)
+
+[node name="trashMop8" type="Node3D" parent="Room5/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1875839, -1.3019699, 4.960061)
+
+[node name="trashspawn" type="Node3D" parent="Room5"]
+
+[node name="trash" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8243694, 0.1642592, -0.8616986)
+
+[node name="trash3" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9545498, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5733585, 0.1642592, -4.3224354)
+
+[node name="trash5" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4688377, 0.1642592, -5.681497)
+
+[node name="trash6" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0315285, 0.1642592, -5.213316)
+
+[node name="trash7" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room5/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3941631, -1.374911, 2.414916)
+
+[node name="Room6" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.754848, 2.4272346, -5.1002455)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight/OmniLight3D")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room6"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="confrence" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3806744, -1.3019699, 2.112269)
+
+[node name="trashMop3" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2952023, -1.3019699, -1.4682226)
+
+[node name="trashMop4" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2205658, -1.3019699, -4.791213)
+
+[node name="trashMop5" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9415684, -1.3019699, 1.7637331)
+
+[node name="trashMop6" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.761507, -1.3019694, -1.2584467)
+
+[node name="trashMop7" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2977619, -1.3019694, -2.052257)
+
+[node name="trashMop8" type="Node3D" parent="Room6/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9978771, -1.3019699, -1.0012951)
+
+[node name="trashspawn" type="Node3D" parent="Room6"]
+
+[node name="trash" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8243694, 0.1642592, -0.8616986)
+
+[node name="trash3" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9545498, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5733585, 0.1642592, -4.3224354)
+
+[node name="trash5" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4688377, 0.1642592, -5.681497)
+
+[node name="trash6" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0315285, 0.1642592, -5.213316)
+
+[node name="trash7" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room6/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3941631, -1.374911, 2.414916)
+
+[node name="confrence" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6907768, 2.4272366, -17.015518)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/confrence/OmniLight3D10")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
@@ -2895,27 +3234,350 @@ metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0527458, 0, 3.8855572)
 shape = SubResource("BoxShape3D_1f6r8")
 
-[node name="Room3" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="confrence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9480734, -1.3019699, -0.18348312)
+
+[node name="trashMop2" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6716609, -1.3019694, 3.2757654)
+
+[node name="trashMop3" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7298007, -1.3019699, -2.2657871)
+
+[node name="trashMop4" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6422715, -1.3019699, -2.8403034)
+
+[node name="trashMop5" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36588, -1.3019699, 8.469946)
+
+[node name="trashMop6" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7381587, -1.3019699, 5.8680325)
+
+[node name="trashMop7" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2061615, -1.3019704, 2.5101624)
+
+[node name="trashMop8" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8412666, -1.3019699, 7.079418)
+
+[node name="trashMop9" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8412666, -1.3019699, 1.6669292)
+
+[node name="trashMop10" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.124684, -1.3019699, 1.6669292)
+
+[node name="trashMop11" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.265283, -1.3019699, 9.0663395)
+
+[node name="trashMop12" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.928076, -1.3019699, 8.408627)
+
+[node name="trashMop13" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.203955, -1.3019699, -1.0408115)
+
+[node name="trashMop14" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.373068, -1.3019699, 3.5148315)
+
+[node name="trashMop15" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.936125, -1.3019699, 3.5148315)
+
+[node name="trashMop16" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.906982, -1.3019699, 7.284547)
+
+[node name="trashMop17" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.547101, -1.3019699, 9.523208)
+
+[node name="trashMop18" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.939113, -1.3019699, -1.713192)
+
+[node name="trashMop19" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.425251, -1.3019699, 11.174872)
+
+[node name="trashMop20" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2386785, -1.3019699, 9.713222)
+
+[node name="trashMop21" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.905966, -1.3019699, 10.695325)
+
+[node name="trashMop22" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39007, -1.3019708, -2.4622097)
+
+[node name="trashMop23" type="Node3D" parent="confrence/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.638254, -1.3019708, -2.4622097)
+
+[node name="trashspawn" type="Node3D" parent="confrence"]
+
+[node name="trash14" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5338626, -1.374911, 1.0251637)
+
+[node name="trash15" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0327663, -1.374911, 6.0406914)
+
+[node name="trash16" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.009219, -1.374911, 8.885041)
+
+[node name="trash17" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1007137, -1.374911, 5.38381)
+
+[node name="trash18" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.015601, -1.374911, 1.2786894)
+
+[node name="trash19" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.896292, -1.374911, -0.9429741)
+
+[node name="trash20" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.469171, -1.374911, 2.8351068)
+
+[node name="trash21" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.087319, -1.374911, 6.465065)
+
+[node name="trash22" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.841938, -1.374911, 4.950178)
+
+[node name="trash23" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7793283, -1.3749119, -2.1318321)
+
+[node name="trash24" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5156522, -1.3749129, -1.7048435)
+
+[node name="trash25" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4060822, -1.3749148, -2.9708157)
+
+[node name="trash26" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6562266, -1.3749148, -0.010040283)
+
+[node name="trash27" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2654715, -1.3749148, -0.010040283)
+
+[node name="trash28" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2654715, -1.3749148, 4.5925665)
+
+[node name="trash29" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.409862, -1.3749148, 4.5925665)
+
+[node name="trash30" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.472355, -1.3749148, 0.3086605)
+
+[node name="trash31" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.689455, -1.3749148, 5.530532)
+
+[node name="trash32" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1597424, -1.3749148, -2.4524345)
+
+[node name="trash33" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.542727, -1.3749148, -2.623787)
+
+[node name="trash34" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.61254, -1.3749148, 3.1027355)
+
+[node name="trash35" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.61254, -1.3749148, -0.8972645)
+
+[node name="trash36" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.008583, -1.3749148, 2.6264324)
+
+[node name="trash37" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.008583, -1.3749148, 5.6264324)
+
+[node name="trash38" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.47765, -1.3749148, 8.824227)
+
+[node name="trash39" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.422726, -1.3749148, 10.1411)
+
+[node name="trash40" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.723127, -1.3749148, 8.002352)
+
+[node name="trash41" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.70965, -1.3749148, 9.681202)
+
+[node name="trash42" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.240303, -1.3749148, 9.438198)
+
+[node name="trash43" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3852797, -1.3749148, 9.467512)
+
+[node name="trash44" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6147332, -1.3749148, 9.382101)
+
+[node name="trash45" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.969575, -1.3749148, 9.3540535)
+
+[node name="trash46" type="Node3D" parent="confrence/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.618597, -1.3749148, 7.085905)
+
+[node name="Room3" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8424664, 2.4272346, 7.9786673)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight3/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room3"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="Room2" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3806744, -1.3019699, 2.112269)
+
+[node name="trashMop3" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.881074, -1.3019699, -1.8649015)
+
+[node name="trashMop4" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.653593, -1.3019699, -3.685264)
+
+[node name="trashMop5" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9415684, -1.3019699, 1.7637331)
+
+[node name="trashMop6" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8636761, -1.3019694, 5.3994484)
+
+[node name="trashMop7" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.777587, -1.3019694, 4.7198)
+
+[node name="trashMop8" type="Node3D" parent="Room3/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3013117, -1.3019699, 0.39243507)
+
+[node name="trashspawn" type="Node3D" parent="Room3"]
+
+[node name="trash" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3035221, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8243694, 0.1642592, -0.8616986)
+
+[node name="trash3" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9545498, 0.16425872, -2.5053601)
+
+[node name="trash4" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5733585, 0.1642592, -4.3224354)
+
+[node name="trash5" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4688377, 0.1642592, -5.681497)
+
+[node name="trash6" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0315285, 0.1642592, -5.213316)
+
+[node name="trash7" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2334137, -1.37491, -2.2551842)
+
+[node name="trash8" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.007154, -1.3749105, 2.6538486)
+
+[node name="trash10" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9196663, -1.3749105, -3.6466632)
+
+[node name="trash11" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8855762, -1.3749105, 4.8663054)
+
+[node name="trash12" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6205645, -1.374911, 4.4449587)
+
+[node name="trash13" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25748253, -1.3749105, 4.955165)
+
+[node name="trash14" type="Node3D" parent="Room3/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3941631, -1.374911, 2.414916)
+
+[node name="Room2" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.144392, 2.4272346, -5.0765376)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/roomlight5/OmniLight3D3")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room2"]
 shape = SubResource("BoxShape3D_r2fkr")
 
-[node name="corridor" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+[node name="trashspawnmop" type="Node3D" parent="Room2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0740275, -1.3019699, 3.1961498)
+
+[node name="trashMop2" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3806744, -1.3019699, 2.112269)
+
+[node name="trashMop3" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7170429, -1.3019699, -5.3806767)
+
+[node name="trashMop4" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2258968, -1.3019699, -5.0844502)
+
+[node name="trashMop5" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8745575, -1.3019699, 2.0388534)
+
+[node name="trashMop6" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8636761, -1.3019694, 5.3994484)
+
+[node name="trashMop7" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8970442, -1.3019694, 3.5749383)
+
+[node name="trashMop8" type="Node3D" parent="Room2/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1927052, -1.3019699, -5.320622)
+
+[node name="trashspawn" type="Node3D" parent="Room2"]
+
+[node name="trash" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0024891, 0.16425896, -0.86165714)
+
+[node name="trash2" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.658945, 0.1642592, 0.73380136)
+
+[node name="trash3" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0081577, 0.16425872, -1.8682771)
+
+[node name="trash4" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5555172, 0.1642592, -5.6019063)
+
+[node name="trash5" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4565163, 0.1642592, -2.4664106)
+
+[node name="trash6" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3381834, 0.1642592, -2.7483292)
+
+[node name="trash7" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.456809, -1.37491, -1.0248046)
+
+[node name="trash8" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.052782, -1.3749105, 3.638689)
+
+[node name="trash9" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2977161, -1.3749105, 0.1989274)
+
+[node name="trash10" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88523865, -1.374911, -5.055781)
+
+[node name="trash11" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7966957, -1.37491, 2.049339)
+
+[node name="trash12" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20215797, -1.3749114, -0.4207573)
+
+[node name="trash13" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6801739, -1.3749105, -5.843373)
+
+[node name="trash14" type="Node3D" parent="Room2/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8414555, -1.374911, 4.5621505)
+
+[node name="corridor" type="Area3D" parent="." node_paths=PackedStringArray("trash_spawner", "dirt_spawner", "light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8752918, 2.4272346, -2.4607553)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
@@ -2923,6 +3585,10 @@ min_trash_spawn = 1
 max_trash_spawn = 1
 min_mop_spawn = 1
 max_mop_spawn = 1
+trash_spawner = NodePath("trashspawn")
+dirt_spawner = NodePath("trashspawnmop")
+trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
+mop_dirt_scenes = Array[PackedScene]([ExtResource("24_tv2ut")])
 light = NodePath("../lights/corridorlight/OmniLight3D7")
 metadata/_custom_type_script = "uid://bpgrkcmo2snu4"
 
@@ -2937,6 +3603,122 @@ shape = SubResource("BoxShape3D_tcqau")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="corridor"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.938778, 0, 10.276288)
 shape = SubResource("BoxShape3D_tcqau")
+
+[node name="trashspawnmop" type="Node3D" parent="corridor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.048357964, 0)
+
+[node name="trashMop" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6695695, -1.3019699, 1.5146316)
+
+[node name="trashMop2" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.53308, -1.3019708, 0.39744282)
+
+[node name="trashMop3" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.925125, -1.3019699, 10.420286)
+
+[node name="trashMop4" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.355436, -1.3019699, -0.061501026)
+
+[node name="trashMop5" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.876001, -1.3019699, 3.786598)
+
+[node name="trashMop6" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.075773, -1.3019694, 12.37972)
+
+[node name="trashMop7" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.238809, -1.3019694, -0.49354076)
+
+[node name="trashMop8" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.178239, -1.3019699, 2.1881628)
+
+[node name="trashMop9" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.721423, -1.3019699, 10.3844)
+
+[node name="trashMop10" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.362051, -1.3019699, 15.150305)
+
+[node name="trashMop11" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.132742, -1.3019699, 15.150305)
+
+[node name="trashMop12" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.072735, -1.3019699, 3.073573)
+
+[node name="trashMop13" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.297765, -1.3019699, 6.336703)
+
+[node name="trashMop14" type="Node3D" parent="corridor/trashspawnmop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2639365, -1.3019699, 1.356123)
+
+[node name="trashspawn" type="Node3D" parent="corridor"]
+
+[node name="trash12" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3936496, -1.3749114, 1.3005359)
+
+[node name="trash13" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18758, -1.3749105, -0.9999671)
+
+[node name="trash14" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.756156, -1.374911, 1.659754)
+
+[node name="trash15" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.399678, -1.374911, -0.83334994)
+
+[node name="trash16" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.61663, -1.374911, 0.87750065)
+
+[node name="trash17" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.664045, -1.374911, -1.1084404)
+
+[node name="trash18" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.371309, -1.374911, 3.7096872)
+
+[node name="trash19" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.477161, -1.374911, 6.812453)
+
+[node name="trash20" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.294241, -1.374911, 9.474283)
+
+[node name="trash21" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.643758, -1.374911, 9.567898)
+
+[node name="trash22" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.963823, -1.374911, 12.129019)
+
+[node name="trash23" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.316232, -1.374911, 15.158504)
+
+[node name="trash24" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.512651, -1.374911, 14.815101)
+
+[node name="trash25" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.79328, -1.374911, 14.815101)
+
+[node name="trash26" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.306871, -1.374911, 10.917794)
+
+[node name="trash27" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.183711, -1.374911, 8.698431)
+
+[node name="trash28" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.42581, -1.3749119, 6.230691)
+
+[node name="trash29" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.046644, -1.3749129, 3.3296008)
+
+[node name="trash30" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.128492, -1.3749129, 1.6437812)
+
+[node name="trash31" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.674879, -1.3749129, -0.13581991)
+
+[node name="trash32" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.628515, -1.3749138, 0.4902525)
+
+[node name="trash33" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.457261, -1.3749138, -1.335362)
+
+[node name="trash34" type="Node3D" parent="corridor/trashspawn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8299775, -1.3749138, 0.4948647)
 
 [node name="postprocess" type="Node3D" parent="."]
 
@@ -2954,3 +3736,50 @@ transform = Transform3D(-0.010023551, 0.8354238, -0.54951483, 0.015236205, 0.549
 [node name="Radio" parent="." node_paths=PackedStringArray("spawns") instance=ExtResource("25_1f6r8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.062369, 1.1890519, 5.073428)
 spawns = [NodePath("../Node3D/EnemySpawn1"), NodePath("../Node3D/EnemySpawn2")]
+
+[node name="DecorationsNoNavmesh" type="Node3D" parent="."]
+
+[node name="Cactus" parent="DecorationsNoNavmesh" instance=ExtResource("27_hgxaw")]
+transform = Transform3D(0.7981626, 0, -0.6024421, 0, 1, 0, 0.6024421, 0, 0.7981626, 8.343929, 2.6418834, 9.148289)
+
+[node name="Cactus2" parent="DecorationsNoNavmesh" instance=ExtResource("27_hgxaw")]
+transform = Transform3D(-0.38886672, 0, -0.9212941, 0, 1, 0, 0.9212941, 0, -0.38886672, -1.2025546, 2.6418834, 6.194322)
+
+[node name="Cactus3" parent="DecorationsNoNavmesh" instance=ExtResource("27_hgxaw")]
+transform = Transform3D(-0.9880543, 0, -0.15410683, 0, 1, 0, 0.15410683, 0, -0.9880543, -16.606005, 2.6418834, -5.9877324)
+
+[node name="Cactus4" parent="DecorationsNoNavmesh" instance=ExtResource("27_hgxaw")]
+transform = Transform3D(0.6642265, 0, 0.7475315, 0, 1, 0, -0.7475315, 0, 0.6642265, 24.914568, 2.6418834, 6.150332)
+
+[node name="Fern" parent="DecorationsNoNavmesh" instance=ExtResource("28_tv2ut")]
+transform = Transform3D(0.5552364, 0, 0.8316926, 0, 1, 0, -0.8316926, 0, 0.5552364, -21.228062, 1.2700748, -0.61090004)
+
+[node name="Fern2" parent="DecorationsNoNavmesh" instance=ExtResource("28_tv2ut")]
+transform = Transform3D(0.5552364, 0, 0.8316926, 0, 1, 0, -0.8316926, 0, 0.5552364, -11.212134, 1.2700748, -18.80185)
+
+[node name="Fern3" parent="DecorationsNoNavmesh" instance=ExtResource("28_tv2ut")]
+transform = Transform3D(-0.24005869, 0, -0.97075844, 0, 1, 0, 0.97075844, 0, -0.24005869, -11.694816, 1.2700748, -3.6684868)
+
+[node name="Fern4" parent="DecorationsNoNavmesh" instance=ExtResource("28_tv2ut")]
+transform = Transform3D(-0.6708668, 0, -0.741578, 0, 1, 0, 0.741578, 0, -0.6708668, 26.642666, 1.2700748, 12.441353)
+
+[node name="Fern5" parent="DecorationsNoNavmesh" instance=ExtResource("28_tv2ut")]
+transform = Transform3D(-0.85779595, 0, -0.5139906, 0, 1, 0, 0.5139906, 0, -0.85779595, 0.88767636, 1.2700748, 12.723796)
+
+[node name="Vase" parent="DecorationsNoNavmesh" instance=ExtResource("29_tgw6e")]
+transform = Transform3D(0.9987778, 0, -0.049425032, 0, 1, 0, 0.049425032, 0, 0.9987778, -3.822, 0.991, -4.34)
+
+[node name="Vase2" parent="DecorationsNoNavmesh" instance=ExtResource("29_tgw6e")]
+transform = Transform3D(0.9992373, 0, -0.039050534, 0, 1, 0, 0.039050534, 0, 0.9992373, 7.049, 0.991, 0.311)
+
+[node name="Vase4" parent="DecorationsNoNavmesh" instance=ExtResource("29_tgw6e")]
+transform = Transform3D(-0.08692971, 0, -0.99621445, 0, 1, 0, 0.99621445, 0, -0.08692971, -14.434, 0.991, 8.75)
+
+[node name="Vase5" parent="DecorationsNoNavmesh" instance=ExtResource("29_tgw6e")]
+transform = Transform3D(0.7459411, 0, -0.6660118, 0, 1, 0, 0.6660118, 0, 0.7459411, 17.399, 0.991, -19.467)
+
+[node name="Vase6" parent="DecorationsNoNavmesh" instance=ExtResource("29_tgw6e")]
+transform = Transform3D(0.35639542, 0, 0.93433523, 0, 1, 0, -0.93433523, 0, 0.35639542, 17.533, 0.991, -6.778)
+
+[node name="Vase3" parent="DecorationsNoNavmesh" instance=ExtResource("29_tgw6e")]
+transform = Transform3D(-0.7918315, 0, 0.61073965, 0, 1, 0, -0.61073965, 0, -0.7918315, 17.432102, 0.99135315, -3.9999347)

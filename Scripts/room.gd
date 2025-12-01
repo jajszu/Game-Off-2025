@@ -6,8 +6,10 @@ class_name Room
 @export_range(0, 20) var max_trash_spawn: int = 6
 @export_range(0, 20) var min_mop_spawn: int = 2
 @export_range(0, 20) var max_mop_spawn: int = 6
-@export var trash_spawn_points: Array[Node3D]
-@export var mop_dirt_spawn_points: Array[Node3D]
+@export var trash_spawner: Node3D
+@export var dirt_spawner: Node3D
+var trash_spawn_points: Array[Node3D]
+var mop_dirt_spawn_points: Array[Node3D]
 @export var trash_scenes: Array[PackedScene]
 @export var mop_dirt_scenes: Array[PackedScene]
 #endregion
@@ -24,7 +26,13 @@ var goal_mop: int = 10
 #endregion
 
 func _ready() -> void:
-	self.body_entered.connect(on_body_entered)
+	if trash_spawner != null:
+		for c in trash_spawner.get_children():
+			trash_spawn_points.append(c)
+	if dirt_spawner != null:
+		for c in dirt_spawner.get_children():
+			mop_dirt_spawn_points.append(c)
+		self.body_entered.connect(on_body_entered)
 	spawn_tasks()
 	Globals.rooms_total += 1
 
@@ -67,6 +75,8 @@ func spawn_tasks():
 			var random_trash_scene = trash_scenes[randi() % trash_scenes.size()]
 			var trash_instance = random_trash_scene.instantiate()
 			add_child(trash_instance)
+			if trash_instance is Trash:
+				trash_instance.room = self
 			trash_instance.global_position = point.global_position
 			trash_instance.global_rotation = point.global_rotation
 
@@ -86,5 +96,7 @@ func spawn_tasks():
 			var random_mop_scene = mop_dirt_scenes[randi() % mop_dirt_scenes.size()]
 			var mop_instance = random_mop_scene.instantiate()
 			add_child(mop_instance)
+			if mop_instance is Dirt:
+				mop_instance.room = self
 			mop_instance.global_position = point.global_position
 			mop_instance.global_rotation = point.global_rotation

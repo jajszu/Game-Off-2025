@@ -34,7 +34,6 @@ func play_radio_loop() -> void:
 			continue
 		print("play")
 		var player = Globals.current_map.player
-		var player_pos = player.global_position
 		if sounds.is_empty():
 			await get_tree().create_timer(1.0).timeout
 			continue
@@ -64,10 +63,10 @@ func play_radio_loop() -> void:
 		song_player.play()
 		tween_noise_to_song(tween)
 		await get_tree().create_timer(first_subtitles_offset).timeout
-		if global_position.distance_to(player_pos) > subtitles_distance:
+		if global_position.distance_to(player.global_position) < subtitles_distance:
 			player.add_subtitles(sound_data.subtitles, 4)
-		await get_tree().create_timer(second_subtitles_offset).timeout
-		if global_position.distance_to(player_pos) > subtitles_distance:
+		await get_tree().create_timer(second_subtitles_offset - first_subtitles_offset).timeout
+		if global_position.distance_to(player.global_position) < subtitles_distance:
 			player.add_subtitles(sound_data.subtitles, 4)
 		var t = instructions_time - first_subtitles_offset - second_subtitles_offset
 		if t > 0:
@@ -77,7 +76,7 @@ func play_radio_loop() -> void:
 		var max_dist := 0.0
 		var chosen_spawn: Vector3 = Vector3.ZERO
 		for s in spawns:
-			var dist := s.global_position.distance_to(player_pos)
+			var dist := s.global_position.distance_to(player.global_position)
 			if dist > max_dist:
 				max_dist = dist
 				chosen_spawn = s.global_position
