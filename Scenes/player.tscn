@@ -15,6 +15,7 @@ physics_interpolation_mode = 1
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 collision_layer = 2
 script = ExtResource("1_v0iea")
+mouse_sensitivity = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -36,6 +37,9 @@ collision_mask = 9
 transform = Transform3D(0.96592575, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.96592575, 0.405, -0.28104007, -0.468)
 script = ExtResource("2_cvnsp")
 metadata/_custom_type_script = "uid://do5of5w1c0soj"
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+collision_mask = 4
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

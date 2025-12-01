@@ -158,11 +158,9 @@ func ghost_visible_to_camera() -> void:
 	if not cam.is_position_in_frustum(Globals.current_ghost.global_position):
 		SignalBus.saw_ghost.emit(false)
 		return
-	var space = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(cam.global_position, Globals.current_ghost.global_position)
-	query.collision_mask = 1
-	var result = space.intersect_ray(query)
-	if result and result.collider != Globals.current_ghost:
+	var ray = $Camera3D/RayCast3D
+	ray.target_position = Globals.current_ghost.global_position
+	if ray.is_colliding():
 		SignalBus.saw_ghost.emit(false)
 		return
 	SignalBus.saw_ghost.emit(true)

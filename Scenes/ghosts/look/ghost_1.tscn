@@ -1,8 +1,16 @@
-[gd_scene load_steps=8 format=4 uid="uid://cd30tevb6onjv"]
+[gd_scene load_steps=16 format=4 uid="uid://cd30tevb6onjv"]
 
 [ext_resource type="Script" uid="uid://276mo0jb6eio" path="res://Scenes/ghosts/look/ghost_1.gd" id="1_sjck6"]
+[ext_resource type="AudioStream" uid="uid://b7jg7rlgqp3k8" path="res://Sounds/ghost/bg1.mp3" id="2_5pwbe"]
 [ext_resource type="Material" uid="uid://bav2ptpr38g8f" path="res://Materials/Material.tres" id="2_kwr5n"]
 [ext_resource type="PackedScene" uid="uid://xw6nkjv2owld" path="res://Particles/ghost_particles.tscn" id="3_kwr5n"]
+[ext_resource type="AudioStream" uid="uid://do8l1k7dw3vcj" path="res://Sounds/ghost/bg1_2.mp3" id="3_ruycg"]
+[ext_resource type="AudioStream" uid="uid://dmq0bf0v5udea" path="res://Sounds/ghost/bg2.mp3" id="4_xa683"]
+[ext_resource type="AudioStream" uid="uid://dbixgrpbb7l4p" path="res://Sounds/ghost/bg2_2.mp3" id="5_ijyuj"]
+[ext_resource type="AudioStream" uid="uid://bnk55c144xk57" path="res://Sounds/ghost/bg2_3.mp3" id="6_20onn"]
+[ext_resource type="AudioStream" uid="uid://cyel0li425kub" path="res://Sounds/ghost/effect1.mp3" id="7_c1ygy"]
+[ext_resource type="AudioStream" uid="uid://b6rm0cd28ekt6" path="res://Sounds/ghost/effect2.mp3" id="8_gdtpq"]
+[ext_resource type="AudioStream" uid="uid://nmvbhi582frb" path="res://Sounds/ghost/effect3.mp3" id="9_50hps"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_o41kg"]
 resource_name = "base_002"
@@ -565,8 +573,9 @@ _data = {
 &"mixamo_com": SubResource("Animation_cf1wx")
 }
 
-[node name="ghost1" type="CharacterBody3D" node_paths=PackedStringArray("agent", "emiter", "animator")]
+[node name="ghost1" type="CharacterBody3D" node_paths=PackedStringArray("agent", "emiter", "animator", "sound1", "sound2", "sound3")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
+collision_layer = 5
 script = ExtResource("1_sjck6")
 shy = true
 active = true
@@ -575,6 +584,12 @@ chasing = true
 agent = NodePath("NavigationAgent3D")
 emiter = NodePath("Ghost")
 animator = NodePath("AnimationPlayer")
+sound1 = NodePath("bg1")
+sound2 = NodePath("bg2")
+sound3 = NodePath("effect")
+bg_sound_1 = Array[AudioStream]([ExtResource("2_5pwbe"), ExtResource("3_ruycg")])
+bg_sound_2 = Array[AudioStream]([ExtResource("4_xa683"), ExtResource("5_ijyuj"), ExtResource("6_20onn")])
+sound_effects = Array[AudioStream]([ExtResource("7_c1ygy"), ExtResource("8_gdtpq"), ExtResource("9_50hps")])
 
 [node name="Skeleton3D" type="Skeleton3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -1049,3 +1064,12 @@ speed_scale = 0.78
 
 [node name="Ghost" parent="." instance=ExtResource("3_kwr5n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9463254, 0)
+
+[node name="bg1" type="AudioStreamPlayer3D" parent="."]
+bus = &"Ghost"
+
+[node name="bg2" type="AudioStreamPlayer3D" parent="."]
+bus = &"Ghost"
+
+[node name="effect" type="AudioStreamPlayer3D" parent="."]
+bus = &"Ghost"
