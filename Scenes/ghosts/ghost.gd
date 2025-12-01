@@ -17,9 +17,18 @@ class_name Ghost
 @export var agent : NavigationAgent3D
 @export var emiter : GPUParticles3D
 @export var animator : AnimationPlayer
+@export var sound1 : AudioStreamPlayer3D
+@export var sound2 : AudioStreamPlayer3D
+@export var sound3 : AudioStreamPlayer3D
+
+@export var bg_sound_1 : Array[AudioStream]
+@export var bg_sound_2 : Array[AudioStream]
+@export var sound_effects : Array[AudioStream]
+
+var is_screaming := false
 
 var waypoints = []
-var player = null
+var player : Player = null
 var target
 
 
@@ -28,6 +37,15 @@ func _ready() -> void:
 	waypoints = get_tree().get_nodes_in_group("waypoints")
 	player = get_tree().get_first_node_in_group("player")
 	pick_destination()
+	
+	sound1.volume_db = -40
+	sound2.volume_db = -40
+	sound3.volume_db = -40
+	
+	sound1.stream = bg_sound_1.pick_random()
+	sound1.play(randf_range(0.0,10.0))
+	sound2.stream = bg_sound_2.pick_random()
+	sound2.play(randf_range(0.0,10.0))
 
 func wander(delta):
 	if not agent.is_navigation_finished():
@@ -49,9 +67,18 @@ func chase_player(delta):
 	if global_position.distance_to(target.global_position) < 1.0:
 		kill()
 	else:
+		if not is_screaming:
+			scream()
 		target = player
 		agent.set_target_position(target.global_position)
 		wander(delta)
+
+func scream():
+	is_screaming = true
+	sound3.stream = sound_effects.pick_random()
+	sound3.play()
+	await get_tree().create_timer(randf_range(3.0,10.0)).timeout
+	is_screaming = false
 
 func kill():
 	Globals.current_map.game_over()
@@ -60,6 +87,13 @@ func despawn():
 	Globals.current_ghost = null
 
 func _process(delta: float) -> void:
+	if sound1.volume_db < 0:
+		sound1.volume_db += delta * 10
+	if sound2.volume_db < 0:
+		sound2.volume_db += delta * 10
+	if sound3.volume_db < 0:
+		sound3.volume_db += delta * 10
+	
 	if not active:
 		animator.stop(true)
 		return
