@@ -10,9 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://phglhryxy216" path="res://Sounds/Instructions/hide.mp3" id="6_7yf7r"]
 [ext_resource type="PackedScene" uid="uid://ccftrqlpxtk21" path="res://Scenes/ghosts/floorislava/floor_is_lava.tscn" id="6_v8ggg"]
 [ext_resource type="PackedScene" uid="uid://cuh23wgobhim1" path="res://Models/radio.fbx" id="7_geon2"]
-[ext_resource type="AudioStream" uid="uid://oa4xshxed2kj" path="res://Sounds/Instructions/look.mp3" id="7_lmej3"]
 [ext_resource type="PackedScene" uid="uid://bap7mtqn3sg2y" path="res://Scenes/ghosts/hide/hide.tscn" id="8_lhl7a"]
-[ext_resource type="PackedScene" uid="uid://cd30tevb6onjv" path="res://Scenes/ghosts/look/ghost_1.tscn" id="10_ic8se"]
+[ext_resource type="AudioStream" uid="uid://blsrknmmsworc" path="res://Sounds/Instructions/dontmove.mp3" id="9_v8ggg"]
+[ext_resource type="PackedScene" uid="uid://ddk0s2v1ii6a3" path="res://Scenes/ghosts/dontmove/dont_move.tscn" id="10_lhl7a"]
 [ext_resource type="AudioStream" uid="uid://hru8331p30u2" path="res://Sounds/Instructions/turn off light.mp3" id="11_lxpvs"]
 [ext_resource type="PackedScene" uid="uid://bi728v7l7tx3v" path="res://Scenes/ghosts/light/light.tscn" id="12_x4xy5"]
 
@@ -39,9 +39,9 @@ metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_v8ggg"]
 script = ExtResource("2_jp436")
-audio = ExtResource("7_lmej3")
-enemy = ExtResource("10_ic8se")
-subtitles = "look at him"
+audio = ExtResource("9_v8ggg")
+enemy = ExtResource("10_lhl7a")
+subtitles = "do not move"
 metadata/_custom_type_script = "uid://dyskunjdmx1le"
 
 [sub_resource type="Resource" id="Resource_lhl7a"]
@@ -61,7 +61,7 @@ script = ExtResource("1_8y21s")
 sounds = Array[ExtResource("2_jp436")]([SubResource("Resource_63cyc"), SubResource("Resource_clxkr"), SubResource("Resource_5jvd1"), SubResource("Resource_v8ggg"), SubResource("Resource_lhl7a")])
 songs = Array[AudioStream]([ExtResource("6_3asvo")])
 noise_volume = -2.0
-song_time = 5.0
+song_time = 30.0
 instructions_time = 27.0
 noise_time = 30.0
 

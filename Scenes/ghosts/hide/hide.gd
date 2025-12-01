@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	super(delta)
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
-	if player.hidden:
+	if !player.hidden:
 		wandering = false
 		chasing = true
 		speed = chasing_speed

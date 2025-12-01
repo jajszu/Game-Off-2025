@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bguuvk4k5ivxu"]
+[gd_scene load_steps=16 format=4 uid="uid://bguuvk4k5ivxu"]
 
 [ext_resource type="Material" uid="uid://bp842hfelf4bm" path="res://Models/chair.fbm/leather.tres" id="1_ughjk"]
 [ext_resource type="Texture2D" uid="uid://bo3rhtnp5ty4" path="res://Models/chair_0.png" id="2_3y41w"]
@@ -206,8 +206,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q54v2")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ughjk"]
-height = 7.714
+height = 2.754
 radius = 1.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ughjk"]
+size = Vector3(2.545, 4.15, 0.64)
 
 [node name="Node3D" type="Node3D"]
 
@@ -240,5 +243,9 @@ transform = Transform3D(45.17011, -89.21693, -1.1920929e-05, -5.960464e-06, -2.3
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9598522, 0.09531975)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0082226, 0.09531975)
 shape = SubResource("CylinderShape3D_ughjk")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.359736, 1.2294278)
+shape = SubResource("BoxShape3D_ughjk")

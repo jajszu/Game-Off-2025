@@ -1,12 +1,12 @@
 extends Control
 class_name LoseScreen
 
-@onready var label: Label = $Label
+@export var label: Label
 
 func _ready() -> void:
 	var p = get_parent()
 	if p is Game:
-		p.bg_music.play()
+		p.bg_music.play(24)
 
 func _on_restart_button_pressed() -> void:
 	var p = get_parent()

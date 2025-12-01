@@ -5,7 +5,7 @@ extends StaticBody3D
 func get_interact_text() -> String:
 	if Globals.current_map.player.hidden:
 		return "[E] stop hiding"
-	elif get_angle_to_player() < 40:
+	elif get_angle_to_player() < 45:
 		return "[E] hide"
 	
 	return ""
@@ -15,7 +15,7 @@ func interact():
 		return
 	var player = Globals.current_map.player
 	player.hidden = true
-	player.drop_item()
+	#player.drop_item()
 	player.set_collision_mask_value(1, false)
 	player.position_before_hidden = player.global_position
 	player.global_position.y -= 2

@@ -14,8 +14,8 @@ height = 1.5
 physics_interpolation_mode = 1
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_v0iea")
-mouse_sensitivity = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -3,7 +3,7 @@ class_name Room
 
 #region Spawning
 @export_range(0, 20) var min_trash_spawn: int = 2
-@export_range(0, 20) var max_trash_spawn: int = 6
+@export_range(0, 20) var max_trash_spawn: int = 5
 @export_range(0, 20) var min_mop_spawn: int = 1
 @export_range(0, 20) var max_mop_spawn: int = 3
 @export var trash_spawner: Node3D

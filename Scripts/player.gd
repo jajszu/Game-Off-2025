@@ -135,6 +135,8 @@ func pick_up_item(item: Item):
 	drop_item_label.visible = true
 
 func drop_item():
+	if not is_on_floor():
+		return
 	if inventory.current_item == null:
 		return
 	else:

@@ -469,16 +469,16 @@ uv1_scale = Vector3(48.96, 48.96, 48.96)
 size = Vector3(100, 0.3, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r2fkr"]
-size = Vector3(9.41, 6.15, 12.625)
+size = Vector3(7.82, 6.15, 12.625)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1f6r8"]
 size = Vector3(32.135, 6.15, 15.31)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l12iw"]
-size = Vector3(32.025, 6.15, 6.975)
+size = Vector3(29.43, 6.15, 3.715)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tcqau"]
-size = Vector3(13.365, 6.15, 6.29)
+size = Vector3(13.365, 6.15, 3.235)
 
 [sub_resource type="Environment" id="Environment_r2fkr"]
 background_energy_multiplier = 0.0
@@ -1210,11 +1210,12 @@ metadata/_edit_lock_ = true
 
 [node name="roof" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6696892, 5.734723, -1.8603764)
-visible = false
 material_override = SubResource("StandardMaterial3D_mue85")
 size = Vector3(100, 0.1, 100)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="roof"]
+collision_layer = 32
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="roof/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999905, 0)
@@ -1636,8 +1637,9 @@ omni_attenuation = 2.0
 transform = Transform3D(-2.2292808e-08, 0, 0.51, 0, 0.50999993, 0, -0.51, 0, -2.2292808e-08, -11.124132, 3.1533422, -5.697691)
 lights = [NodePath("../OmniLight3D8"), NodePath("../OmniLight3D9"), NodePath("../OmniLight3D10"), NodePath("../OmniLight3D11"), NodePath("../OmniLight3D12"), NodePath("../OmniLight3D13"), NodePath("../OmniLight3D14"), NodePath("../OmniLight3D15"), NodePath("../OmniLight3D16"), NodePath("../OmniLight3D17")]
 
-[node name="LightSwitch2" parent="lights/confrence" instance=ExtResource("21_aweeb")]
+[node name="LightSwitch2" parent="lights/confrence" node_paths=PackedStringArray("lights") instance=ExtResource("21_aweeb")]
 transform = Transform3D(-2.2292808e-08, 0, 0.51, 0, 0.50999993, 0, -0.51, 0, -2.2292808e-08, 16.86971, 3.1533422, -5.697691)
+lights = [NodePath("../OmniLight3D8"), NodePath("../OmniLight3D9"), NodePath("../OmniLight3D10"), NodePath("../OmniLight3D11"), NodePath("../OmniLight3D12"), NodePath("../OmniLight3D13"), NodePath("../OmniLight3D14"), NodePath("../OmniLight3D15"), NodePath("../OmniLight3D16"), NodePath("../OmniLight3D17")]
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="lights/confrence"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9662895, 4.77928, -10.067113)
@@ -2063,6 +2065,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3941631, -1.374911, 2.41491
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6907768, 2.4272366, -17.015518)
 collision_mask = 2
 script = ExtResource("22_wvmc5")
+min_trash_spawn = 4
+max_trash_spawn = 8
+min_mop_spawn = 3
+max_mop_spawn = 6
 trash_spawner = NodePath("trashspawn")
 dirt_spawner = NodePath("trashspawnmop")
 trash_scenes = Array[PackedScene]([ExtResource("23_hgxaw")])
@@ -2572,9 +2578,8 @@ data = ExtResource("23_r2fkr")
 [node name="Mop" parent="." instance=ExtResource("24_tcqau")]
 transform = Transform3D(-0.010023551, 0.8354238, -0.54951483, 0.015236205, 0.54960626, 0.83528477, 0.99983364, 4.872937e-10, -0.018237695, 13.815107, 3.0684078, 7.8800297)
 
-[node name="Radio" parent="." node_paths=PackedStringArray("spawns") instance=ExtResource("25_1f6r8")]
+[node name="Radio" parent="." instance=ExtResource("25_1f6r8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.062369, 1.1890519, 5.073428)
-spawns = [NodePath("../Node3D/EnemySpawn1"), NodePath("../Node3D/EnemySpawn2")]
 
 [node name="DecorationsNoNavmesh" type="Node3D" parent="."]
 

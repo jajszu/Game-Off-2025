@@ -64,7 +64,7 @@ func pick_destination():
 func chase_player(delta):
 	if player == null:
 		player = get_tree().get_first_node_in_group("player")
-	if global_position.distance_to(target.global_position) < 1.0:
+	if dist_player_no_y() < 1.0:
 		kill()
 	else:
 		if not is_screaming:
@@ -103,3 +103,11 @@ func _process(delta: float) -> void:
 		wander(delta)
 	if chasing:
 		chase_player(delta)
+		
+func dist_player_no_y() -> float:
+	var gp = global_position
+	gp.y = 0
+	var pp = target.global_position
+	pp.y = 0
+	return gp.distance_to(pp)
+	
