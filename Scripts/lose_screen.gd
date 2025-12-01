@@ -1,4 +1,7 @@
 extends Control
+class_name LoseScreen
+
+@onready var label: Label = $Label
 
 func _ready() -> void:
 	var p = get_parent()
