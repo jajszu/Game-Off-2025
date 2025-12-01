@@ -28,7 +28,7 @@ class_name Ghost
 var is_screaming := false
 
 var waypoints = []
-var player = null
+var player : Player = null
 var target
 
 
