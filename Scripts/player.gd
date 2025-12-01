@@ -83,8 +83,8 @@ func update_tasks():
 	trash_label.visible = !no_trash
 
 	#set text
-	room_count_label.text = "Rooms done: " + str(Globals.rooms_done) \
-	+ "/" + str(Globals.rooms_total)
+	room_count_label.text = "Rooms done: " + str(Globals.current_map.rooms_done) \
+	+ "/" + str(Globals.current_map.rooms_total)
 	mop_label.text = "Mop up the dirt " + str(current_room.current_mop) \
 	+ "/" + str(current_room.goal_mop)
 	trash_label.text = "Pick up the trash " + str(current_room.current_trash) \
