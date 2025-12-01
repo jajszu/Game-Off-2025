@@ -8,6 +8,7 @@ height = 2.8984375
 radius = 1.1767578
 
 [node name="TrashCan" type="StaticBody3D"]
+collision_layer = 9
 script = ExtResource("1_t3ghh")
 
 [node name="trashbin" parent="." instance=ExtResource("1_bgvmr")]
