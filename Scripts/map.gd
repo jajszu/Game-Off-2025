@@ -12,6 +12,8 @@ func _ready() -> void:
 	Globals.current_map = self
 	spawn_player()
 	player.cam.current = true
+	Globals.map_loaded.emit()
+	player.update_tasks()
 
 
 func spawn_player():

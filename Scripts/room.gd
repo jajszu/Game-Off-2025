@@ -34,7 +34,8 @@ func _ready() -> void:
 			mop_dirt_spawn_points.append(c)
 		self.body_entered.connect(on_body_entered)
 	spawn_tasks()
-	Globals.current_map.rooms_total += 1
+	Globals.map_loaded.connect(func(): Globals.current_map.rooms_total += 1,CONNECT_ONE_SHOT)
+	
 
 func on_body_entered(body: Node3D):
 	print(name)
