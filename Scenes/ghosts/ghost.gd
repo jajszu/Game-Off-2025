@@ -105,9 +105,9 @@ func _process(delta: float) -> void:
 		chase_player(delta)
 		
 func dist_player_no_y() -> float:
-	var gp = global_position
+	var gp = Vector3(global_position)
 	gp.y = 0
-	var pp = target.global_position
+	var pp = Vector3(target.global_position)
 	pp.y = 0
 	return gp.distance_to(pp)
 	

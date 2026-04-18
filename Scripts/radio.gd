@@ -117,8 +117,8 @@ func tween_song_to_noise(tween: Tween):
 		tween.tween_property(noise_player, "volume_db", noise_volume, fade_time)
 
 func dist_to_no_y(other: Node3D) -> float:
-	var gp = global_position
+	var gp = Vector3(global_position)
 	gp.y = 0
-	var op = other.global_position
+	var op = Vector3(other.global_position)
 	op.y = 0
 	return gp.distance_to(op) 

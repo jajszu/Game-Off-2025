@@ -95,7 +95,7 @@ use_item={
 
 [physics]
 
-3d/default_gravity=11.100000000000001
+3d/default_gravity=11.1
 
 [rendering]
 

@@ -23,9 +23,9 @@ func interact():
 	player.global_position = hide_location.global_position
 	
 func get_angle_to_player():
-		var pos := hide_location.global_position
+		var pos := Vector3(hide_location.global_position)
 		pos.y = 0
-		var pos_p := Globals.current_map.player.global_position
+		var pos_p := Vector3(Globals.current_map.player.global_position)
 		pos_p.y = 0
 		var dir = (pos_p - pos).normalized()
 		var forward = -hide_location.global_basis.z
